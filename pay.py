@@ -2,53 +2,79 @@
 import datetime, os
 _pth = str(os.path.dirname(os.path.abspath(__file__))) + "/log.txt"
 # welcome
-print(_pth)
-print(("#" * 75) + "\n" + ("#" + "Welcome to PAYMENT_TABLE logging".center(73) + "#") + "\n" + ("#" * 75))
-print("Please use these commands \\ Add (a), Show (s) or Exit (e)")
+print(("#" * 100) + "\n" + ("#" + "Welcome to PAYMENT_TABLE.JO logging".center(98) + "#") + "\n" + ("#" * 100))
+_doc = "# Please use these commands \\ Add (a), Remove (r), Show (s), Help (h) or Exit (e)"
+print(_doc)
 # process
 while True :
     # input
-    _cmd = input("PAYMENT_TABLE> ").split(" ")
+    _cmd = input("PAYMENT_TABLE.JO> ").split(" ", 2)
     # file
     _flw = open(_pth, "a")
     _flr = open(_pth, "r")
     # command
     ## add
     if _cmd[0].lower() in ["add", "a"] :
-        # date
-        _dat = datetime.datetime.now().strftime(r"%Y/%m/%d - %H:%M:%S")
-        ## nothing salary
-        if _cmd[1][0] == "s" and int(_cmd[1][1:]) == 0 :
-            _flw.write(f"\n[NOT] ===> {_dat} ===> {str(int(_cmd[1][1:])).ljust(10)} ===> ")
-        ## salary
-        elif _cmd[1][0] == "s" :
-            _flw.write(f"\n[SAL] ===> {_dat} ===> {str(int(_cmd[1][1:])).ljust(10)} ===> ")
-        ## nothing payment
-        elif int(_cmd[1]) == 0 :
-            _flw.write(f"\n[NOT] ===> {_dat} ===> {str(int(_cmd[1])).ljust(10)} ===> ")
-        ## payment
-        else :
-            _flw.write(f"\n[REM] ===> {_dat} ===> {str(int(_cmd[1].ljust(10))).ljust(10)} ===> ")
-        ## discription
         try :
-            _flw.write(_cmd[2])
+            # date
+            _dat = datetime.datetime.now().strftime(r"%Y/%m/%d - %H:%M:%S")
+            ## nothing salary
+            if _cmd[1][0] == "s" and int(_cmd[1][1:]) == 0 :
+                _flw.write(f"[NOT] ==> {_dat} ==> {int(_cmd[1][1:])} ==> ")
+            ## salary
+            elif _cmd[1][0] == "s" :
+                _flw.write(f"[SAL] ==> {_dat} ==> {int(_cmd[1][1:])} ==> ")
+            ## nothing payment
+            elif int(_cmd[1]) == 0 :
+                _flw.write(f"[NOT] ==> {_dat} ==> {int(_cmd[1])} ==> ")
+            ## payment
+            else :
+                _flw.write(f"[REM] ==> {_dat} ==> {int(_cmd[1].ljust(10))} ==> ")
+            ## discription
+            try :
+                _flw.write(_cmd[2] + "\n")
+            except :
+                _flw.write("\n")
             _flw.close()
-        except IndexError :
-            _flw.write("-")
+            print("# Successfully added")
+        except :
+            print("# Wrong syntax\n# The syntax is : a [s]<number> [discription]")
+    ## remove
+    elif _cmd[0].lower() in ["remove", "r"] :
+        try :
+            _txt = _flr.readlines()
+            if len(_txt) - 1 < int(_cmd[1]) or int(_cmd[1]) <= 0 :
+                print("# Out of range")
+                continue
+            _flc = open(_pth, "w")
+            _txt.pop(int(_cmd[1]))
+            _txt = "".join(_txt)
+            _flc.write("")
+            _flc.close()
+            _flw.write(_txt)
             _flw.close()
+            print("# Successfully removed")
+        except :
+            print("# Wrong syntax\n# The syntax is : r <indexNumber>")
     ## show
     elif _cmd[0].lower() in ["show", "s"] :
-        print("-" * 75)
-        print("|" + "DATA".center(73) + "|")
-        print("-" * 75)
-        print("".join(_flr.readlines()[1:]))
-        print("\b" + "-" * 73)
+        print("-" * 100 + "\n|" + "DATA".center(98) + "|\n" + "-" * 100 + "\n| No. | Type  | " + "Date".ljust(22) + "| " + "Cost".ljust(10) + " | Discription".ljust(49) + "|\n" + "-" * 100)
+        x = 1
+        for i in _flr.readlines()[1:] :
+            _dat = i.split(" ==> ")
+            print(f"| {str(x).zfill(3)} | {_dat[0]} | {_dat[1]} | {_dat[2].ljust(10)} | {_dat[3]}", end = "")
+            x += 1
+            print("-" * 100)
         _flw.close()
-        _flr.close()
     ## exit
     elif _cmd[0].lower() in ["exit", "e"] :
-        print("Goodbye :)")
+        print("# Goodbye :)\n\n© 2021 PAYMENT_TABLE.JO v1.2.2\nPowerd by JO")
+        _flr.close()
         break
-    ## another charecter
-    else :
-        print("Please use these commands \\ Add (a), Show (s) or Exit (e)")
+    ## help
+    elif _cmd[0].lower() in ["help", "h"] :
+        print(_doc)
+    ## another character
+    elif _cmd[0].lower() != "" :
+        print("# Wrong syntax\n# The syntax is : Add (a), Remove (r), Show (s), Help (h), or Exit (e)")
+    _flr.close()
