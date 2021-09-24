@@ -89,7 +89,7 @@ while True :
         _cmd = input("PAYMENT_TABLE.JO> ").split(" ", 2)
         ## exit
         if _cmd[0].lower() in ["exit", "e"] :
-            print("# Goodbye :)\n\n© 2021 PAYMENT_TABLE.JO v1.2.2\nPowerd by JO")
+            print("# Goodbye :)\n\n© 2021 PAYMENT_TABLE.JO v2.1.1\nPowerd by JO")
             break
         _pay(_cmd, _pas)
     else :
