@@ -7,7 +7,7 @@ _doc = "# Please use these commands \\ Add (a), Remove (r), Show (s), Help (h) o
 print(_doc)
 ## password
 _pas = input("Password> ")
-_rot = "760320"
+_rot = ""
 ## ensure login
 if _pas == _rot :
     print("# Successfully login")
