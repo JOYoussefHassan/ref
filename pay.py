@@ -1,81 +1,58 @@
 # import
-import datetime, os
-_pth = str(os.path.dirname(os.path.abspath(__file__))) + "/log.txt"
+import os, sys, datetime, getpass
+sys.path.append("/storage/emulated/0/jo_modules")
+from encybration import _enc, _unc
+# data
+_pth = "/home/jo/Desktop/Projects/log.txt"
+_flr = open(_pth, "r")
+_dta = _unc("".join(_flr.readlines())).split("\n")
 # welcome
 print(("#" * 100) + "\n" + ("#" + "Welcome to PAYMENT_TABLE.JO logging".center(98) + "#") + "\n" + ("#" * 100))
-_doc = "# Please use these commands \\ Add (a), Remove (r), Show (s), Help (h) or Exit (e)"
+_doc = "# These is the document of PAYMENT_TABLE.JO\n# [1] - Commands :-\n#\tAdd method\t\t: a [s]<coast>\n#\tRemove method\t\t: r <indexNumber>\n#\tHelp method\t\t: h\n#\tExit\t\t\t: e\n#\n# [2] - Types :-\n#\t[REM]\t\t\t: payment\n#\t[SAL]\t\t\t: salary\n#\t[NOT]\t\t\t: nothing salary or payment"
 print(_doc)
 ## password
-_pas = input("Password> ")
+_pas = getpass.getpass("Password> ")
 _rot = ""
 ## ensure login
 if _pas == _rot :
     print("# Successfully login")
 ## function
-def _pay(_cmd, _pass) :
-    # file
-    _flw = open(_pth, "a")
-    _flr = open(_pth, "r")
-    # command
+def _pay(_cmd, _dta) :
+    _dat = datetime.datetime.now().strftime(r"%Y/%m/%d - %H:%M:%S")
     ## add
     if _cmd[0].lower() in ["add", "a"] :
-        try :
-            # date
-            _dat = datetime.datetime.now().strftime(r"%Y/%m/%d - %H:%M:%S")
-            ## nothing salary
-            if _cmd[1][0] == "s" and int(_cmd[1][1:]) == 0 :
-                _flw.write(f"[NOT] ==> {_dat} ==> {int(_cmd[1][1:])} ==> ")
-            ## salary
-            elif _cmd[1][0] == "s" :
-                _flw.write(f"[SAL] ==> {_dat} ==> {int(_cmd[1][1:])} ==> ")
-            ## nothing payment
-            elif int(_cmd[1]) == 0 :
-                _flw.write(f"[NOT] ==> {_dat} ==> {int(_cmd[1])} ==> ")
-            ## payment
-            else :
-                _flw.write(f"[REM] ==> {_dat} ==> {int(_cmd[1].ljust(10))} ==> ")
-            ## discription
-            try :
-                _flw.write(_cmd[2] + "\n")
-            except :
-                _flw.write("\n")
-            _flw.close()
-            # ensure added
-            print("# Successfully added")
-        except :
-            print("# Wrong syntax\n# The syntax is : a [s]<number> [discription]")
+        try :       # commands of add method
+            if _cmd[1][0] == "s" and float(_cmd[1][1:]) == 0 :  # nothing payment
+                _dta = _dta.append(f"[NOT] ==> {_dat} ==> {float(_cmd[1][1:])} ==> ")
+            elif _cmd[1][0] == "s" :                            # salary
+                _dta = _dta.append(f"[SAL] ==> {_dat} ==> {float(_cmd[1][1:])} ==> ")
+            elif float(_cmd[1]) == 0 :                          # nothing payment
+                _dta = _dta.append(f"[NOT] ==> {_dat} ==> {float(_cmd[1])} ==> ")
+            elif float(_cmd[1]) > 0 :                           # payment
+                _dta = _dta.append(f"[REM] ==> {_dat} ==> {float(_cmd[1])} ==> ")
+            else :                                              # none of the above
+                raise IndexError()
+        except :    # error
+            print("# Wrong syntax\n# The syntax is : a [s]<coast>")
     ## remove
     elif _cmd[0].lower() in ["remove", "r"] :
-        try :
-            # data
-            _txt = _flr.readlines()
-            ## out of range
-            if len(_txt) - 1 < int(_cmd[1]) or int(_cmd[1]) <= 0 :
+        try :       # commands of remove method
+            n = int(_cmd[1]) - 1
+            if n < len(_dta) and n > 0 :                        # remove
+                _dta.pop(n)
+            else :                                              # out of range
                 print("# Out of range")
-            else :
-                _flc = open(_pth, "w")
-                _txt.pop(int(_cmd[1]))
-                _txt = "".join(_txt)
-                _flc.write("")
-                _flc.close()
-                _flw.write(_txt)
-                _flw.close()
-                # ensure removed
-                print("# Successfully removed")
-        except :
+        except :    # error
             print("# Wrong syntax\n# The syntax is : r <indexNumber>")
     ## show
     elif _cmd[0].lower() in ["show", "s"] :
-        # main of table
-        print("-" * 100 + "\n|" + "DATA".center(98) + "|\n" + "-" * 100 + "\n| No. | Type  | " + "Date".ljust(22) + "| " + "Cost".ljust(10) + " | Discription".ljust(49) + "|\n" + "-" * 100)
-        x = 1
-        # cells of table
-        for i in _flr.readlines()[1:] :
-            _dat = i.split(" ==> ")
-            print(f"| {str(x).zfill(3)} | {_dat[0]} | {_dat[1]} | {_dat[2].ljust(10)} | {_dat[3]}", end = "")
-            x += 1
+        print("-" * 100 + "\n|" + "DATA".center(98) + "|\n" + "-" * 100 + "\n| No. | Type  | " + "Date".ljust(22) + "| " + "Cost".ljust(13) + " | Discription".ljust(46) + "|\n" + "-" * 100)
+        y = 0
+        for i in _dta :                                         # table
+            x = i.split(" ==> ")
+            y += 1
+            print(f"| {str(y).zfill(3)} | {x[0]} | {x[1]} | {x[2].ljust(13)} | {x[3]}")
             print("-" * 100)
-        _flw.close()
     ## help
     elif _cmd[0].lower() in ["help", "h"] :
         print(_doc)
@@ -90,10 +67,18 @@ while True :
         _cmd = input("PAYMENT_TABLE.JO> ").split(" ", 2)
         ## exit
         if _cmd[0].lower() in ["exit", "e"] :
-            print("# Goodbye :)\n\n© 2021 PAYMENT_TABLE.JO v2.1.1\nPowerd by JO")
+            print("# Goodbye :)\n\n© 2021 PAYMENT_TABLE.JO v3.1.2\nPowerd by JO")
             break
-        _pay(_cmd, _pas)
+        _pay(_cmd, _dta)
     else :
         # wrong
         print("# Wrong password")
-        _pas = input("Password> ")
+        _pas = getpass.getpass("Password> ")
+        ## ensure login
+        if _pas == _rot :
+            print("# Successfully login")
+# encybrate the file and close
+_dta = _enc("\n".join(_dta), True)
+_flw = open(_pth, "w")
+_flw.write(_dta)
+_flw.close()
