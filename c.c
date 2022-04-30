@@ -146,7 +146,7 @@ u                                                               ===> _uInt
 li                                                              ===> _longInt
 lu                                                              ===> _longUInt
 ._digits_f
-s
+_chars_s
 */
 // #######################
 // # Format files (_frF) #
@@ -177,6 +177,12 @@ or
 ==
 !=
 */
+// ###################################
+// # storage_class specifiers (_scM) #
+// ###################################
+/*
+
+*/
 // #################
 // # Main strucure #
 // #################
@@ -192,6 +198,13 @@ typedef struct _nameIndex                                       ===> to create d
     ...
 }
 _nameAll;
+
+struct _name
+{
+    _dT _var1;
+    _dT _var2;
+    ...
+}
 
 _dT _funcName(void) or (_dT _var1, _dT _var2, ...);             ===> function prototype (u can put function declarion here)
 
@@ -214,6 +227,8 @@ int main(void) or (int argc, string argv[])
     _var1->_var1 = _data;
     _var1->_var2 = _data;
     ...
+
+    struct _name _var;                                          ===> to declare the struct datastructure
 
     _funcName() or (_data1, _data2, ...)                        ===> to call the function
 
@@ -263,7 +278,7 @@ int main(void) or (int argc, string argv[])
     return 0;
 }
 
-_dT _funcName(void) or (_dT _var1, _dT _var2, ...)              ===> function declaration
+_dT _funcName(void) or (_dT _var1, _dT _var2, ...)              ===> function declaration, (char* => to return string)
 {
     _funcName() or (_data1, _data2, ...);                       ===> to recursion the function
     _statements;
@@ -281,7 +296,8 @@ sizeof(_dT);
 // ###########
 /*
 print("_dta %_frS1 _dta _frS2 ...", _dta1, _dta2, ...);         ===> to print data
-scanf("%_frS", &_var);                                          ===> to input data
+scanf("%_frS", &_var);                                          ===> to input data, &_var will be _var only if string
+gets_s(_char, _length);                                         ===> to get characters
 
 FILE *_handle = fopen("_filePath", "_frF");                     ===> to open file
 fprintf(_file, _data);                                          ===> to add _data to current file
@@ -306,6 +322,8 @@ ferror()                                                        ===> if any erro
 malloc(_sB);                                                    ===> to take of RAM in bytes (_sB => number of bytes)
 realloc(_pntr, _sB);                                            ===> to retake of RAM in bytes (_sB => number of bytes)
 free(_tB);                                                      ===> free of malloc bytes (_tB => bytes were taken)
+
+b
 */
 // ############
 // # unistd.h #
@@ -340,6 +358,7 @@ round(_float);
 /*
 strlen(_string);
 strcmp(_char1, _char2);                                         ===> compare characters (0 => true, 1 => false)
+strcat(_string1, _string2);                                     ===> concatenate strings
 */
 // ############
 // # ctype.h #
@@ -348,11 +367,211 @@ strcmp(_char1, _char2);                                         ===> compare cha
 islower(_char);
 toupper(_char);
 */
+// ###########
+// # errno.h #
+// ###########
+/*
+errno;                                                          ===> to show the index of error in positive intger (33 => Mathematics argument out of domain of function, 84 => Illegal byte sequence, 34 => Result too large)
+*/
+// ############
+// # assert.h #
+// ############
+/*
+assert(_condition);                                             ===> give => Aborted (core dumped)
+static_assert(_condition, _string);                             ===> give => _string as error
+*/
+
+// ################
+// # Sockets in c #
+// ################
+/*
+#include <stdio
+*/
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#include <string.h>
+
+bool            strsam(char frst[], char scnd[]);
+const char *    myFunction(char str[]);
+int             strsch(char str[], char rep[]);
+int             length(char str[]);
+int             strLen(char str[]);
+void            repeat(char chr, int i, char end);
+void            center(char str[], char chr, int len, char end);
 
 int main(void)
 {
-    FILE *fil = fopen("log.txt", "r");
-    printf("%li", sizeof(fil));
-    fclose(fil);
+    // header
+    repeat('#', 100, '\n');
+    printf("#");
+    center("Welcome to PAYMENT_TABLE.JO logging", ' ', 98, '\0');
+    printf("#\n");
+    repeat('#', 100, '\n');
+
+    // data
+    char docs[] = "# These is the document of PAYMENT_TABLE.JO\n# [1] - Commands :-\n#\tAdd method\t\t: a <s - d - c - r> <coast>[-][indexNumber][-][describtion]\n#\tEdit method\t\t: e <s - d - c - r> <indexNumber><-><coast>[-][describtion]\n#\tRemove method\t\t: r <indexNumber>\n#\tView method\t\t: v\n#\tSearch method\t\t: s <s - n> <text>\n#\t\t\t\t  s <s - n><p> <text-text-text-text>\n#\tSummation method\t: + <<num>,<num-num>,...> [<num>,<num-num>,...]\n#\tHelp method\t\t: h\n#\tQuit\t\t\t: q\n#\n# [2] - Types :-\n#\t[REM]\t\t\t: payment\n#\t[SAL]\t\t\t: salary\n#\t[DBT]\t\t\t: salary\n#\t[CHR]\t\t\t: charity\n#\t[NOT]\t\t\t: nothing salary, debt or payment";
+    char pasU[] = "1", *pasI = malloc(sizeof(char) * 255), *cliU = malloc(sizeof(char) * 255);
+    bool blen = true;
+    char str[] = "nlbdf;dfml;";
+    printf("%s", myFunction(str));
+    printf("%s\n", docs);
+
+    // cli
+    while (blen)
+    {
+        FILE *hndl = fopen("log.txt", "a+");
+        printf("%s", *hndl);
+        int c;
+
+        // repeat
+        printf("PAYMENT_TABLE.JO>");
+        scanf("%s", cliU);
+
+        // switch
+        switch (cliU[0])
+        {
+            // <method> <option><coast> <description>
+            case 'a' :
+                
+                break;
+            case 'e' :
+                printf("# e\n");
+                break;
+            case 'r' :
+                printf("# r\n");
+                break;
+            case '+' :
+                printf("# +\n");
+                break;
+            case 'v' :
+                while (c != EOF)
+                {
+                    printf("%c", c);
+                    c = fgetc(hndl);
+                }
+                break;
+            case 's' :
+                //printf("%i\n", strsch());
+                break;
+            case 'h' :
+                printf("%s\n", docs);
+                break;
+            case 'q' :
+                break;
+            default :
+                printf("# Wrong syntax :( please type \'h\' to show the documentation\n");
+                break;
+        }
+
+        // exit
+        blen = strcmp(cliU, "q");
+        c = 0;
+        fclose(hndl);
+    }
+
+    free(pasI);
+    free(cliU);
+}
+
+bool strsam(char frst[], char scnd[])
+{
+    // sametic or no
+    if (length(frst) != length(scnd))
+        return false;
+    for (int i = 0; i < length(frst); i++)
+        if (frst[i] != scnd[i])
+            return false;
+    return true;
+}
+
+const char * myFunction(char str[])
+{
+    return str;
+}
+
+int strsch(char str[], char rep[])
+{
+    // search
+    int str_length = length(str),
+        rep_length = length(rep),
+        index = -1;
+    bool status = false, skip = false;
+    for (int i = 0; i < str_length; i++)
+        if (str[i] == rep[0])
+            for (int x = 0; x < rep_length; x++)
+                if (str[i + x] != rep[x])
+                {
+                    status = false;
+                    break;
+                }
+                else if (status == true && x == rep_length - 1)
+                {
+                    index = i;
+                    skip = true;
+                }
+                else
+                    status = true;
+    return index;
+}
+
+int length(char str[])
+{
+    // number of characters
+    int len = 0;
+    while (len >= 0)
+    {
+        if (str[len] == '\0')
+            break;
+        len++;
+    }
+    return len;
+}
+
+int strLen(char str[])
+{
+    // number of lines
+    int len = 1;
+    for (int i = 0; i < length(str); i++)
+        len = (str[i] == '\n') ? len + 1 : len;
+    return len;
+}
+
+void repeat(char chr, int i, char end)
+{
+    // repeat of words
+    for (int x = 0; x < i; x++)
+        printf("%c", chr);
+    printf("%c", end);
+}
+
+void center(char str[], char chr, int len, char end)
+{
+    // center of text
+    int x, y;
+    if (length(str) % 2 == 0 && len % 2 == 0)
+    {
+        x = 1;
+        y = 1;
+    }
+    else if (length(str) % 2 != 0 && len % 2 == 0)
+    {
+        x = 1;
+        y = 0;
+    }
+    else if (length(str) % 2 == 0 && len % 2 != 0)
+    {
+        x = 0;
+        y = 1;
+    }
+    else
+    {
+        x = 0;
+        y = 0;
+    }
+    repeat(' ', (len - length(str) + x) / 2, '\0');
+    printf("%s", str);
+    repeat(' ', (len - length(str) + y) / 2, end);
 }
