@@ -93,6 +93,9 @@
 # 
 #       [15] - (_data1|_data2|...)                                                                              ===> contain _data1 or _data2 or ...
 #       [16] - #_data                                                                                           ===> comment
+# [12] - _escapeString
+#       [1] - "_data"\                                                                                          ===> to multiline of string data
+#             "_data"
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # [1] - _command; _command
 # [2] _parentCommand
@@ -211,6 +214,7 @@
 # [4] - int                                                                                                     ===> the type
 # [5] - _dataType._builtinFunc(_data)                                                                           ===> float, complex, int, execute built in function
 # [6] - bin(_num)                                                                                               ===> to show the binary code of number
+# [7] - hex(_num)                                                                                               ===> to convert number to hex
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | Tuple |
 # ---------
@@ -295,7 +299,7 @@
 #           _command
 # [3] - for _childOject, _childValue in _object                                                                 ===> _childObject is key, _object[_childObject] and _childValue is value
 #           _command
-# [4] - with _data as _var :
+# [4] - with _file as _var :
 #           _command
 # [5] - def _functionName(_param1 = _default, _param2 = _default, ...) -> _dataType :                           ===> _functionName() to execute this, *_param to set the number of parameter according inputs as tuple or **_param to create
 #           _command                                                                                                 dictionary and this one is key (unpaking) => _functionName(_data = "_data") tuple unpacking with * and dictionary with **,
@@ -365,6 +369,7 @@
 # 
 # [5] - import sys                                                                                              ===> to import module to edit path of modules you wiil add
 # [6] - sys.path.append("_path")                                                                                ===> to add new path to add custom module
+# [7] - sys.getsizeof(_data)                                                                                    ===> get the size in bytes
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | Packages |
 # ------------
@@ -507,12 +512,12 @@
 #               self._attribute2 = _data or _param1 or _param2 or ...
 #               ...
 #           @classmethod
-#           def _classMethod(cls, _param1, _param2, ...) :                                                      ===> (_classMethod)
+#           def _classMethod(cls, _param1, _param2, ...) :                                                      ===> (_classMethod), cls ==> to get class
 #               cls._instanceMethod1
 #               cls._instanceMethod2
 #               ...
 #           @staticmethod
-#           def _staticMethod(_param1, _param2, ...) :                                                          ===> (_staticMethod)
+#           def _staticMethod(_param1, _param2, ...) :                                                          ===> (_staticMethod), to delete self object
 #               _statement1
 #               _statement2
 #               ...
@@ -1028,55 +1033,3 @@
 #     msg_box.send_keys(msg)
 #     button = driver.find_element_by_class_name("_4sWnG")
 #     button.click()
-
-# massage app (type1, user, password, contact, messege), (type2, user, password, chat), (type3, user, password, contact)
-from sys import argv
-import os, ftplib
-from datetime import datetime
-# ftp = ftplib.FTP('files.000webhost.com', "test1526", "76032002")
-# ftp.encoding = "utf-8"
-# ftp.cwd("./tmp")
-# fin = open('/home/jo/Desktop/ref/log.txt', 'wb')
-# ftp.retrbinary("RETR ./+201556725510/info.txt", fin.write)
-# fin = open('/home/jo/Desktop/ref/log.txt', 'rb')
-# ftp.storbinary('APPE ./+201556725510/info.txt', fin, 1)
-# ftp.cwd("tmp/+201556725510")
-# ftp.encoding = "utf-8"
-# ftp.retrlines('LIST')
-# ftp.dir()
-try :
-    usr = argv[2]
-    psw = argv[3]
-    ctc = argv[4]
-    if os.path.isdir(f"/home/jo/Desktop/ref/{usr}") :
-            _info1r = open(r"/home/jo/Desktop/ref/" + usr + r"/info.txt", "r")
-            if _info1r.readlines()[0].strip("\n") == psw :
-                if os.path.isdir(f"/home/jo/Desktop/ref/{ctc}") :
-                    if argv[1] == "1" :         # messege
-                        msg = " ".join(argv[5:]) + "\n"
-                        _info1a = open(r"/home/jo/Desktop/ref/" + usr + r"/" + ctc + r".txt", "a")
-                        _info2a = open(r"/home/jo/Desktop/ref/" + ctc + r"/" + usr + r".txt", "a")
-                        _date = datetime.now().strftime(r"%Y/%m/%d - %H:%M:%S")
-                        if usr == ctc :
-                            _info1a.write(f"u1 ==> {_date} ==> {msg}")
-                        else :
-                            _info1a.write(f"u1 ==> {_date} ==> {msg}")
-                            _info2a.write(f"p2 ==> {_date} ==> {msg}")
-                        _info1a.close()
-                        _info2a.close()
-                    elif argv[1] == "2" :       # view chat
-                        print("-" * 100 + "\n|" + f"CHAT {ctc}".center(98) + "|")
-                        try :
-                            _info2r = open(r"/home/jo/Desktop/ref/" + usr + r"/" + ctc + r".txt", "r")
-                            _chat = " ".join(_info2r.readlines()).replace("u1 ", "\b" + ("-" * 100) + "\n" + "\b| mine".ljust(10)).replace("p2 ", "\b" + ("-" * 100) + "\n" + "\b| person".ljust(10)) + ("-" * 100)
-                            print(_chat.replace(" ==> ", " | "))
-                            _info2r.close()
-                        except :
-                            print("-" * 100)
-                    elif argv[1] == "3" :       # information
-                        _info2r = open(r"/home/jo/Desktop/ref/" + ctc + r"/info.txt", "r")
-                        print("".join(_info2r.readlines()[1:]))
-                        _info2r.close()
-            _info1r.close()
-except :
-    pass
