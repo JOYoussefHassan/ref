@@ -109,7 +109,7 @@
 # [5] - dir(_dataType)                                                                                          ===> str, int, float, bool, list, tuple, dict, set, complex, type
 # [6] - help("keywords")                                                                                        ===> to show keywords in programming langauge
 # [7] - _var = _data                                                                                            ===> set variable
-# [8] - _var1, _var2 = _data1, _data2                                                                           ===> to set more than one variable
+# [8] - _var1: _dataType, _var2: _dataType = _data1, _data2                                                     ===> to set more than one variable
 # [9] - _lst[_numStart:_numEnd:_numStep]                                                                        ===> to print according index number [+number] or [-number] or [number:numer] or [:number]
 # [10] - _str[_numStart:_numEnd:_numStep]                                                                       ===> to print according index number [+number] or [-number] or [number:numer] or [:number]
 # [11] - global _var                                                                                            ===> to convert to global scope
