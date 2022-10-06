@@ -192,7 +192,7 @@
 # [10] - _lst.copy()                                                                                            ===> to copy list and if i add to main list not modified
 # [11] - _lst.count(_data)                                                                                      ===> to count _data in list
 # [12] - _lst.index(_data)                                                                                      ===> to search the index of _data, output error if error syntax
-# [13] - _lst.pop(_numIndex)                                                                                    ===> to get data from list according _numIndex
+# [13] - _lst.pop(_numIndex)                                                                                    ===> to remove data in list
 # 
 # [14] - _lst * _num                                                                                            ===> to repeat list
 # 
