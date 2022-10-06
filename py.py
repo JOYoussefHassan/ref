@@ -313,7 +313,8 @@
 # [7] - continue                                                                                                ===> to continue
 # [8] - pass                                                                                                    ===> if _command is not filled with command
 # [9] - return _data                                                                                            ===> to return to data, in normal function
-# [10] - yield _data                                                                                             ===> to return datas as itrator in next(), in generator function
+# [10] - yield _data                                                                                            ===> to return datas as itrator in next(), in generator function
+# [11] - del _object                                                                                            ===> to delete object
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | Files Handling |
 # ------------------
