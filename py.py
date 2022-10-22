@@ -96,6 +96,11 @@
 # [12] - _escapeString
 #       [1] - "_data"\                                                                                          ===> to multiline of string data
 #             "_data"
+#
+# [13] - _decorator:
+#        def _decorator(_func):
+#            def inner(*args, **kwargs)
+#                _conditions
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # [1] - _command; _command
 # [2] _parentCommand
@@ -113,12 +118,16 @@
 # [9] - _lst[_numStart:_numEnd:_numStep]                                                                        ===> to print according index number [+number] or [-number] or [number:numer] or [:number]
 # [10] - _str[_numStart:_numEnd:_numStep]                                                                       ===> to print according index number [+number] or [-number] or [number:numer] or [:number]
 # [11] - global _var                                                                                            ===> to convert to global scope
+#
+# [12] - @_decorator                                                                                            ===> to be as _func(_name)
+#        def _name(...):
+#            ...
 # 
-# [12] - iter(_iterable)                                                                                        ===> to convert iterable data to iterator
-# [13] - next(_iterator)                                                                                        ===> to take part of iterator and next part in the next statement
-# [14] - zip(_data1, _data2)                                                                                    ===> to get indexes of 2 datas as tuples, according the least indexes
+# [13] - iter(_iterable)                                                                                        ===> to convert iterable data to iterator
+# [14] - next(_iterator)                                                                                        ===> to take part of iterator and next part in the next statement
+# [15] - zip(_data1, _data2)                                                                                    ===> to get indexes of 2 datas as tuples, according the least indexes
 # 
-# [15] - isinstance(_data, _dataType)                                                                           ===> to check the data type
+# [16] - isinstance(_data, _dataType)                                                                           ===> to check the data type
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | String |
 # ----------
