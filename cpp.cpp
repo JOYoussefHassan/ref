@@ -397,17 +397,21 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [10] - +=                                                                                                   ===> _aombinedAssignment_
     [11] - -=                                                                                                   ===> _aombinedAssignment_
 
-    [12] - >                                                                                                    ===> _relationalOperators_
-    [13] - <                                                                                                    ===> _relationalOperators_
-    [14] - >=                                                                                                   ===> _relationalOperators_
-    [15] - <=                                                                                                   ===> _relationalOperators_
-    [16] - ==                                                                                                   ===> _relationalOperators_
-    [17] - !=                                                                                                   ===> _relationalOperators_
+    [12] - >                                                                                                    ===> _relationalOperator_
+    [13] - <                                                                                                    ===> _relationalOperator_
+    [14] - >=                                                                                                   ===> _relationalOperator_
+    [15] - <=                                                                                                   ===> _relationalOperator_
+    [16] - ==                                                                                                   ===> _relationalOperator_
+    [17] - !=                                                                                                   ===> _relationalOperator_
 
-    [18] - ++_var_                                                                                              ===> _incrementDecrementOperators_
-    [19] - _var_++                                                                                              ===> _incrementDecrementOperators_
-    [20] - --_var_                                                                                              ===> _incrementDecrementOperators_
-    [21] - _var_--                                                                                              ===> _incrementDecrementOperators_
+    [18] - ++_var_                                                                                              ===> _incrementDecrementOperator_
+    [19] - _var_++                                                                                              ===> _incrementDecrementOperator_
+    [20] - --_var_                                                                                              ===> _incrementDecrementOperator_
+    [21] - _var_--                                                                                              ===> _incrementDecrementOperator_
+    
+    [22] - &&                                                                                                   ===> _logicalOperator_
+    [23] - ||                                                                                                   ===> _logicalOperator_
+    [24] - !                                                                                                    ===> _logicalOperator_
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _builtin_ |
 -------------
