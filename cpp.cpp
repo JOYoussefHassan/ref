@@ -283,7 +283,7 @@ else if (_conditionStatement_)
 else
     _statement_
 
-[2] - _simpleIfCondition_
+[2] - _simpleIfCondition_                                                                                       ===> can be as nested condition
 (_conditionStatement_) ? _statement_ : _statement_;                                                             ===> the first _statement_ is as after (if) and the second as after (else)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | switch_condition |
@@ -291,22 +291,15 @@ else
 [1] - _switch_
 switch (_var_)                                                                                                  ===> as multiple choice
 {
-    case _int_ :                                                                                                ===> the choice
-    {
+    case _int_:                                                                                                 ===> the choice
+    case _int_:
+    ...
         _statement_
         break;                                                                                                  ===> to stop other operations
-    }
-    case _int_ :
-    {
-        _statement_
-        break;
-    }
     ...
-    default :                                                                                                   ===> to set default choice
-    {
+    default:                                                                                                    ===> to set default choice
         _statement_
         break;
-    }
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | while_loop |
@@ -397,24 +390,22 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [10] - +=                                                                                                   ===> _aombinedAssignment_
     [11] - -=                                                                                                   ===> _aombinedAssignment_
 
-    [12] - >                                                                                                    ===> _relationalOperator_
-    [13] - <                                                                                                    ===> _relationalOperator_
-    [14] - >=                                                                                                   ===> _relationalOperator_
-    [15] - <=                                                                                                   ===> _relationalOperator_
-    [16] - ==                                                                                                   ===> _relationalOperator_
-    [17] - !=                                                                                                   ===> _relationalOperator_
+    [12] - >                                                                                                    ===> _relationalOperators_
+    [13] - <                                                                                                    ===> _relationalOperators_
+    [14] - >=                                                                                                   ===> _relationalOperators_
+    [15] - <=                                                                                                   ===> _relationalOperators_
+    [16] - ==                                                                                                   ===> _relationalOperators_
+    [17] - !=                                                                                                   ===> _relationalOperators_
 
-    [18] - ++_var_                                                                                              ===> _incrementDecrementOperator_
-    [19] - _var_++                                                                                              ===> _incrementDecrementOperator_
-    [20] - --_var_                                                                                              ===> _incrementDecrementOperator_
-    [21] - _var_--                                                                                              ===> _incrementDecrementOperator_
-    
-    [22] - &&                                                                                                   ===> _logicalOperator_
-    [23] - ||                                                                                                   ===> _logicalOperator_
-    [24] - !                                                                                                    ===> _logicalOperator_
-    [25] - &                                                                                                    ===> _logicalOperator_
-    [26] - |                                                                                                    ===> _logicalOperator_
-    [27] - ^                                                                                                    ===> _logicalOperator_
+    [18] - ++_var_                                                                                              ===> _incrementDecrementOperators_
+    [19] - _var_++                                                                                              ===> _incrementDecrementOperators_
+    [20] - --_var_                                                                                              ===> _incrementDecrementOperators_
+    [21] - _var_--                                                                                              ===> _incrementDecrementOperators_
+
+    [22] - &&                                                                                                   ===> _logicalOperators_
+    [23] - ||                                                                                                   ===> _logicalOperators_
+    [24] - !                                                                                                    ===> _logicalOperators_
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _builtin_ |
 -------------
@@ -439,7 +430,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
 | <iostream> |
 --------------
 [1] - cout << _data_ << ...                                                                                     ===> to output the data
-[2] - cin >> _var_                                                                                              ===> to input the data
+[2] - cin >> _var_ >> ...                                                                                       ===> to input the data
 [3] - string _var_                                                                                              ===> to create string variable
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | <iomanip> |
