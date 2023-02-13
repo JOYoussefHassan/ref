@@ -94,7 +94,7 @@ function() _statement_
 [069] - bind('_event_ ...', _func_)
 
         bind('_eventCustom_', function(event, _pram_, ...) {...})
-        $('_selector_).tigger('_eventCustom_', [_pram_, ...])
+        $('_selector_).trigger('_eventCustom_', [_pram_, ...])
 
         bind({_event_: _func_, ...})
 [069] - live('_event_', _func_)

@@ -329,7 +329,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [5] - float                                                                                                 ===> (4 byte [7 digit])
     [6] - double                                                                                                ===> (8 byte [15 digit])
     [7] - bool                                                                                                  ===> (1 byte [true, false])
-    [8] - _datatype_[]                                                                                          ===> array
+    [8] - _datatype_ _var_[_intLen_]                                                                            ===> array, (_datatype_ _var_[_intLen_] = {_data_, ...}) or (_datatype_ _var_[_intLen_]{_data_, ...})
     [9] - auto                                                                                                  ===> auto data type
     [10] - pointer                                                                                              ===> it equal NULL
 
