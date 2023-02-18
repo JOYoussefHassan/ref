@@ -247,7 +247,7 @@
 [2] - ;                                                                                                         ===> the end of the command
 [3] - {...}                                                                                                     ===> block of commands (_statement_)
 
-[4] - _datatype_ _var_ = _data_, _var_ = _data_, ...                                                            ===> to declare variable
+[4] - _datatype_ _var_ = _data_, ...                                                            ===> to declare variable
 
 #include <_library_>                                                                                            ===> (#) preprocessing character, (include) to get functions of _library_ to current file
 ...
@@ -329,7 +329,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [5] - float                                                                                                 ===> (4 byte [7 digit])
     [6] - double                                                                                                ===> (8 byte [15 digit])
     [7] - bool                                                                                                  ===> (1 byte [true, false])
-    [8] - _datatype_ _var_[_intLen_]                                                                            ===> array, (_datatype_ _var_[_intLen_] = {_data_, ...}) or (_datatype_ _var_[_intLen_]{_data_, ...})
+    [8] - _datatype_ _var_[_intLen_][...]                                                                       ===> array, (_datatype_ _var_[_intLen_][...] = {_data_, ...}) or (_datatype_ _var_[_intLen_][...]{_data_, ...})
     [9] - auto                                                                                                  ===> auto data type
     [10] - pointer                                                                                              ===> it equal NULL
 
