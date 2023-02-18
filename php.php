@@ -339,8 +339,7 @@ do
 | function |
 ------------
 [1] - syntax
-function _func_(_var_ = _data_, ...)                                                                            ===> parameters, add & before variable to accept differents, default values from right
-{
+function _func_(_datatype_ _var_ = _data_, ...) : _datatype_ {                                                   ===> parameters, add & before variable to accept differents, default values from right
     _statement_
     return _data_;
 }
