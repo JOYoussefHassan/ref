@@ -24,17 +24,18 @@
 [002] - $_name_                                                                                                 ===> _var_
 [003] - define(_name_, _data_, _bool_)                                                                          ===> _bool_ to case sensitive of _name_
         const _var_                                                                                             ===> without dollar sign ($)
+[004]   global _var_
 
-[003] - gettype(_data_)
-[004] - var_dump(_data_)
+[005] - gettype(_data_)
+[006] - var_dump(_data_)
 
-[005] - @_statement_ || die(_data_)
+[007] - @_statement_ || die(_data_)
 
-[006] - rand(_intStart_, _intEnd)
+[008] - rand(_intStart_, _intEnd)
 
-[007] - print_r(_data_)                                                                                         ===> to test speceficily the array
+[009] - print_r(_data_)                                                                                         ===> to test speceficily the array
 
-[008] - _arrayFunc_
+[010] - _arrayFunc_
     [001] - count(_array_)
     [002] - in_array(_data_, _array_, _boolSensitive_)                                                          ===> _bool_ to case sensitive of _name_
     [003] - array_search(_data_, _array_, _boolSensitive_)                                                      ===> _bool_ to case sensitive of _name_
@@ -56,7 +57,7 @@
     [019] - array_rand(_array_, _intLen_)                                                                       ===> shuffle the some of array and take the key
     [020] - array_unique(_array_)
 
-[009] - _stringFunc_
+[011] - _stringFunc_
     [001] - implode(_string_, _array_)
     [002] - explode(_stringSeparator_, _string_, _intRepeat_)
     [003] - join(_string_, _array_)
@@ -93,11 +94,11 @@
     [032] - substr_count(_string_, _stringSub_, _intStart_, _intLen_)
     [033] - substr_compare(_string_, _string_, _intStart_, _intLen_, _boolSensitive_)
 
-[010] - include "_file_.php"
-[011] - include_once "_file_.php"
-[012] - require "_file_.php"                                                                                    ===> no execute any functions if not exists
-[012] - require_once "_file_.php"
-[013] - _file_
+[012] - include "_file_.php"
+[013] - include_once "_file_.php"
+[014] - require "_file_.php"                                                                                    ===> no execute any functions if not exists
+[015] - require_once "_file_.php"
+[016] - _file_
     [001] - dirname('_path')                                                                                    ===> __FILE__ it is to current file
     [002] - file_exists('_path')
     [003] - is_writable('_path')
@@ -124,25 +125,25 @@
     [000] - chmod('_path_', _intMode_)
     [000] - filesize('_path_')
 
-[14] - $GLOBALS['_var_']
+[017] - $GLOBALS['_var_']
 
-[15] - $_SERVER['_data_']
-[16] - $_GET['_name_']
-[17] - $_POST['_name_']
+[018] - $_SERVER['_data_']
+[019] - $_GET['_name_']
+[020] - $_POST['_name_']
 
-[18] - setcookie('_name_', '_value_', time() + _intSecond_, '_path_', '_domin_', _boolSecure_, _boolHTTP_)      ===> to set and modeify and delete if time is negative
-[19] - $_COOKIE['_name_']
+[021] - setcookie('_name_', '_value_', time() + _intSecond_, '_path_', '_domin_', _boolSecure_, _boolHTTP_)      ===> to set and modeify and delete if time is negative
+[022] - $_COOKIE['_name_']
 
-[20] - session_start()
-[21] - $_SESSION['_name_']                                                                                      ===> to set we do ($_SESSION['_name_'] = _value_)
-[22] - session_unset()                                                                                          ===> to free all of sessions
-[23] - session_destroy()                                                                                        ===> to destroy the session
+[023] - session_start()
+[024] - $_SESSION['_name_']                                                                                      ===> to set we do ($_SESSION['_name_'] = _value_)
+[025] - session_unset()                                                                                          ===> to free all of sessions
+[026] - session_destroy()                                                                                        ===> to destroy the session
 
-[24] - sleep(_intSecond_)
-[25] - usleep(_intMicrosecond_)
-[26] - time_sleep_until(time() + _intSecond_)
-[27] - exit('_data_')                                                                                           ===> exit and print data
-[28] - die('_data_')
+[027] - sleep(_intSecond_)
+[028] - usleep(_intMicrosecond_)
+[029] - time_sleep_until(time() + _intSecond_)
+[030] - exit('_data_')                                                                                           ===> exit and print data
+[031] - die('_data_')
 
 [29] - uniqid('_start_', _boolExtra_)
 
