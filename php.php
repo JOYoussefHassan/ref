@@ -21,6 +21,7 @@
 | _builtIn_ |
 -------------
 [001] - echo _data_
+        print _data_
 [002] - $_name_                                                                                                 ===> _var_
 [003] - define(_name_, _data_, _bool_)                                                                          ===> _bool_ to case sensitive of _name_
         const _var_                                                                                             ===> without dollar sign ($)
