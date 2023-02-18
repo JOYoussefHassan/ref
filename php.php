@@ -147,20 +147,31 @@
 [030] - exit('_data_')                                                                                           ===> exit and print data
 [031] - die('_data_')
 
-[29] - uniqid('_start_', _boolExtra_)
+[029] - uniqid('_start_', _boolExtra_)
 
-[30] - _filter_
-    [1] - filter_list()
-    [2] - filter_var(_var_, _filterType_, _filterOption_)                                                       ===> sanitize filter is more secure
+[030] - _filter_
+    [001] - filter_list()
+    [002] - filter_var(_var_, _filterType_, _filterOption_)                                                       ===> sanitize filter is more secure
 
-[31] - _date_
-    [1] - time()                                                                                                ===> current time
-    [2] - date(Y _data_ m _data_ d _data_ h _data_ i _data_ s, _intSecond_)                                     ===> _intSecond_ to add to date
-    [3] - date_default_timezone_get()
-    [4] - date_default_timezone_set(_timezoneName_)
+[031] - _date_
+    [001] - time()                                                                                                ===> current time
+    [002] - date(Y _data_ m _data_ d _data_ h _data_ i _data_ s, _intSecond_)                                     ===> _intSecond_ to add to date
+    [003] - date_default_timezone_get()
+    [004] - date_default_timezone_set(_timezoneName_)
 
-[32] - shal(_data_)                                                                                             ===> to hash data
-[33] - namespace _name_\_class_
+[032] - shal(_data_)                                                                                             ===> to hash data
+[033] - namespace _name_\_class_
+
+[034] - _number_
+    [001] - is_int(_data_)
+    [002] - is_intger(_data_)
+    [003] - is_long(_data_)
+    [004] - is_float(_data_)
+    [005] - is_finite(_data_)
+    [006] - is_infinite(_data_)
+    [007] - is_nan(_data_)
+    [008] - is_numeric(_data_)
+    [009] - (_datatype_)_data_
 [0] - isset(_var_)                                                                                              ===> check the variable has found or not
 [0] - empty(_var_)
 [0] - header('REFRESH:_intSecond_;URL:_url_;')
