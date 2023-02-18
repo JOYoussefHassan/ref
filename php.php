@@ -133,33 +133,33 @@
 [019] - $_GET['_name_']
 [020] - $_POST['_name_']
 
-[021] - setcookie('_name_', '_value_', time() + _intSecond_, '_path_', '_domin_', _boolSecure_, _boolHTTP_)      ===> to set and modeify and delete if time is negative
+[021] - setcookie('_name_', '_value_', time() + _intSecond_, '_path_', '_domin_', _boolSecure_, _boolHTTP_)     ===> to set and modeify and delete if time is negative
 [022] - $_COOKIE['_name_']
 
 [023] - session_start()
-[024] - $_SESSION['_name_']                                                                                      ===> to set we do ($_SESSION['_name_'] = _value_)
-[025] - session_unset()                                                                                          ===> to free all of sessions
-[026] - session_destroy()                                                                                        ===> to destroy the session
+[024] - $_SESSION['_name_']                                                                                     ===> to set we do ($_SESSION['_name_'] = _value_)
+[025] - session_unset()                                                                                         ===> to free all of sessions
+[026] - session_destroy()                                                                                       ===> to destroy the session
 
 [027] - sleep(_intSecond_)
 [028] - usleep(_intMicrosecond_)
 [029] - time_sleep_until(time() + _intSecond_)
-[030] - exit('_data_')                                                                                           ===> exit and print data
+[030] - exit('_data_')                                                                                          ===> exit and print data
 [031] - die('_data_')
 
 [029] - uniqid('_start_', _boolExtra_)
 
 [030] - _filter_
     [001] - filter_list()
-    [002] - filter_var(_var_, _filterType_, _filterOption_)                                                       ===> sanitize filter is more secure
+    [002] - filter_var(_var_, _filterType_, _filterOption_)                                                     ===> sanitize filter is more secure
 
 [031] - _date_
-    [001] - time()                                                                                                ===> current time
-    [002] - date(Y _data_ m _data_ d _data_ h _data_ i _data_ s, _intSecond_)                                     ===> _intSecond_ to add to date
+    [001] - time()                                                                                              ===> current time
+    [002] - date(Y _data_ m _data_ d _data_ h _data_ i _data_ s, _intSecond_)                                   ===> _intSecond_ to add to date
     [003] - date_default_timezone_get()
     [004] - date_default_timezone_set(_timezoneName_)
 
-[032] - shal(_data_)                                                                                             ===> to hash data
+[032] - shal(_data_)                                                                                            ===> to hash data
 [033] - namespace _name_\_class_
 
 [034] - _number_
@@ -172,9 +172,18 @@
     [007] - is_nan(_data_)
     [008] - is_numeric(_data_)
     [009] - (_datatype_)_data_
+
+    [010] - pi()
+    [011] - max(_num_, ...)
+    [012] - min(_num_, ...)
+    [013] - abs(_num_)                                                                                          ===> absolute value
+    [014] - sqrt(_num_)                                                                                         ===> square root
+    [015] - round(_float_)
+    [016] - rand(_intStart_, _intEnd_)
 [0] - isset(_var_)                                                                                              ===> check the variable has found or not
 [0] - empty(_var_)
 [0] - header('REFRESH:_intSecond_;URL:_url_;')
+[0] - declare(strict_types=1)                                                                                   ===> to enable strict to disable static_cast
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _formator_ |
 --------------
@@ -196,30 +205,32 @@
     [4] - *                                                                                                     ===> _arithmeticOperator_
     [5] - /                                                                                                     ===> _arithmeticOperator_
     [6] - %                                                                                                     ===> _arithmeticOperator_
+    [7] - **                                                                                                    ===> _arithmeticOperator_
 
-    [7] - *=                                                                                                    ===> _aombinedAssignment_
-    [8] - /=                                                                                                    ===> _aombinedAssignment_
-    [9] - %=                                                                                                    ===> _aombinedAssignment_
-    [10] - +=                                                                                                   ===> _aombinedAssignment_
-    [11] - -=                                                                                                   ===> _aombinedAssignment_
+    [8] - *=                                                                                                    ===> _aombinedAssignment_
+    [9] - /=                                                                                                    ===> _aombinedAssignment_
+    [10] - %=                                                                                                    ===> _aombinedAssignment_
+    [11] - +=                                                                                                   ===> _aombinedAssignment_
+    [12] - -=                                                                                                   ===> _aombinedAssignment_
 
-    [12] - >                                                                                                    ===> _relationalOperators_
-    [13] - <                                                                                                    ===> _relationalOperators_
-    [14] - >=                                                                                                   ===> _relationalOperators_
-    [15] - <=                                                                                                   ===> _relationalOperators_
-    [16] - ==                                                                                                   ===> _relationalOperators_
-    [17] - ===                                                                                                  ===> _relationalOperators_
-    [18] - !=                                                                                                   ===> _relationalOperators_
-    [19] - <>                                                                                                   ===> _relationalOperators_
-    [20] - !==                                                                                                  ===> _relationalOperators_
+    [13] - >                                                                                                    ===> _relationalOperators_
+    [14] - <                                                                                                    ===> _relationalOperators_
+    [15] - >=                                                                                                   ===> _relationalOperators_
+    [16] - <=                                                                                                   ===> _relationalOperators_
+    [17] - ==                                                                                                   ===> _relationalOperators_
+    [18] - ===                                                                                                  ===> _relationalOperators_
+    [19] - !=                                                                                                   ===> _relationalOperators_
+    [20] - <>                                                                                                   ===> _relationalOperators_
+    [21] - !==                                                                                                  ===> _relationalOperators_
+    [21] - <=>                                                                                                  ===> _relationalOperators_
 
-    [21] - ++_var_                                                                                              ===> _incrementDecrementOperators_
-    [22] - _var_++                                                                                              ===> _incrementDecrementOperators_
-    [23] - --_var_                                                                                              ===> _incrementDecrementOperators_
-    [24] - _var_--                                                                                              ===> _incrementDecrementOperators_
+    [23] - ++_var_                                                                                              ===> _incrementDecrementOperators_
+    [24] - _var_++                                                                                              ===> _incrementDecrementOperators_
+    [25] - --_var_                                                                                              ===> _incrementDecrementOperators_
+    [26] - _var_--                                                                                              ===> _incrementDecrementOperators_
     
-    [25] - .                                                                                                    ===> _concatenateOperator_
-    [26] - .=                                                                                                   ===> _aombinedAssignment_
+    [27] - .                                                                                                    ===> _concatenateOperator_
+    [28] - .=                                                                                                   ===> _aombinedAssignment_
 
 [3] - _typeSort_
     [1] - SORT_REGULAR
