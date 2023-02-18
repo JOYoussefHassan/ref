@@ -247,7 +247,7 @@
 [2] - ;                                                                                                         ===> the end of the command
 [3] - {...}                                                                                                     ===> block of commands (_statement_)
 
-[4] - _datatype_ _var_ = _data_, _var_ = _data_, ...                                                            ===> to declare variable
+[4] - _datatype_ _var_ = _data_, ...                                                            ===> to declare variable
 
 #include <_library_>                                                                                            ===> (#) preprocessing character, (include) to get functions of _library_ to current file
 ...
