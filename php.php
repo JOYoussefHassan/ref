@@ -24,7 +24,8 @@
 [002] - $_name_                                                                                                 ===> _var_
 [003] - define(_name_, _data_, _bool_)                                                                          ===> _bool_ to case sensitive of _name_
         const _var_                                                                                             ===> without dollar sign ($)
-[004]   global _var_
+[004] - global _var_
+        static _var_                                                                                            ===> to edit the variable over the file
 
 [005] - gettype(_data_)
 [006] - var_dump(_data_)
