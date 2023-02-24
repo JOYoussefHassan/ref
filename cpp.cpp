@@ -332,7 +332,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [8] - float                                                                                                 ===> (4 byte [7 digit])
     [9] - double                                                                                                ===> (8 byte [15 digit])
     [10] - bool                                                                                                 ===> (1 byte [true, false])
-    [11] - _datatype_ _var_[_intLen_][...]                                                                      ===> array, (_datatype_ _var_[_intLen_][...] = {_data_, ...}) or (_datatype_ _var_[_intLen_][...]{_data_, ...})
+    [11] - array                                                                                                ===> array, ({'a', 'b', ...}, {1, 2, ...}, ...)
     [12] - auto                                                                                                 ===> auto data type
     [13] - pointer                                                                                              ===> it equal NULL
 
@@ -356,6 +356,14 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [1] - static_cast<_datatype_>(_data_)
     [2] - _datatype_(_data_)
     [3] - (_datatype_)_data_
+
+[6] - decleration
+    [1] - _datatype_ _var_ = _data_
+    [2] - _datatype_ _var_ (_data_)
+    [3] - _datatype_ _var_ {_data_}
+
+    [4] - _datatype_ _var_[_intLen_] = {_data_, ...}
+    [5] - _datatype_ _var_[_intLen_] {_data_, ...}
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _formater_ |
 --------------
