@@ -324,14 +324,17 @@ for (_intStart_; _intEnd_; _intStep_)                                           
 [1] - _datatype_
     [1] - void                                                                                                  ===> no datatype
     [2] - char                                                                                                  ===> (1 byte [signed -128 => 127] [unsigned 0 => 255])
-    [3] - string                                                                                                ===> string ("jo", "ahmed", ...), <iostream>
-    [4] - int                                                                                                   ===> (4 byte [signed -2147483648 => 2147483647] [unsigned 0 => 4294967295])
-    [5] - float                                                                                                 ===> (4 byte [7 digit])
-    [6] - double                                                                                                ===> (8 byte [15 digit])
-    [7] - bool                                                                                                  ===> (1 byte [true, false])
-    [8] - _datatype_ _var_[_intLen_][...]                                                                       ===> array, (_datatype_ _var_[_intLen_][...] = {_data_, ...}) or (_datatype_ _var_[_intLen_][...]{_data_, ...})
-    [9] - auto                                                                                                  ===> auto data type
-    [10] - pointer                                                                                              ===> it equal NULL
+    [3] - char16_t                                                                                              ===> (2 byte [signed] [unsigned])
+    [4] - char32_t                                                                                              ===> (4 byte [signed] [unsigned])
+    [5] - wchar_t                                                                                               ===> (byte [signed] [unsigned])
+    [6] - string                                                                                                ===> string ("jo", "ahmed", ...), <iostream>
+    [7] - int                                                                                                   ===> (4 byte [signed -2147483648 => 2147483647] [unsigned 0 => 4294967295])
+    [8] - float                                                                                                 ===> (4 byte [7 digit])
+    [9] - double                                                                                                ===> (8 byte [15 digit])
+    [10] - bool                                                                                                 ===> (1 byte [true, false])
+    [11] - _datatype_ _var_[_intLen_][...]                                                                      ===> array, (_datatype_ _var_[_intLen_][...] = {_data_, ...}) or (_datatype_ _var_[_intLen_][...]{_data_, ...})
+    [12] - auto                                                                                                 ===> auto data type
+    [13] - pointer                                                                                              ===> it equal NULL
 
 [2] - _modifier_
     [1] - short                                                                                                 ===> (int => 2 byte [signed -32768 => 32767] [unsigned 0 => 65535])
