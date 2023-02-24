@@ -334,7 +334,8 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [10] - bool                                                                                                 ===> (1 byte [true, false])
     [11] - array                                                                                                ===> array, ({'a', 'b', ...}, {1, 2, ...}, ...)
     [12] - auto                                                                                                 ===> auto data type
-    [13] - pointer                                                                                              ===> it equal NULL
+    [13] - decltype(_var_)                                                                                      ===> as auto
+    [14] - pointer                                                                                              ===> it equal NULL
 
 [2] - _modifier_
     [1] - short                                                                                                 ===> (int => 2 byte [signed -32768 => 32767] [unsigned 0 => 65535])
