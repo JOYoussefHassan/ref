@@ -375,8 +375,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [4] - 0_int_                                                                                                ===> to octal
     [5] - 0x_int_                                                                                               ===> to hexal, or (F)
     [6] - _int_f                                                                                                ===> to float
-    [7] - _int_E_int                                                                                            ===> 
-    [8] - _int_e-_int                                                                                           ===> 
+    [7] - _int_E_int_                                                                                            ===> (5e11 => 5 * 10^11)
 
 [2] - _escapeSequanceCharacter_
     [1] - \n                                                                                                    ===> to new line
