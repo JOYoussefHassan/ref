@@ -369,13 +369,14 @@ for (_intStart_; _intEnd_; _intStep_)                                           
 | _formater_ |
 --------------
 [1] - _numFormator_
-    [1] - _num_L                                                                                                ===> to long
-    [2] - _num_LL                                                                                               ===> to long long
-    [3] - 0_num_                                                                                                ===> to octal
-    [4] - 0x_num_                                                                                               ===> to hexal, or (F)
-    [5] - _num_f                                                                                                ===> to float
-    [6] - _num_E_num                                                                                            ===> 
-    [7] - _num_e-_num                                                                                           ===> 
+    [1] - _int_U
+    [2] - _int_L                                                                                                ===> to long
+    [3] - _int_LL                                                                                               ===> to long long
+    [4] - 0_int_                                                                                                ===> to octal
+    [5] - 0x_int_                                                                                               ===> to hexal, or (F)
+    [6] - _int_f                                                                                                ===> to float
+    [7] - _int_E_int                                                                                            ===> 
+    [8] - _int_e-_int                                                                                           ===> 
 
 [2] - _escapeSequanceCharacter_
     [1] - \n                                                                                                    ===> to new line
