@@ -370,7 +370,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _formater_ |
 --------------
-[1] - _numFormator_
+[1] - _formator_ (_literal_)
     [1] - _int_U
     [2] - _int_L                                                                                                ===> to long
     [3] - _int_LL                                                                                               ===> to long long
@@ -378,6 +378,8 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [5] - 0x_int_                                                                                               ===> to hexal, or (F)
     [6] - _int_f                                                                                                ===> to float
     [7] - _int_E_int_                                                                                           ===> (5e11 => 5 * 10^11)
+
+    [8] - 
 
 [2] - _escapeSequanceCharacter_
     [1] - \n                                                                                                    ===> to new line
@@ -388,6 +390,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [6] - \b                                                                                                    ===> backslash
     [7] - \a                                                                                                    ===> bell
     [8] - \r                                                                                                    ===> overide from beginning of line
+    [9] - \v                                                                                                    ===> vertical tab
 
 [3] - _operators_
     [1] - =                                                                                                     ===> assignment operator
