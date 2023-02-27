@@ -327,7 +327,7 @@ for (_intStart_; _intEnd_; _intStep_)                                           
     [3] - char16_t                                                                                              ===> (2 byte [signed] [unsigned])
     [4] - char32_t                                                                                              ===> (4 byte [signed] [unsigned])
     [5] - wchar_t                                                                                               ===> (byte [signed] [unsigned])
-    [6] - string                                                                                                ===> string ("jo", "ahmed", ...), <iostream>
+    [6] - string                                                                                                ===> string ("jo", "ahmed", ...), <iostream> end with ()'\0' => null)
     [7] - int                                                                                                   ===> (4 byte [signed -2147483648 => 2147483647] [unsigned 0 => 4294967295])
     [8] - float                                                                                                 ===> (4 byte [7 digit])
     [9] - double                                                                                                ===> (8 byte [15 digit])
