@@ -101,6 +101,8 @@
 | grammer |
 -----------
 [1] - _preposition_
+    [1] - at _time_
+    [2] - in _day_
 
 [2] - _verbToBe_
 
