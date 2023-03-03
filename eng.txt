@@ -151,7 +151,8 @@
 [1] - _preposition_
     [1] - at _time_
     [2] - in (_day_ | _year_)
-    [3] - on (_month_)
+    [3] - on (_month_) | (foot)
+    [4] - by (_vehicle_)
 
 [2] - _verbToBe_
 
