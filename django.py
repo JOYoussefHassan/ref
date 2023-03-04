@@ -12,8 +12,10 @@
 
 # urls.py
 # -------
-# from . import views
+# from _appName_ import views
 # import django.urls, django.contrib, django.views.generic
+#
+# app_name = '_appName_'
 # urlpatterns = [
 #     django.urls.path('_path_', views.index, name='_indexName_'),
 #     ...
