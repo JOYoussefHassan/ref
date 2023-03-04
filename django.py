@@ -35,6 +35,8 @@
 # -----------
 # INSTALLED_APPS = [
 #     '_appName_.apps._AppName_Config',
+#     '_appName_',
+#
 #     'django.contrib.admin',
 #     'django.contrib.auth',
 #     'django.contrib.contenttypes',
