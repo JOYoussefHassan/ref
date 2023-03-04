@@ -19,6 +19,8 @@
     [15] - confident                    ===> واثق من نفسه
     [16] - conference                   ===> الثقة بالنفس
     [17] - fault                        ===> غلطة
+    [18] - baking hot                   ===> حار كاننا هنتخبز
+    [19] - freezing cold                ===> حار كاننا هنتجمد
 
 [2] - jops
     [1] - actor                         ===> ممثل
@@ -95,6 +97,7 @@
     [7] - light up                      ===> يشعل
     [8] - put out                       ===> يخمد
     [9] - sail                          ===> يبحر
+    [10] - pour                         ===> يصب سائل
 
 [9] - animals
     [1] - deer                          ===> غزال
@@ -128,6 +131,7 @@
     [2] - air craft                     ===> اي حاجة بتطير
     [3] - drone                         ===> طيارة بدون طيار
     [4] - UFO                           ===> طبق طائر
+    [5] - fog                           ===> ضباب
 
 [14] - kitchen
     [1] - pot                           ===> حلة
@@ -148,6 +152,9 @@
         [2] - half past
         [3] - half before
         [4] - text
+
+[2] - covert to adjective
+    [1] - _word_y
         
 [1] - _preposition_
     [1] - at _time_
