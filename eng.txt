@@ -21,6 +21,9 @@
     [17] - fault                        ===> غلطة
     [18] - baking hot                   ===> حار كاننا هنتخبز
     [19] - freezing cold                ===> حار كاننا هنتجمد
+    [20] - allergic to                  ===> حساسية من
+    [21] - vegetarian                   ===> نباتي
+    [22] - acuaintance                  ===> مجرد شخص معروف
 
 [2] - jops
     [1] - actor                         ===> ممثل
@@ -37,6 +40,8 @@
     [12] - lawyer                       ===> محامي
     [13] - soldier                      ===> جندي
     [14] - goalie                       ===> حارس مرمى
+    [15] - colleague                    ===> زميل في مكان مرموق
+    [16] - coworker                     ===> زميل في الشغل
 
 [3] - family
     [1] - aunt                          ===> عمة / خالة
@@ -98,6 +103,9 @@
     [8] - put out                       ===> يخمد
     [9] - sail                          ===> يبحر
     [10] - pour                         ===> يصب سائل
+    [11] - reserve                      ===> يحجز مبدئي
+    [12] - starters                     ===> مقبلات
+    [13] - admire / crush               ===> معجب ب
 
 [9] - animals
     [1] - deer                          ===> غزال
@@ -105,6 +113,7 @@
     [3] - goat                          ===> معز
     [4] - hippo                         ===> فرس النهر
     [5] - owl                           ===> بومة
+    [6] - pork                          ===> لحم خنزير
 
 [10] - numbering
     [1] - many                          ===> للأشياء التي تعد
@@ -163,6 +172,8 @@
     [4] - by (_vehicle_)
 
 [2] - _verbToBe_
+
+[0] - for what ...                      ===> لأجل ماذا
 
 
 _verbToBe_ _preposition_
