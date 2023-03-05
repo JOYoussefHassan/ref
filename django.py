@@ -58,7 +58,7 @@
 #     model = _modelName_
 #     extra = _intRepeat_
 # class _adminClassName_(admin.ModelAdmin):
-#     list_display = ('_columnName_', ...)
+#     list_display = ('_columnName_', '_functionModelName_', ...)
 #     fields       = ['_columnName_', ...]
 #     fieldsets    = [(_sectionName_, {'fields': ['_columnName_', ...], ...}), ...]
 #     inlines      = [_inlineAdminClassName_]
@@ -66,7 +66,7 @@
 
 # models.py
 # ---------
-# import django.db, django.utils
+# import django.db, django.utils, django.contrib
 #
 # class _modelName_(django.db.models.Model):
 #     _columnName_ = django.db.models.CharField(max_length=_int_)
@@ -74,6 +74,7 @@
 #     _columnName_ = django.db.models.ForeignKey(_modelName_, on_delete=django.db.models.CASCADE)
 #     _columnName_ = django.db.models.IntegerField(default=_int_)
 #
+#     @django.contrib.admin.display(boolean = _bool_, ordering = _dataDependentOrder_, description = '_data_')
 #     def __str__(self):
 #         return self._columnName_
 #     def _functionModelName_(self):
