@@ -58,8 +58,10 @@
 #     model = _modelName_
 #     extra = _intRepeat_
 # class _adminClassName_(admin.ModelAdmin):
-#     fieldsets = [(_sectionName_, {'fields': ['_columnName_', ...], ...}), ...]
-#     inlines   = [_inlineAdminClassName_]
+#     list_display = ('_columnName_', ...)
+#     fields       = ['_columnName_', ...]
+#     fieldsets    = [(_sectionName_, {'fields': ['_columnName_', ...], ...}), ...]
+#     inlines      = [_inlineAdminClassName_]
 # django.contrib.admin.site.register(_modelName_, _adminClassName_)
 
 # models.py
