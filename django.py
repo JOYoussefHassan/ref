@@ -51,7 +51,9 @@
 #
 # from .models import _modelName_
 #
-# django.contrib.admin.site.register(_modelName_)
+# class _adminClassName_(admin.ModelAdmin):
+#     fields = [(_sectionName_, {'fields': ['_columnName_', ...], ...}), ...]
+# django.contrib.admin.site.register(_modelName_, _adminClassName_)
 
 # models.py
 # ---------
