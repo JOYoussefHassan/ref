@@ -9,6 +9,184 @@
 # python manage.py shell
 # -----------
 # python manage.py createsuperuser
+# -----------
+# python manage.py test _appName_
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | urls.py |
+# -----------
+# app_name = '_appName_'
+# urlpatterns = [
+#     django.urls.path('_pathFormate_', _viewApp_, name='_urlName_'),
+#     ...
+#     [1] - _pathFormate_
+#         [1] - _adminPathString_
+#         [2] - _pathString_
+#         [3] - _pathString_<_datatype_:_pathArgName_>_pathString_
+#     [2] - _viewApp_
+#         [1] - django.contrib.admin.site.urls
+#         [2] - django.urls.include('_appName_._urlFile_')
+#         [3] - views._appFunctonName_
+#         [4] - views._appGenericName_.as_view()
+#         [5] - django.views.generic._genericType_.as_view(_genericArgument_, ...)
+#             [1] - _genericArgument_
+#                 [1] - template_name = '_htmlName_'
+#                 [2] - extra_context = _context_
+# ]
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | settings.py |
+# ---------------
+# INSTALLED_APPS = [
+#     '_appName_.apps._AppName_Config',
+#     '_appName_',
+#
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+# ]
+#
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [
+#             BASE_DIR / '_path_',
+#         ],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | admin.py |
+# ------------
+# class _inlineAdminClassName_(django.contrib.admin._inlineType_):
+# [1] - _inlineType_
+#     [1] - StackedInline
+#     [2] - TabularInline
+#     model = _modelName_                                                                                   ===> another model
+#     extra = _intRepeat_
+#
+# class _adminClassName_(django.contrib.admin.ModelAdmin):
+#     list_display = ('_columnModelName_', '_functionModelName_', ...)
+#     fields       = ['_columnModelName_', ...]
+#     fieldsets    = [('_sectionName_', {'fields': ['_columnModelName_', ...], ...}), ...]
+#     inlines      = [_inlineAdminClassName_, ...]
+#
+# django.contrib.admin.site.register(_modelName_, _adminClassName_)
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | models.py |
+# -------------
+# class _modelName_(django.db.models.Model):
+#     _columnModelName_ = django.db.models._fieldTypeModelName_(_fieldOptionModelName_)
+#     [1] - _fieldTypeModelName_
+#         [1] - CharField(max_length=_int_)
+#         [2] - IntegerField()
+#         [3] - DateTimeField('_subject_')
+#         [4] - ForeignKey(_modelName_, ondelete=django.db.models.CASCADE)
+#     [2] - _fieldOptionModelName_
+#         [1] - default = _data_
+#         [2] - null    = _bool_
+#         [3] - blank   = _bool_
+#
+#     @django.contrib.admin.display(boolean=_bool_, ordering=_columnModelName_, description='_data_')
+#
+#     def __str__(self):
+#         return self._columnModelName_
+#     def _functionModelName_(self):
+#         _statement_
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | shell (models.py) |
+# ---------------------
+# _modelName_.DoesNotExist
+#
+# _modelSelectVar_ = _modelName_(_tableName_='_data_', ...)
+# _modelSelectVar_._columnName_
+# _modelSelectVar_._columnName_ = _data_
+# _modelSelectVar_.save()
+# _modelSelectVar_.delete()
+#
+# _modelSelectVar_ = get_object_or_404(_tableName_='_data_', ...)
+#
+# _modelName_.objects.all()
+# _modelName_.objects.filter(_tableName_=_data_, _tableName__function_=_data_)
+# _modelName_.objects.order_by('_data_')
+# _modelName_.objects.get(_tableName_=_data_, _tableName__function_=_data_)
+# _modelSelectVar_._modelName__set.count()
+# _modelSelectVar_._modelName__set.all()
+#
+# _modelCreateVar_ = _modelSelectVar_._modelName__set.create(_tableName_='_data_', ...)
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | views.py |
+# ------------
+# def _appFunctonName_(_request_, _pathArgName_, *_args_, **_keywordArgs_):
+#     [1] - _request_
+#         [1] - _request_.GET['_var_']
+#         [2] - _request_.POST['_var_']
+#
+#     _templateName_ = django.template.loader.get_template('_htmlPath_')
+#     return _actionAppFunctonName_
+#     [1] - _actionAppFunctonName_
+#         [1] - django.http.HttpResponse(_data_)
+#             [1] - _data_
+#                 [1] - _data_
+#                 [2] - _templateName_.render(_context_, _request_)
+#         [2] - django.shortcuts.render(_request_, '_htmlPath_', _context_)
+#         [3] - django.http.HttpResponseRedirect(_path_)
+#             [1] - _path_
+#                 [1] - _path_
+#                 [1] - reverse('_appName_:_appFunctonName_', args=(_pathArgName_, ...))
+#     
+#     raise django.http.Http404(_errStr_)
+#
+# class _appGenericName_(django.views.generic._genericType_):
+#     [1] - _genericType_
+#         [1] - TemplateView
+#             template_name   = '_htmlPath_'
+#             template_engine = _engineType_
+#             response_class  = _response_
+#             conten_type     = 'text/html'
+#             def get_context_data(self, ...):
+#                 _statement_
+#         [2] - DetailView
+#             model = _modelName_
+#             template_name = '_htmlPath_'
+#         [3] - ListView
+#             template_name = '_htmlPath_s'
+#             context_object_name = 'latest_question_list'
+#             def get_queryset(self):
+#                 return _dataModelName_
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | tests.py |
+# ------------
+# class _testClassName_(django.test.TestCase):
+#     def _functionTestClassName_(self):
+#         _modelVar_ = _modelName_(_columnModelName_='_data_', ...)
+#         _clientVar_ = self.client.get('_path_')
+#         self._checkTestClassName_
+#         [1] - _checkTestClassName_
+#             [1] - assertIs(_modelVar_._functionModelName_(), _returnDataWanted_)
+#             [2] - assertEqual(_var_, _dataWanted_)
+#             [3] - assertContains(_var_, _dataWanted_)
+#             [4] - assertQuerysetEqual(_varArray_, _array_)
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | shell (models.py) |
+# ---------------------
+# django.test.utils.setup_test_enviroment()
+#
+# _clientVar_ = django.test.utils.Client()
+#
+# _responseClientVar_ = _clientVar_.get('_path_')
+# _responseClientVar_.status_code
+# _responseClientVar_._context_[_data_]
 
 # urls.py
 # -------
@@ -175,6 +353,7 @@
 #
 # {% for question in latest_question_list %}
 #     {{ forloop.counter }}
+#     {{ choice.votes|pluralize }}
 # {% endfor %}
 #
 # {{ _contextVar_ }}
