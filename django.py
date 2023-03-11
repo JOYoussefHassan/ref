@@ -73,6 +73,7 @@
 #     _columnName_ = django.db.models.DateTimeField('date published')
 #     _columnName_ = django.db.models.ForeignKey(_modelName_, on_delete=django.db.models.CASCADE)
 #     _columnName_ = django.db.models.IntegerField(default=_int_)
+#     _columnName_ = django.db.models._fieldTypeModel_(null=_bool_, blank=_bool_)
 #
 #     @django.contrib.admin.display(boolean = _bool_, ordering = _dataDependentOrder_, description = '_data_')
 #     def __str__(self):
