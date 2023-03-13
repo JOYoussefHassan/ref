@@ -114,15 +114,22 @@
 # -------------
 # class _modelName_(django.db.models.Model):
 #     _columnModelName_ = django.db.models._fieldTypeModelName_(_fieldOptionModelName_)
+#    ...
 #     [1] - _fieldTypeModelName_
 #         [1] - CharField(max_length=_int_)
 #         [2] - IntegerField()
 #         [3] - DateTimeField('_subject_')
 #         [4] - ForeignKey(_modelName_, ondelete=django.db.models.CASCADE)
+#         [5] - TextChoices(_value_, ...)                                                                   ===> to access (TextChoices(_value_, ...).choices)
+#         [6] - BigAutoField()
 #     [2] - _fieldOptionModelName_
-#         [1] - default = _data_
-#         [2] - null    = _bool_
-#         [3] - blank   = _bool_
+#         [1] - '_data_'                                                                                    ===> the subject of column
+#         [2] - default     = _data_
+#         [3] - null        = _bool_
+#         [4] - blank       = _bool_
+#         [5] - choices     = [(_key_, _value_), ...]
+#         [6] - help_text   = _data_
+#         [7] - primary_key = _bool_
 #
 #     @django.contrib.admin.display(boolean=_bool_, ordering=_columnModelName_, description='_data_')
 #
@@ -136,6 +143,8 @@
 # _modelName_.DoesNotExist
 #
 # _modelSelectVar_ = _modelName_(_tableName_='_data_', ...)
+# _modelCreateVar_.get__choicesVar__display()
+# _modelCreateVar_.objects.values_list('_columnModelName_', flat=_bool_)
 # _modelSelectVar_._columnName_
 # _modelSelectVar_._columnName_ = _data_
 # _modelSelectVar_.save()
