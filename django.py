@@ -26,6 +26,19 @@
 #     [2] - stop
 #     [3] - restart
 
+# /etc/apache2/sites-available/000-default.conf
+# ---------------------------------------------
+# Alias /static /media/sf_sharedfolder2/zayelketab/static
+# <Directory /media/sf_sharedfolder2/zayelketab/static>
+#     Require all granted
+# </Directory>
+# 
+# <Directory /media/sf_sharedfolder2/zayelketab/zayelketab>
+#     <Files wsgi.py>
+#         Require all granted
+#     </Files>
+# </Directory>
+
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | urls.py |
 # -----------
