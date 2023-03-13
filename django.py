@@ -11,8 +11,16 @@
 # python manage.py createsuperuser
 # -----------
 # python manage.py test _appName_
-# -----------
+
+
 # sudo systemctl _command_ apache2
+# [1] - _command_
+#     [1] - start
+#     [2] - stop
+#     [3] - restart
+
+
+# service mysql _command_
 # [1] - _command_
 #     [1] - start
 #     [2] - stop
