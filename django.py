@@ -119,17 +119,24 @@
 #         [1] - CharField(max_length=_int_)
 #         [2] - IntegerField()
 #         [3] - DateTimeField('_subject_')
-#         [4] - ForeignKey(_modelName_, ondelete=django.db.models.CASCADE)
+#         [4] - BigAutoField()
 #         [5] - TextChoices(_value_, ...)                                                                   ===> to access (TextChoices(_value_, ...).choices)
-#         [6] - BigAutoField()
+#
+#         [5] - ForeignKey(_modelName_, ondelete=django.db._modelNameOnDelete_)                             ===> many to one (model has one model only)
+#             [1] - _modelNameOnDelete_
+#                 [1] - models.SET_NULL
+#                 [2] - models.CASCADE
+#         [7] - ManyToManyField(_modelName_, through='_modelName_')
 #     [2] - _fieldOptionModelName_
 #         [1] - '_data_'                                                                                    ===> the subject of column
-#         [2] - default     = _data_
-#         [3] - null        = _bool_
-#         [4] - blank       = _bool_
-#         [5] - choices     = [(_key_, _value_), ...]
-#         [6] - help_text   = _data_
-#         [7] - primary_key = _bool_
+#               verbose_name = '_data_'
+#         [2] - default      = _data_
+#         [3] - null         = _bool_
+#         [4] - blank        = _bool_
+#         [5] - choices      = [(_key_, _value_), ...]
+#         [6] - help_text    = _data_
+#         [7] - primary_key  = _bool_
+#         [8] - unique       = _bool_
 #
 #     @django.contrib.admin.display(boolean=_bool_, ordering=_columnModelName_, description='_data_')
 #
