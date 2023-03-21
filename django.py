@@ -211,7 +211,7 @@
 # | tests.py |
 # ------------
 # class _testClassName_(django.test.TestCase):
-#     def _functionTestClassName_(self):
+#     def test_functionTestClassName_(self):
 #         _modelVar_ = _modelName_(_columnModelName_='_data_', ...)
 #         _clientVar_ = self.client.get('_path_')
 #         self._checkTestClassName_
