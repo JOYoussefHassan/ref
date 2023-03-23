@@ -1,6 +1,6 @@
-# django-admin startproject _projectName_
+# django-admin startproject _ProjectName_
 # python manage.py runserver _ip_:_port_
-# python manage.py startapp _appName_
+# python manage.py startapp _AppName_
 # -----------
 # python manage.py makemigrations _appName_
 # python manage.py sqlmigrate _appName_ _int_
@@ -44,17 +44,17 @@
 # -----------
 # app_name = '_appName_'
 # urlpatterns = [
-#     django.urls.path('_pathFormate_', _viewApp_, name='_urlName_'),
+#     django.urls.path(_RoutePathUrls_, _ViewViews_, _kwargs_, _namePathUrls_),
 #     ...
-#     [1] - _pathFormate_
+#     [1] - _RoutePathUrls_
 #         [1] - _adminPathString_
-#         [2] - _pathString_
-#         [3] - _pathString_<_datatype_:_pathArgName_>_pathString_
-#     [2] - _viewApp_
+#         [2] - _stringPathUrls_
+#         [3] - _stringPathUrls_<_datatypePathUrls_:_pathArgPathUrls_>_stringPathUrls_
+#     [2] - _ViewViews_
 #         [1] - django.contrib.admin.site.urls
-#         [2] - django.urls.include('_appName_._urlFile_')
-#         [3] - views._appFunctonName_
-#         [4] - views._appGenericName_.as_view()
+#         [2] - django.urls.include('_App_._AppUrls_')
+#         [3] - views._IndexFunctionViews_
+#         [4] - views._ClassbasedViews_.as_view()
 #         [5] - django.views.generic._genericType_.as_view(_genericArgument_, ...)
 #             [1] - _genericArgument_
 #                 [1] - template_name = '_htmlName_'
