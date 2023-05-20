@@ -312,7 +312,7 @@
 #           _command
 #       else :
 #           _command
-# [3] - for _childOject, _childValue in _object                                                                 ===> _childObject is key, _object[_childObject] and _childValue is value
+# [3] - for _childOject, _childValue in enumerate(_object, _numStart)                                           ===> _childObject is key, _object[_childObject] and _childValue is value
 #           _command
 # [4] - with _file as _var :
 #           _command
@@ -473,7 +473,16 @@
 # | SQLite |
 # ----------
 # import sqlite3                                                                                                ===> to import SQLite functions
-# [1] - 
+# [1] - _databaseVar = sqlite3.connect("_fileName")
+#
+# [2] - _cursorVar = _databaseVar.cursor()                                                                      ===> to begain edit
+# [3] - _cursorVar.execute("_command")
+# [4] - _cursorVar.commit()                                                                                     ===> save changes of inserted data
+# [5] - _cursorVar.fetchone()                                                                                   ===> to yield data in command (SELECT), and return (None) if reach to the last of table
+# [6] - _cursorVar.fetchall()                                                                                   ===> as _lst
+# [7] - _cursorVar.fetchmany(_int)                                                                              ===> the size of _lst
+#
+# [3] - _databaseVar.close()
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | ftplib |
 # ----------
