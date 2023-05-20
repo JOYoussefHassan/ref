@@ -77,11 +77,12 @@
 # [11] - _regularExpression
 #       [1] - *                                                                                                 ===> 0 or more
 #       [2] - +                                                                                                 ===> 1 or more
-#       [3] - _data?                                                                                            ===> if found or no
+#       [3] - _data?                                                                                            ===> if found or no, (_data?) is for more one character
 #       [4] - {_int}                                                                                            ===> only _int
 #       [5] - {_int1,_int2}                                                                                     ===> from _int1 to _int2
 #       [6] - {,_int}                                                                                           ===> from 0 to _int
 #       [7] - {_int,}                                                                                           ===> _int or more
+#       [8] - (_regularExpression)
 # 
 #       [9] - [_int1_int2...]                                                                                   ===> contain _int1 or _int2 or ..., [0-9]
 #       [10] - [_char1_char2...]                                                                                ===> contain _char1 or _char2 or ..., [A-Za-z]
@@ -101,6 +102,11 @@
 #        def _decorator(_func):
 #            def inner(*args, **kwargs)
 #                _conditions
+#
+# [14] - variable syntax
+#       [1] - name                                                                                              ===> public
+#       [2] - _name                                                                                             ===> protected but could print it
+#       [3] - __name                                                                                            ===> private and couldn't print it
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # [1] - _command; _command
 # [2] _parentCommand
@@ -438,7 +444,7 @@
 # [6] - re.split(r"_regularExpression", _data, _numSplit)                                                       ===> to convert to _lst, _str default is " ", _num of splits
 # [7] - re.sub(r"_regularExpression", _data, _dataReplacement, _intReplacement)                                 ===> to replace
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# | Abstract Base Class |
+# | Abstract Base Class |                                                                                       ===> to include this in other classes and must has the same pattern but different in return data or passed
 # -----------------------
 # from abc import ABCMeta, abstractmethod                                                                       ===> to import ABCs functions
 # [1] - class _className(metaclass = ABCMeta) :                                                                 ===> to create abstract functions
@@ -508,10 +514,10 @@
 #               self._attribute2 = _data or _param1 or _param2 or ...                                                refer to (_protectedAttribute)
 #               _className._attribute1                                                                          ===> to accsess attributes
 #               _className._attribute2
-#               _className1._func1(_default, _param1, _param2, ...)                                             ===> to derived specific function
-#               _className1._func2(_default, _param1, _param2, ...)                                             ===> to derived specific function
-#               super()._func1(_default, _param1, _param2, ...)                                                 ===> to derived specific function
-#               super()._func2(_default, _param1, _param2, ...)                                                 ===> to derived specific function
+#               _className1._func1(_default, _param1, _param2, ...)                                             ===> to derived from included another class specific function
+#               _className1._func2(_default, _param1, _param2, ...)                                             ===> to derived from included another class specific function
+#               super()._func1(_default, _param1, _param2, ...)                                                 ===> to derived from included another class specific function
+#               super()._func2(_default, _param1, _param2, ...)                                                 ===> to derived from included another class specific function
 #               ...
 #           def __str__(self, _param1, _param2, ...)                                                            ===> (_readableFunc)
 #               return self._attribute1 + self._attribute2 + ...
@@ -571,8 +577,8 @@
 # [4] - https://strftime.org/
 # [5] - https://docs.python.org/3/library/exceptions.html
 # [6] - https://replit.com
-# [7] - https://pythex.org/
-# [8] - https://www.debuggex.com/cheatsheet/regex/python
+# [7] - https://pythex.org/                                                                                     ===> regular expression
+# [8] - https://www.debuggex.com/cheatsheet/regex/python                                                        ===> regular expression
 # [9] - https://regex101.com/
 # [10] - https://sqlitebrowser.org/
 # [11] - https://docs.python.org/3/library/unittest.html
