@@ -1,23 +1,9 @@
-class Todo {
-  final String who;
-  final String what;
+import 'dart:core';
 
-  const Todo(this.who, this.what);
-}
-
-class ClassName {
-  @Todo('Dash', 'Implement this function')
-  void doSomething() {
-    print('Do something');
-  }
-}
-
-void main() {
-  print(1);
-}
+void main(List<String> args) {}
 
 /*
-void main() {
+void main(List<String> args) {
   _statement_
   ...
 }
@@ -52,14 +38,16 @@ _varDeclare_ _varName_ = _data_;
     [4] - const (_nothing_, Object, int, String, _className_, _className_)
   [2] - _datatype_
     [1] - Object
-    [2] - int
-    [3] - String
-    [4] - _className_
-    [5] - _enumName_
-    [6] - _mixinName_
-    [7] - List<_datatype_, ...>                                                                             ===> [_data_, ...]
-    [8] - Set<_datatype_, ...>                                                                              ===> {_data_, ...}
-    [9] - Map<_datatype_, _datatype_>                                                                       ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
+    [2] - num
+    [3] - int
+    [4] - double
+    [5] - String                                                                                            ===> '_data_\n...', '''_data_\n...'
+    [6] - _className_
+    [7] - _enumName_
+    [8] - _mixinName_
+    [9] - List<_datatype_, ...>                                                                             ===> [_data_, ...]
+    [10] - Set<_datatype_, ...>                                                                             ===> {_data_, ...}
+    [11] - Map<_datatype_, _datatype_>                                                                      ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
 +--------------------+
