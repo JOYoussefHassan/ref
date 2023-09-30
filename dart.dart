@@ -145,10 +145,18 @@ _varDeclare_ _varName_ = _data_;
 | _statement_: _datatype_ (List) |
 +--------------------------------+
 [1] - ?[_data_, ...]
+[1] - [..._set_list_]                                                                                                                               ===> to spread list in list
+      [...?_set_list_]
+[2] - _list_.length
+[3] - 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (Set) |
 +-------------------------------+
-[1] - {..._list_}                                                                                                                                   ===> to spread list in set
+[1] - {..._set_list_}                                                                                                                               ===> to spread list in set
+      {...?_set_list_}
+[2] - _set_.add(_data_)
+[3] - _set_.addAll(_set_)
+[4] - _set_.length
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (String) |
 +----------------------------------+
@@ -176,7 +184,8 @@ _varDeclare_ _varName_ = _data_;
           _statement_
           ...
         }
-  [2] - (_exp_) ? _statement_ : _statement_
+  [2] - if (_exp_) _statement_;
+  [3] - (_exp_) ? _statement_ : _statement_
 
 [2] - _loop_
   [1] - _forLoop_
@@ -184,10 +193,12 @@ _varDeclare_ _varName_ = _data_;
             _statement_
             ...
           }
-    [2] - for (_varDeclare_ _varName_ = _intStart_; _conditionEnd_; _step_) {
+    [2] - for (_varDeclare_ _varName_ in _iterable_) _statement_;
+    [3] - for (_varDeclare_ _varName_ = _intStart_; _conditionEnd_; _step_) {
             _statement_
             ...
           }
+    [4] - for (_varDeclare_ _varName_ = _intStart_; _conditionEnd_; _step_) _statement_;
   [2] - _whileLoop_
     [1] - while (_conditionEnd_) {
             _statement_
