@@ -62,8 +62,9 @@ _varDeclare_ _varName_ = _data_;
     [10] - _mixinName_
     [11] - List<_datatype_, ...>                                                                                                                    ===> [_data_, ...]
     [12] - Set<_datatype_, ...>                                                                                                                     ===> {_data_, ...}
-    [13] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
-    [14] - (_datatype_, ...)                                                                                                                        ===> _record_, (1, a: 2, ...)
+    [13] - _nothing_<_datatype_, ...>                                                                                                               ===> [_data_, ...] or {_data_, ...}
+    [14] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
+    [15] - (_datatype_, ...)                                                                                                                        ===> _record_, (1, a: 2, ...)
             ({_datatype_ _varName_, ...})                                                                                                           ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
