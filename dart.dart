@@ -1,16 +1,8 @@
-import 'dart:core';
-
-List<(int, int)> test = [(1, 2)];
-
-final json = <String, dynamic>{
-  'name': 'Dash',
-  'age': 10,
-  'color': 'blue',
-};
+typedef SetInt = Set<int>;
 
 void main(List<String> args) {
-  print('\u1234');
-  print(test[0].$1);
+  SetInt str = {1, 2};
+  print(str);
 }
 
 /*
@@ -49,6 +41,8 @@ _varDeclare_ _varName_ = _data_;
     [2] - var ()                                                                                                                                    ===> not with functions, no null safety
     [3] - final (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)?                      ===> not with functions
     [4] - const (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)
+    [5] - typedef (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)                     ===> must out of main function
+          typedef _varDatatype_ = _datatype_
   [2] - _datatype_
     [1] - Object
     [2] - dynamic
@@ -60,11 +54,10 @@ _varDeclare_ _varName_ = _data_;
     [8] - _className_
     [9] - _enumName_
     [10] - _mixinName_
-    [11] - List<_datatype_, ...>                                                                                                                    ===> [_data_, ...]
-    [12] - Set<_datatype_, ...>                                                                                                                     ===> {_data_, ...}
-    [13] - _nothing_<_datatype_, ...>                                                                                                               ===> [_data_, ...] or {_data_, ...}
-    [14] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
-    [15] - (_datatype_, ...)                                                                                                                        ===> _record_, (1, a: 2, ...)
+    [11] - List<_datatype_>                                                                                                                         ===> [_data_, ...]
+    [12] - Set<_datatype_>                                                                                                                          ===> {_data_, ...}
+    [13] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
+    [14] - (_datatype_, ...)                                                                                                                        ===> _record_, (1, a: 2, ...)
             ({_datatype_ _varName_, ...})                                                                                                           ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
@@ -148,13 +141,15 @@ _varDeclare_ _varName_ = _data_;
 [1] - ?[_data_, ...]
 [1] - [..._set_list_]                                                                                                                               ===> to spread list in list
       [...?_set_list_]
-[2] - _list_.length
-[3] - 
+[2] - <_datatype_>[_data_, ...]
+[3] - _list_.length
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (Set) |
 +-------------------------------+
 [1] - {..._set_list_}                                                                                                                               ===> to spread list in set
       {...?_set_list_}
+[2] - <_datatype_>{_data_, ...}
+      <_datatype_, _datatype_>{_data_: _data_, ...}
 [2] - _set_.add(_data_)
 [3] - _set_.addAll(_set_)
 [4] - _set_.length
@@ -235,7 +230,13 @@ _varDeclare_ _varName_ = _data_;
 | _statement_: _class_ |
 +----------------------+
 [1] - _normalClass_
-  [1] - class _normalClassName_ {
+  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
+          @_metadata_
+          _statement_
+          ...
+        }
+[2] - _abstractClass_
+  [1] - abstract class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
           @_metadata_
           _statement_
           ...
