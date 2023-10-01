@@ -1,8 +1,13 @@
 typedef SetInt = Set<int>;
 
 void main(List<String> args) {
-  SetInt str = {1, 2};
-  print(str);
+  // Inferred as if you wrote <double>[3.0].
+  var listOfDouble = [3.0];
+
+  // Inferred as Iterable<int>.
+  var ints = listOfDouble.map((double x) => x.toInt());
+
+  print(ints);
 }
 
 /*
@@ -17,11 +22,12 @@ void main(List<String> args) {
 [2] - assert(_bool_);
 [3] - identical(_data_, _data_);
 [4] - const _data_;
+[5] - _data_.map((_varDeclare_ _varName_) => _data_);                                                                                               ===> to pass all of itrable object to function
 [5] - _statementControler_
-  [1] - return _data_                                                                                                                               ===> not with `void` _datatype_
-  [2] - continue
-  [3] - break
-  [4] - throw _error_
+  [1] - return _data_;                                                                                                                              ===> not with `void` _datatype_
+  [2] - continue;
+  [3] - break;
+  [4] - throw _error_;
 [6] - _object_instance_._object_instance_....;
       _object_instance_
       _memberAccessOperator__object_instance_
@@ -232,13 +238,23 @@ _varDeclare_ _varName_ = _data_;
 [1] - _normalClass_
   [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
           @_metadata_
-          _statement_
+          _statement_;
+          ...
+          _varDeclare_ get _function_;
+          ...
+          _functionMethod_;
+          _propertyVar_;
           ...
         }
 [2] - _abstractClass_
   [1] - abstract class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
           @_metadata_
-          _statement_
+          _statement_;
+          ...
+          _varDeclare_ get _function_;
+          ...
+          _functionMethod_;
+          _propertyVar_;
           ...
         }
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
