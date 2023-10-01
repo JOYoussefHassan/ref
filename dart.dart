@@ -1,13 +1,11 @@
 typedef SetInt = Set<int>;
 
 void main(List<String> args) {
-  // Inferred as if you wrote <double>[3.0].
-  var listOfDouble = [3.0];
-
-  // Inferred as Iterable<int>.
-  var ints = listOfDouble.map((double x) => x.toInt());
-
-  print(ints);
+  var isPrimary = switch ('re') {
+    'red' => true,
+    _ => false,
+  };
+  print(isPrimary);
 }
 
 /*
@@ -144,6 +142,9 @@ _varDeclare_ _varName_ = _data_;
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (List) |
 +--------------------------------+
+_varDeclare_ _varName_ = [_data_, ...]
+_varDeclare_ [_varName_, ...] = [_data_, ...]
+
 [1] - ?[_data_, ...]
 [1] - [..._set_list_]                                                                                                                               ===> to spread list in list
       [...?_set_list_]
@@ -152,6 +153,9 @@ _varDeclare_ _varName_ = _data_;
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (Set) |
 +-------------------------------+
+_varDeclare_ _varName_ = {_data_, ...}
+_varDeclare_ {_varName_, ...} = {_data_, ...}
+
 [1] - {..._set_list_}                                                                                                                               ===> to spread list in set
       {...?_set_list_}
 [2] - <_datatype_>{_data_, ...}
@@ -218,6 +222,23 @@ _varDeclare_ _varName_ = _data_;
           _statement_
           ...
         }
+[4] - _switch_
+  [1] - switch (_data_) {
+          case _relationOperator_ _exp_ ...:
+            _statement_;
+            ...
+            _statementControler_;
+          ...
+          default:
+            _statement_;
+            ...
+            _statementControler_;
+        }
+  [2] - switch (_data_) {
+          _relationOperator_ _exp_ ... => _data_,
+          ...
+          _ => _data_,
+        };
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _function_ |
 +-------------------------+
