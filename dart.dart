@@ -1,11 +1,11 @@
-typedef SetInt = Set<int>;
+(int?, int?) position = (2, 3);
 
 void main(List<String> args) {
-  var isPrimary = switch ('re') {
-    'red' => true,
-    _ => false,
-  };
-  print(isPrimary);
+  switch ((1, 2)) {
+    // 'var a' and 'var b' are variable patterns that bind to 1 and 2, respectively.
+    case (var a, var b): // ...
+      print('$a');
+  }
 }
 
 /*
@@ -56,13 +56,15 @@ _varDeclare_ _varName_ = _data_;
     [6] - double
     [7] - String                                                                                                                                    ===> '_data_'\n'...', '''_data_\n...''', r'_data_'
     [8] - _className_
+          _className_(:_varParameter_, ...)
     [9] - _enumName_
     [10] - _mixinName_
     [11] - List<_datatype_>                                                                                                                         ===> [_data_, ...]
     [12] - Set<_datatype_>                                                                                                                          ===> {_data_, ...}
     [13] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
-    [14] - (_datatype_, ...)                                                                                                                        ===> _record_, (1, a: 2, ...)
-            ({_datatype_ _varName_, ...})                                                                                                           ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
+    [14] - (_datatype_ _varName_, ...)                                                                                                              ===> _record_, (1, a: 2, ...)
+          ({_datatype_ _varName_, ...})                                                                                                             ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
+          (_varName_: _varDeclare_, ...)
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
 +--------------------+
@@ -134,11 +136,17 @@ _varDeclare_ _varName_ = _data_;
   [1] - _nullOperator_
     [1] - ??
 
-[12] - _object_instance__memberAccessOperator__object_instance_
+[12] - _object_instance__memberAccessOperator_._object_instance_
   [1] - _memberAccessOperator_
-    [1] - .
-    [2] - ?.
-    [3] - !-
+    [1] - _nothing_
+    [2] - ?
+    [3] - !
+
+[13] - _object_instance__memberCheckOperator_                                                                                                       ===> in switch case only
+  [1] - _memberCheckOperator_
+    [1] - _nothing_
+    [2] - ?
+    [3] - !
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (List) |
 +--------------------------------+
@@ -146,8 +154,8 @@ _varDeclare_ _varName_ = [_data_, ...]
 _varDeclare_ [_varName_, ...] = [_data_, ...]
 
 [1] - ?[_data_, ...]
-[1] - [..._set_list_]                                                                                                                               ===> to spread list in list
-      [...?_set_list_]
+[1] - [..._set_list_, ...]                                                                                                                          ===> to spread list in list
+      [...?_set_list_, ...]
 [2] - <_datatype_>[_data_, ...]
 [3] - _list_.length
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -156,8 +164,8 @@ _varDeclare_ [_varName_, ...] = [_data_, ...]
 _varDeclare_ _varName_ = {_data_, ...}
 _varDeclare_ {_varName_, ...} = {_data_, ...}
 
-[1] - {..._set_list_}                                                                                                                               ===> to spread list in set
-      {...?_set_list_}
+[1] - {..._set_list_, ...}                                                                                                                          ===> to spread list in set
+      {...?_set_list_, ...}
 [2] - <_datatype_>{_data_, ...}
       <_datatype_, _datatype_>{_data_: _data_, ...}
 [2] - _set_.add(_data_)
@@ -176,6 +184,10 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
   [2] - \n
   [3] - \uXXXX                                                                                                                                      ===> `X` is hex integer
         \u{XXXXXX}
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| _statement_: _datatype_ (Map) |
++-------------------------------+
+[1] - _map_.containsKey('_key_');
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _controlFlow_ |
 +----------------------------+
@@ -196,6 +208,10 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 [2] - _loop_
   [1] - _forLoop_
     [1] - for (_varDeclare_ _varName_ in _iterable_) {
+            _statement_
+            ...
+          }
+          for (var MapEntry(key: _varKeyName_, value: _varValueName_) in _map_.entries) {
             _statement_
             ...
           }
@@ -223,22 +239,40 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
           ...
         }
 [4] - _switch_
-  [1] - switch (_data_) {
-          case _relationOperator_ _exp_ ...:
-            _statement_;
+  [1] - _dataSwitch_
+    [1] - switch (_data_) {
+            case _relationOperator_ _exp_ ...:
+              _statement_;
+              ...
+              _statementControler_;
             ...
-            _statementControler_;
-          ...
-          default:
-            _statement_;
+            default:
+              _statement_;
+              ...
+              _statementControler_;
+          }
+    [2] - switch (_data_) {
+            _relationOperator_ _exp_ ... => _data_,
             ...
-            _statementControler_;
-        }
-  [2] - switch (_data_) {
-          _relationOperator_ _exp_ ... => _data_,
-          ...
-          _ => _data_,
-        };
+            _ => _data_,
+          };
+  [2] - _varSwitch_                                                                                                                               ===> to check _data_ has same data type or not
+    [1] - switch (_data_) {
+            case _varDeclare_ ...:
+              _statement_;
+              ...
+              _statementControler_;
+            ...
+            default:
+              _statement_;
+              ...
+              _statementControler_;
+          }
+    [2] - switch (_data_) {
+            _varDeclare_ ... => _data_,
+            ...
+            _ => _data_,
+          };
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _function_ |
 +-------------------------+
@@ -257,7 +291,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 | _statement_: _class_ |
 +----------------------+
 [1] - _normalClass_
-  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
+  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
           @_metadata_
           _statement_;
           ...
@@ -268,7 +302,18 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
           ...
         }
 [2] - _abstractClass_
-  [1] - abstract class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ {
+  [1] - abstract class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
+          @_metadata_
+          _statement_;
+          ...
+          _varDeclare_ get _function_;
+          ...
+          _functionMethod_;
+          _propertyVar_;
+          ...
+        }
+[3] - _sealedClass_
+  [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
           @_metadata_
           _statement_;
           ...
