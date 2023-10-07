@@ -1,13 +1,11 @@
-(int?, int?) position = (2, 3);
-
 void main(List<String> args) {
-  switch ((1, 2)) {
-    // 'var a' and 'var b' are variable patterns that bind to 1 and 2, respectively.
-    case (var a, var b): // ...
-      print('$a');
-  }
+  print(~1);
 }
 
+/*
+dart run _path_.dart
+dart --enable-asserts _path_.dart
+*/
 /*
 void main(List<String> args) {
   _statement_
@@ -25,7 +23,7 @@ void main(List<String> args) {
   [1] - return _data_;                                                                                                                              ===> not with `void` _datatype_
   [2] - continue;
   [3] - break;
-  [4] - throw _error_;
+  [4] - throw _errorClass_;
 [6] - _object_instance_._object_instance_....;
       _object_instance_
       _memberAccessOperator__object_instance_
@@ -349,5 +347,9 @@ import '_importingFunction_:_path_' _libraryControl_;
   [3] - hide _object_instance_
   [4] - deferred as _libraryName_
         await _libraryName_.loadLibrary();                                                                                                          ===> to load lazily library
++--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| _library_: dart:io |
++--------------------+
+[1] - stdin.readLineSync()
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
