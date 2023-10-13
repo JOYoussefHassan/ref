@@ -134,6 +134,9 @@
 # [15] - zip(_data1, _data2)                                                                                    ===> to get indexes of 2 datas as tuples, according the least indexes
 # 
 # [16] - isinstance(_data, _dataType)                                                                           ===> to check the data type
+#
+# [17] - # -*- coding: _encoding_ -*-                                                                           ===> to set encoding of file
+# [18] - #!/usr/bin/env python3                                                                                 ===> to set python interpreter path
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | String |
 # ----------
@@ -1058,3 +1061,7 @@
 #     msg_box.send_keys(msg)
 #     button = driver.find_element_by_class_name("_4sWnG")
 #     button.click()
+
+import sys
+
+print(sys.argv)
