@@ -326,6 +326,11 @@
 #       _childFunction()
 # 
 #       _functionName = lambda _param1 = _default, _param2 = _default, ... : _command                           ===> if _command is return the command is be without return command
+# [6] - async def _functionName(_param1 = _default, _param2 = _default, ...) -> _dataType :                     ===> _functionName() to execute this, *_param to set the number of parameter according inputs as tuple or **_param to create
+#           _command                                                                                                 dictionary and this one is key (unpaking) => _functionName(_data = "_data") tuple unpacking with * and dictionary with **,
+#                                                                                                                    _param can be a function (child function in _command place) and main function is called _decoratorFunction, (->) to hint
+#       @_decoratorFunction                                                                                     ===> to execute child function in decorator function
+#       _childFunction()
 # 
 # [6] - break                                                                                                   ===> to stop
 # [7] - continue                                                                                                ===> to continue
