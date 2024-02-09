@@ -53,14 +53,16 @@ _varDeclare_ _varName_ = _data_;
     [5] - int
     [6] - double
     [7] - String                                                                                                                                    ===> '_data_'\n'...', '''_data_\n...''', r'_data_'
-    [8] - _className_
+    [8] - Symbol('_data_')
+          #_data_
+    [9] - _className_
           _className_(:_varParameter_, ...)
-    [9] - _enumName_
-    [10] - _mixinName_
-    [11] - List<_datatype_>                                                                                                                         ===> [_data_, ...]
-    [12] - Set<_datatype_>                                                                                                                          ===> {_data_, ...}
-    [13] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
-    [14] - (_datatype_ _varName_, ...)                                                                                                              ===> _record_, (1, a: 2, ...)
+    [10] - _enumName_
+    [11] - _mixinName_
+    [12] - List<_datatype_>                                                                                                                         ===> [_data_, ...]
+    [13] - Set<_datatype_>                                                                                                                          ===> {_data_, ...}
+    [14] - Map<_datatype_, _datatype_>                                                                                                              ===> {_data_: _data_, ...}, `_data_` in each other must matched with its `_datatype_`
+    [15] - (_datatype_ _varName_, ...)                                                                                                              ===> _record_, (1, a: 2, ...)
           ({_datatype_ _varName_, ...})                                                                                                             ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
           (_varName_: _varDeclare_, ...)
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
