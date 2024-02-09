@@ -26,7 +26,7 @@ void main(List<String> args) {
   [4] - throw _errorClass_;
 [6] - _object_instance_._object_instance_....;
       _object_instance_
-      _memberAccessOperator__object_instance_
+      ._memberAccessOperator__object_instance_
       ...;
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _var_ (_object_instance_) |
@@ -139,6 +139,7 @@ _varDeclare_ _varName_ = _data_;
     [1] - _nothing_
     [2] - ?
     [3] - !
+    [4] - .
 
 [13] - _object_instance__memberCheckOperator_                                                                                                       ===> in switch case only
   [1] - _memberCheckOperator_
