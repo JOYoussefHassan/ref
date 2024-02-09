@@ -26,7 +26,7 @@ void main(List<String> args) {
   [4] - throw _errorClass_;
 [6] - _object_instance_._object_instance_....;
       _object_instance_
-      ._memberAccessOperator__object_instance_
+      _memberAccessOperator_._object_instance_
       ...;
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _var_ (_object_instance_) |
