@@ -32,6 +32,7 @@ void main(List<String> args) {
 | _statement_: _var_ (_object_instance_) |
 +----------------------------------------+
 _varDeclare_ _varName_ = _data_;
+_varDeclare_ [_varName_, ...] = _data_;                                                                                                             ===> _destruturing_
 '_data_${_varName_}_data_';
 '_data_$_varName__data_';
 
