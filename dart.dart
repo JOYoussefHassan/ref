@@ -317,14 +317,32 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
   [1] - _varDeclare_ _varFunctionName_ = _function_
 
         _varFunctionName_(varName_: _data_, ...);
-[4] - _itarableFunction_
-  [1] - Itarable<_datatype_> _itarableFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) sync* {
+[4] - _syncFunction_
+  [1] - Itarable<_datatype_> _syncFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) sync* {
             _statement_
             ...
             _statementControler_;
+            yield _data_;
           }
 
-          _itarableFunctionName_(_varName_: _data_, ...);
+          _syncFunctionName_(_varName_: _data_, ...);
+  [2] - Itarable<_datatype_> _syncFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) sync* {
+            _statement_
+            ...
+            _statementControler_;
+            yield* _syncFunctionName_(_varName_: _data_, ...);
+          }
+
+          _syncFunctionName_(_varName_: _data_, ...);
+[5] - _asyncFunction_
+  [1] - Stream<_datatype_> _syncFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) async* {
+            _statement_
+            ...
+            _statementControler_;
+            yield _data_;
+          }
+
+          _syncFunctionName_(_varName_: _data_, ...);
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
 +----------------------+
