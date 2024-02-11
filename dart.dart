@@ -310,6 +310,7 @@ external _function_
             _statement_
             ...
             _statementControler_;
+            return _data_;
           }
           _blockSimpleFunctionName_(_varName_: _data_, ...);
     [2] - _smallSimpleFunction_
