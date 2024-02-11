@@ -313,9 +313,18 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
     [2] - _smallSimpleFunction_
       [1] - _varDeclare_ _smallSimpleFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) => _data_;
             _smallSimpleFunctionName_(_varName_: _data_, ...);
-[3] - _varDeclare_ _functionVarName_ = _function_
+[3] - _varFunction_
+  [1] - _varDeclare_ _varFunctionName_ = _function_
 
-_functionVarName_(varName_: _data_, ...);
+        _varFunctionName_(varName_: _data_, ...);
+[4] - _itarableFunction_
+  [1] - Itarable<_datatype_> _itarableFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) {
+            _statement_
+            ...
+            _statementControler_;
+          }
+
+          _itarableFunctionName_(_varName_: _data_, ...);
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
 +----------------------+
