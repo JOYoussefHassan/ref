@@ -40,14 +40,14 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
 [1] - _varDeclare_
   [1] - _lateVarDeclare_ (_varControl_, ...) _datatype_?                                                                                            ===> can assignned later
     [1] - late (_nothing_, var, final)
-  [1] - _varControl_ (_datatype_, ...)?                                                                                                             ===> `?` to null safety
+  [2] - _varControl_ (_datatype_, ...)?                                                                                                             ===> `?` to null safety
     [1] - _nothing_ (_nothing_, Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)?
     [2] - var ()                                                                                                                                    ===> not with functions, no null safety
     [3] - final (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)?                      ===> not with functions
     [4] - const (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)
     [5] - typedef (Object, bool, num, int, double, String, _classNem_, _enumName_, _mixinName_, _lits_, _set_, _map_, _record_)                     ===> must out of main function
           typedef _varDatatype_ = _datatype_
-  [2] - _datatype_
+  [3] - _datatype_
     [1] - Object
     [2] - dynamic
     [3] - bool
@@ -69,6 +69,7 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
           ({_datatype_ _varName_, ...})                                                                                                             ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
           (_varName_: _varDeclare_, ...)
     [17] - _genericDatatype_                                                                                                                        ===> in class
+  [4] - void
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
 +--------------------+
