@@ -302,14 +302,14 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 +-------------------------+
 [1] - _simpleFunction_
   [1] - _blockSimpleFunction_
-    [1] - _varDeclare_ _blockSimpleFunctionName_(_varDeclare_ _varName_, ...) {
+    [1] - _varDeclare_ _blockSimpleFunctionName_({required _varDeclare_ _varName_, ...}) {
             _statement_
             ...
             _statementControler_;
           }
           _blockSimpleFunctionName_(_data_, ...);
     [2] - _smallSimpleFunction_
-      [1] - _varDeclare_ _smallSimpleFunctionName_(_varDeclare_ _varName_, ...) => _data_;
+      [1] - _varDeclare_ _smallSimpleFunctionName_({required _varDeclare_ _varName_, ...}) => _data_;
             _smallSimpleFunctionName_(_data_);
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
