@@ -19,6 +19,7 @@ void main(List<String> args) {
 [3] - identical(_data_, _data_);
 [4] - const _data_;
 [5] - _data_.map((_varDeclare_ _varName_) => _data_);                                                                                               ===> to pass all of itrable object to function
+[6] _itrable_.forEach(_function_)
 [5] - _statementControler_
   [1] - return _data_;                                                                                                                              ===> not with `void` _datatype_
   [2] - continue;
@@ -168,7 +169,6 @@ _varDeclare_ [_varName_, ...] = [_data_, ...]
 [4] - _list_.isEmpty
 [5] - _list_.add(_data_)
 [6] - _list_.addAll(_set_)
-[7] - _list_.forEach(_function_)
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _datatype_ (Set) |
 +-------------------------------+
