@@ -318,7 +318,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 
         _varFunctionName_(varName_: _data_, ...);
 [4] - _itarableFunction_
-  [1] - Itarable<_datatype_> _itarableFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) {
+  [1] - Itarable<_datatype_> _itarableFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) sync* {
             _statement_
             ...
             _statementControler_;
