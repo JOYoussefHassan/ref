@@ -302,6 +302,8 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _function_ |
 +-------------------------+
+external _function_
+
 [1] - _simpleFunction_
   [1] - _blockSimpleFunction_
     [1] - _varDeclare_ _blockSimpleFunctionName_({required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) {
