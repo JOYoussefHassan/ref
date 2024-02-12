@@ -257,6 +257,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 [4] - _switch_
   [1] - _dataSwitch_
     [1] - switch (_data_) {
+            _switchCaseName_:
             case _relationOperator_ _exp_ ... when _bool_:
               _statement_;
               ...
@@ -274,6 +275,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
           };
   [2] - _varSwitch_                                                                                                                               ===> to check _data_ has same data type or not
     [1] - switch (_data_) {
+            _switchCaseName_:
             case _varDeclare_ ... when _bool_:
               _statement_;
               ...
