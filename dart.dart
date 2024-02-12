@@ -15,7 +15,7 @@ void main(List<String> args) {
 | _statement_: _builtinFunction_ |
 +--------------------------------+
 [1] - print(_data_);                                                                                                                                ===> to show the output of `_data_`
-[2] - assert(_bool_);
+[2] - assert(_bool_, '_errString_');
 [3] - identical(_data_, _data_);
 [4] - const _data_;
 [5] - _data_.map((_varDeclare_ _varName_) => _data_);                                                                                               ===> to pass all of itrable object to function
@@ -25,6 +25,10 @@ void main(List<String> args) {
   [2] - continue _switchCaseName_OR_Nothing_;
   [3] - break;
   [4] - throw _errorClass_;
+    [1] - FormatException(_errString_)
+    [2] - _errString_
+    [3] - UnimplementedError()
+  [5] - rethrow                                                                                                                                     ===> allow callers to see the exception
 [6] - _object_instance_._object_instance_....;
       _object_instance_
       _memberAccessOperator_._object_instance_
@@ -247,7 +251,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
   [1] - try {
           _statement_
           ...
-        } on _error_ catch (e) {
+        } on _error_ catch (_errVarName_, _stakeTraceVarName_) {
           _statement_
           ...
         } finally {
