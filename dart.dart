@@ -22,7 +22,7 @@ void main(List<String> args) {
 [6] _itrable_.forEach(_function_)
 [5] - _statementControler_
   [1] - return _data_;                                                                                                                              ===> not with `void` _datatype_
-  [2] - continue;
+  [2] - continue _switchCaseName_OR_Nothing_;
   [3] - break;
   [4] - throw _errorClass_;
 [6] - _object_instance_._object_instance_....;
