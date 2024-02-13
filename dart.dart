@@ -359,7 +359,8 @@ _varDeclare_ = const _className_._functionMethod_;
           @_metadata_
           _statement_;
           ...
-          _varDeclare_ get _function_;
+          _varDeclare_ get _propertyVarName_ => _data_;
+          _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           ...
           _normalClassName_._fuctionMethod_;
           _functionMethod_;
@@ -372,7 +373,8 @@ _varDeclare_ = const _className_._functionMethod_;
           @_metadata_
           _statement_;
           ...
-          _varDeclare_ get _function_;
+          _varDeclare_ get _propertyVarName_ => _data_;
+          _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           ...
            _abstractClassName_._fuctionMethod_;
           _functionMethod_;
@@ -385,7 +387,8 @@ _varDeclare_ = const _className_._functionMethod_;
           @_metadata_
           _statement_;
           ...
-          _varDeclare_ get _function_;
+          _varDeclare_ get _propertyVarName_ => _data_;
+          _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           ...
            _sealedClassName_._fuctionMethod_;
           _functionMethod_;
