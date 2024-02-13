@@ -345,6 +345,9 @@ external _function_
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
 +----------------------+
+_varDeclare_ = _className_(_data_, ...)
+_varDeclare_ = new _className_(_data_, ...)
+
 [1] - _normalClass_
   [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
           @_metadata_
