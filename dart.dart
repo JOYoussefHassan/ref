@@ -345,39 +345,49 @@ external _function_
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
 +----------------------+
-_varDeclare_ = _className_(_data_, ...)
-_varDeclare_ = new _className_(_data_, ...)
-_varDeclare_ = const _className_(_data_, ...)
+_varDeclare_ = _className_(_data_, ...);
+_varDeclare_ = new _className_(_data_, ...);
+_varDeclare_ = const _className_(_data_, ...);
+
+_varDeclare_ = _className_._functionMethod_;
+_varDeclare_ = new _className_._functionMethod_;
+_varDeclare_ = const _className_._functionMethod_;
 
 [1] - _normalClass_
   [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
+          _normalClassName_(this._propertyVarName_, ...);
           @_metadata_
           _statement_;
           ...
           _varDeclare_ get _function_;
           ...
+          _normalClassName_._fuctionMethod_;
           _functionMethod_;
           _propertyVar_;
           ...
         }
 [2] - _abstractClass_
-  [1] - abstract class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
+  [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
+          _abstractClassName_(this._propertyVarName_, ...);
           @_metadata_
           _statement_;
           ...
           _varDeclare_ get _function_;
           ...
+           _abstractClassName_._fuctionMethod_;
           _functionMethod_;
           _propertyVar_;
           ...
         }
 [3] - _sealedClass_
   [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _sealedClassName_ {
+          _sealedClassName_(this._propertyVarName_, ...);
           @_metadata_
           _statement_;
           ...
           _varDeclare_ get _function_;
           ...
+           _sealedClassName_._fuctionMethod_;
           _functionMethod_;
           _propertyVar_;
           ...
