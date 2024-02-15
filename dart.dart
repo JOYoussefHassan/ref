@@ -364,6 +364,8 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
           _varDeclare_ get _propertyVarName_ => _data_;
           _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
+          set _propertyVarName_(_varDeclare_) => _data_;
+          set _propertyVarNameImplementClass_(_varDeclare_) => _data_;
           ...
           _normalClassName_._fuctionMethod_ : _propertyVarName_ = _value_, ...;
           _functionMethod_;
