@@ -412,6 +412,9 @@ int get hashCode => _data_;
 @_metadata_
 set contrast(_varDeclare_) {_statement_}
 
+@_metadata_
+void noSuchMethod(Invocation _varName_) {_statement_}
+
 [1] - _metadata_
   [1] - deprecated
   [2] - Deprecated(_data_)
