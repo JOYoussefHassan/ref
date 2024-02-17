@@ -357,7 +357,7 @@ _varDeclare_ = new _className_._functionMethod_;
 _varDeclare_ = const _className_._functionMethod_;
 
 [1] - _normalClass_
-  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... {
+  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... with _mixinName_, ... {
           _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
@@ -373,7 +373,7 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
         }
 [2] - _abstractClass_
-  [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... {
+  [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... with _mixinName_, ... {
           _abstractClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
@@ -387,7 +387,7 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
         }
 [3] - _sealedClass_
-  [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... {
+  [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_ implements _className_, ... with _mixinName_, ... {
           _sealedClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
@@ -400,6 +400,10 @@ _varDeclare_ = const _className_._functionMethod_;
           _propertyVar_;
           ...
         }
++----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| _statement_: _mixin_ |
++----------------------+
+
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _classControl_ |
 +-----------------------------+
