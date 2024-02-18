@@ -420,12 +420,26 @@ _varDeclare_ = const _className_._functionMethod_;
 | _statement_: _enum_ |
 +---------------------+
 [1] - _normalEnum_
-  [1] - enum _normalEnumName_ {
-          _propertyValueName_,
+  [1] - enum _normalEnumName_ implements _className_ {
+          _propertyValueName_(_childPropertyVarName_: _childPropertyValueName_, ...),
           ...;
-          final _varDeclare;
+          _normalEnumName_({
+            required this._propertyVarName_,
+            ...
+          });
+          factory _normalEnumName_({
+            required this._propertyVarName_,
+            ...
+          }) => _data_;
+          final _varDeclare_ _propertyVarName_;
+          ...
+          _functionMethod_
           ...
         }
+
+_enumName_._propertyValueName_;
+_enumName_._propertyValueName_.index;
+_enumName_.values;
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _classControl_ |
 +-----------------------------+
