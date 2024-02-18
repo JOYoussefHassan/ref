@@ -34,6 +34,7 @@ void main(List<String> args) {
       _memberAccessOperator_._object_instance_
       ...;
 [7] - Object.hash(_data_, ...)
+[8] - _cache
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _var_ (_object_instance_) |
 +----------------------------------------+
@@ -359,6 +360,7 @@ _varDeclare_ = const _className_._functionMethod_;
 [1] - _normalClass_
   [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixinName_, ... implements _className_, ... with _mixinName_, ... {
           const _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          factory _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...}) => _data_;
           @_metadata_
           _statement_;
           ...
@@ -368,6 +370,7 @@ _varDeclare_ = const _className_._functionMethod_;
           set _propertyVarNameImplementClass_(_varDeclare_) => _data_;
           ...
           _normalClassName_._fuctionMethod_ : _propertyVarName_ = _value_, ...;
+          factory _normalClassName_._fuctionMethod_ : _propertyVarName_ = _value_, ...;
           _functionMethod_;
           _propertyVar_;
           ...
