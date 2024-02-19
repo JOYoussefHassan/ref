@@ -34,6 +34,7 @@ void main(List<String> args) {
       _memberAccessOperator_._object_instance_
       ...;
 [7] - Object.hash(_data_, ...)
+[8] - _cache
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _var_ (_object_instance_) |
 +----------------------------------------+
@@ -358,7 +359,8 @@ _varDeclare_ = const _className_._functionMethod_;
 
 [1] - _normalClass_
   [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixinName_, ... implements _className_, ... with _mixinName_, ... {
-          _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          const _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          factory _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...}) => _data_;
           @_metadata_
           _statement_;
           ...
@@ -368,13 +370,14 @@ _varDeclare_ = const _className_._functionMethod_;
           set _propertyVarNameImplementClass_(_varDeclare_) => _data_;
           ...
           _normalClassName_._fuctionMethod_ : _propertyVarName_ = _value_, ...;
+          factory _normalClassName_._fuctionMethod_ : _propertyVarName_ = _value_, ...;
           _functionMethod_;
           _propertyVar_;
           ...
         }
 [2] - _abstractClass_
   [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixin_, ... implements _className_, ... with _mixinName_, ... {
-          _abstractClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          const _abstractClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
           ...
@@ -388,7 +391,7 @@ _varDeclare_ = const _className_._functionMethod_;
         }
 [3] - _sealedClass_
   [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixinName_, ... implements _className_, ... with _mixinName_, ... {
-          _sealedClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          const _sealedClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
           ...
@@ -417,10 +420,26 @@ _varDeclare_ = const _className_._functionMethod_;
 | _statement_: _enum_ |
 +---------------------+
 [1] - _normalEnum_
-  [1] - enum _normalEnumName_ {
-          _propertyValueName_,
+  [1] - enum _normalEnumName_ implements _className_ {
+          _propertyValueName_(_childPropertyVarName_: _childPropertyValueName_, ...),
+          ...;
+          _normalEnumName_({
+            required this._propertyVarName_,
+            ...
+          });
+          factory _normalEnumName_({
+            required this._propertyVarName_,
+            ...
+          }) => _data_;
+          final _varDeclare_ _propertyVarName_;
+          ...
+          _functionMethod_
           ...
         }
+
+_enumName_._propertyValueName_;
+_enumName_._propertyValueName_.index;
+_enumName_.values;
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _classControl_ |
 +-----------------------------+
