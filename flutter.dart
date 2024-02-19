@@ -22,6 +22,84 @@ void main() {
   runApp(MyApp());
 }
 
+class _appClassWidgetName_ extends _stateOfWidgetName_ {
+  ...
+  @override
+  Widget build(BuildContext _contextArgVarName_) {
+    var _appStateVarName_ = _contextArgVarName_.watch<_notifierClassName_>();
+    return _flutterAppFunction_OR_childFlutterAppClass_
+  }
+  ...
+}
+
+class _newAppClassWidgetName_ extends _stateOfWidgetName_ {
+  const _newAppClassWidgetName_({
+    Key? key,
+    required this._newAppClassWidgetArgVarName_,
+  }) : super(key: key);
+  ...
+  @override
+  Widget build(BuildContext _contextArgVarName_) {
+    return _flutterAppFunction_childFlutterAppClass_
+  }
+}
+--------------------------------------------------------------------------------
+[1] - _stateOfWidgetName_
+  [1] - StatelessWidget
+
+[2] - _flutterAppClass_
+  [1] - ChangeNotifierProvider(
+          create: (_contextArgVarName_) => _notifierClassName_(),
+          child: _childFlutterAppClass_,
+        )
+  [2] - Scaffold(
+          child: _childFlutterAppClass_,
+        )
+
+[3] - _childFlutterAppClass_
+  [1] - MaterialApp(
+          title: '_string_',
+          theme: _themeFlutterAppClass_,
+          home: _appClassWidgetName_(),
+        )
+  [2] - Text(_data_)
+  [3] - ElavatedButton(
+          _eventActionArgName_: _function_,
+          child: _childFlutterAppClass_,
+        )
+  [4] - Column(
+          children: [
+            _childFlutterAppClass_,
+            ...
+          ],
+        )
+  [5] - Padding(
+          padding: const EdgeInsets.all(_int_),
+          child: _childFlutterAppClass_,
+        )
+  [6] - Card(
+          color: _theme_.colorScheme.primary,
+          child: _childFlutterAppClass_,
+        )
+  [7] - _appStateVarName_._mehod_OR_Property_
+
+[4] - _themeFlutterAppClass_
+  [1] - ThemeData(
+          useMaterial3: _bool_,
+          colorScheme: ColorScheme.fromSeed(seedColor: _colorFlutterApp_),
+        )
+  [2] - Theme.of(_data_)
+
+[5] - _colorFlutterApp_
+  [1] - Colors._colorName_
+--------------------------------------------------------------------------------
+class _notifierClassName_ extends _notifierTypeClassName_ {                     ===> to connect state with some widget with another by `watch` and `ChangeNotifierProvider`
+  ...
+}
+--------------------------------------------------------------------------------
+[1] - _notifierTypeClassName_
+  [1] - ChangeNotifier
+--------------------------------------------------------------------------------
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -43,6 +121,11 @@ class MyApp extends StatelessWidget {
 
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
+
+  void getNext() {
+    current = WordPair.random();
+    notifyListeners();
+  }
 }
 
 class MyHomePage extends StatelessWidget {
@@ -53,8 +136,14 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('A random idea:'),
+          Text('A random AWESOME idea:'),
           Text(appState.current.asLowerCase),
+          ElevatedButton(
+            onPressed: () {
+              print('button pressed!');
+            },
+            child: Text('Next'),
+          ),
         ],
       ),
     );
