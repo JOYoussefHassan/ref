@@ -22,6 +22,8 @@ void main() {
   runApp(MyApp());
 }
 
+setState(_funtion_);                                                            ===> to change thing in `StatefulWidget`
+
 class _appClassWidgetName_ extends _stateOfWidgetName_ {
   ...
   @override
@@ -46,6 +48,7 @@ class _newAppClassWidgetName_ extends _stateOfWidgetName_ {
 --------------------------------------------------------------------------------
 [1] - _stateOfWidgetName_
   [1] - StatelessWidget
+  [2] - StatefulWidget
 
 [2] - _flutterAppClass_
   [1] - ChangeNotifierProvider(
