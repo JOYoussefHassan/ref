@@ -200,6 +200,39 @@ linter:
 | backend: rest_api - django |
 +----------------------------+
 
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------
+| widgets: _basicWidget_ |
++------------------------+
+MaterialApp(theme,title,home)                                                   ===> inside `home` add `Scaffold`
+Scaffold(appBar,body)                                                           ===> inside `appBar` add `AppBar`
+AppBar(title)
+
+CupertinoApp(theme,title,home)                                                  ===> inside `home` add `CupertinoPageScaffold`
+CupertinoPageScaffold(navigationBar,child)                                      ===> inside `navigationBar` add `CupertinoNavigationBar`
+CupertinoNavigationBar(backgroundColor,middle)
+
+[1] - Text('_data_',style)
+      DefaultTextStyle.merge(style,child)                                       ===> as `Text`
+[2] - Icon(IconData,color)                                                      ===> `IconData` as `Icons.home`
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------
+| widgets: _assetWidget_ |
++------------------------+
+[1] - Image.asset('_imagePath_',fit)
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------
+| widgets: _layoutWidget_ |
++-------------------------+
+[1] - Container(margin,padding,height,width,decoration,child)
+[2] - Row(children,mainAxisAlignment,crossAxisAlignment,mainAxisSize)           ===> `children` use `Expand` to flex edit
+[3] - Column(children,mainAxisAlignment,crossAxisAlignment,mainAxisSize)        ===> `children` use `Expand` to flex edit
+  [1] - Expand(flex,child)
+[4] - Center(child)
+[5] - SizedBox(height,width,child)
+[6] - GridView.extent()                                                         ===> pixels
+      GridView.count()                                                          ===> flexes
+[7] - ListView(scrollDirection)                                                 ===> as `Column` or `Row`
+  [1] - ListTile(leading,title)                                                 ===> `leading` is the icon
+[8] - Stack(alignment, children)                                                ===> as `position: fixed`
+[9] - Card()
 +-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | reference |
 +-----------+
