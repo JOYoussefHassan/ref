@@ -8,6 +8,9 @@ flutter _command_
   [1] - create _flutterProjectName_
   [2] - devices
   [3] - run
+  [4] - pup _command_                                                           ===> to controls in pubspec.yaml
+    [1] - upgrade
+    [2] - outdated
 
 [2] - _runApp_                                                                  ===> when app run
   [1] - r                                                                       ===> hot reload
