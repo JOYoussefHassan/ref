@@ -111,7 +111,7 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
   [1] - _testTypeOperator_
     [1] - is
     [2] - is!
-    [3] - as
+    [3] - as                                                                                                                                  ===> type casting
     [4] - case
 [6] - _data_ _assignmentOperator_ _data_
   [1] - _assignmentOperator_
