@@ -279,7 +279,7 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
     [2] - switch (_data_) {
             _relationOperator_ _exp_ ... when _bool_=> _data_,
             ...
-            _ => _data_,
+            _ => _data_,                                                                                                                          ===> the default data
           };
   [2] - _varSwitch_                                                                                                                               ===> to check _data_ has same data type or not
     [1] - switch (_data_) {
