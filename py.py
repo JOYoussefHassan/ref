@@ -225,6 +225,7 @@
 # [17] - _str not in _lst                                                                                       ===> if string not in list
 # 
 # [18] - bytearray(_lst, _unicode)                                                                              ===> to convert list if contain numbers to byetes or if string must add _unicode
+# [19] - del _lst[_index]
 # 
 # [1] - list(_data)                                                                                             ===> to convert to list, (character in string, key in dictionary, can't convert _num)
 # [2] - list._builtinFunc(_data)                                                                                ===> execute buit in function
