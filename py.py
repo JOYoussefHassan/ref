@@ -189,6 +189,7 @@
 # 
 # [35] - char(_int)                                                                                             ===> to show character according ascii code
 # [36] - ord(_char)                                                                                             ===> to show the integer of character
+# [37] - del _str[_index]
 # 
 # [1] - "_str1 %_frmt _str2 %_frmt ..." % (_data1, _data2, ...)                                                 ===> to concatenate all data types, old way
 # [2] - "_str1 {:_frmt} _str2 {:_frmt} ...".format(_data1, _data2, ...)                                         ===> to concatenate all data types, new way, :_frmt is opitional
