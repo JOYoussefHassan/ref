@@ -35,6 +35,8 @@
 #       [10] - _numIndex:_nums                                                                                  ===> to rearrangment the placeholders, for new way, without :
 #       [11] - _numIndex:f                                                                                      ===> to rearrangment the placeholders, for new way, without :
 #       [12] - _numIndex:_numf                                                                                  ===> to rearrangment the placeholders, for new way, without :
+#       [13] - 0x_num
+#       [14] - 0o_num
 # [5] - _arth
 #       [1] - +                                                                                                 ===> 1 + 1 = 2
 #       [2] - -                                                                                                 ===> 2 - 1 = 1
