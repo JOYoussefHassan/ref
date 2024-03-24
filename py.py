@@ -322,6 +322,8 @@
 #           _command
 # [3] - for _childOject, _childValue in enumerate(_object, _numStart):                                          ===> _childObject is key, _object[_childObject] and _childValue is value
 #           _command
+#       else:
+#           _command
 # [4] - with _file as _var :
 #           _command
 # [5] - def _functionName(_param1 = _default, _param2 = _default, ...) -> _dataType :                           ===> _functionName() to execute this, *_param to set the number of parameter according inputs as tuple or **_param to create
