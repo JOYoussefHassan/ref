@@ -249,6 +249,7 @@
 # [5] - len(_tpl)                                                                                               ===> to show length of tuple
 # [6] - _tpl[_index]
 # [7] - _tpl * _int
+# [8] - del _tpl[_index]
 # 
 # [1] - _var1, _var2, ... = _tpl                                                                                ===> to distribute the data in variables, and write _ to ignore variable
 # 
