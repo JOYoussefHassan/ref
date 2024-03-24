@@ -247,6 +247,7 @@
 # [3] - _tpl.count(_data)                                                                                       ===> to count _data in tuple
 # [4] - _tpl.index(_data)                                                                                       ===> to search the index of _data, output error if error syntax
 # [5] - len(_tpl)                                                                                               ===> to show length of tuple
+# [6] - _tpl[_index]
 # 
 # [1] - _var1, _var2, ... = _tpl                                                                                ===> to distribute the data in variables, and write _ to ignore variable
 # 
