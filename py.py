@@ -190,6 +190,7 @@
 # [35] - char(_int)                                                                                             ===> to show character according ascii code
 # [36] - ord(_char)                                                                                             ===> to show the integer of character
 # [37] - del _str[_index]
+# [38] - _data in _str
 # 
 # [1] - "_str1 %_frmt _str2 %_frmt ..." % (_data1, _data2, ...)                                                 ===> to concatenate all data types, old way
 # [2] - "_str1 {:_frmt} _str2 {:_frmt} ...".format(_data1, _data2, ...)                                         ===> to concatenate all data types, new way, :_frmt is opitional
@@ -227,6 +228,7 @@
 # 
 # [18] - bytearray(_lst, _unicode)                                                                              ===> to convert list if contain numbers to byetes or if string must add _unicode
 # [19] - del _lst[_index]
+# [20] - _data in _lst
 # 
 # [1] - list(_data)                                                                                             ===> to convert to list, (character in string, key in dictionary, can't convert _num)
 # [2] - list._builtinFunc(_data)                                                                                ===> execute buit in function
@@ -251,6 +253,7 @@
 # [6] - _tpl[_index]
 # [7] - _tpl * _int
 # [8] - del _tpl[_index]
+# [9] - _data in _str
 # 
 # [1] - _var1, _var2, ... = _tpl                                                                                ===> to distribute the data in variables, and write _ to ignore variable
 # 
