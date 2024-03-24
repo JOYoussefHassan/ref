@@ -319,7 +319,7 @@
 #           _command
 #       else :
 #           _command
-# [3] - for _childOject, _childValue in enumerate(_object, _numStart)                                           ===> _childObject is key, _object[_childObject] and _childValue is value
+# [3] - for _childOject, _childValue in enumerate(_object, _numStart):                                          ===> _childObject is key, _object[_childObject] and _childValue is value
 #           _command
 # [4] - with _file as _var :
 #           _command
