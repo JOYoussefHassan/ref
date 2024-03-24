@@ -283,6 +283,7 @@
 # [16] - _set.issuperset(_set)                                                                                  ===> if the elements of second set is found in first set
 # [17] - _set.issubset(_set)                                                                                    ===> if the elements of first set is found in second set
 # [18] - _set.isdisjoint(_set)                                                                                  ===> if both sets is difference in all elements
+# [19] - _data in _set
 # 
 # [19] - len(_set)                                                                                              ===> to print length of set
 # 
