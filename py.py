@@ -621,6 +621,9 @@
 #           _method1
 #           _method2
 #           ...
+#           @_propertyMethod._propertyConntroller
+#           def _propertyMethod(self, value):
+#               _command
 # 
 #       _handle = _className(_data1, _data2, ...)                                                               ===> to execute class, and must put argument if no data in this argument
 # 
