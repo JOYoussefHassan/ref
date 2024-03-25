@@ -577,7 +577,7 @@
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | OOP |
 # -------
-# [1] - class _className2(_className1, _className3) :                                                           ===> to derived the _className2 from _className1
+# [1] - class _className2(_className1, _className3, ...) :                                                      ===> to derived the _className2 from _className1, can be `Error` or `Exception`
 #           _attribute1 = _data
 #           _attribute2 = _data
 #           ...
