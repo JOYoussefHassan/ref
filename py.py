@@ -629,6 +629,9 @@
 # [8] - _handle.mro()                                                                                           ===> to show properties of this class and derived classes
 # [9] - print(_handle.__className___privateAttribute)                                                           ===> to print _privateAttribute
 # [10] - print(_handle._attribute)                                                                              ===> to print attribute
+# 
+# [11] - isinstance(_handle, _class)
+# [12] - issubclass(_handle, _class)
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | Advanced |
 # ------------
