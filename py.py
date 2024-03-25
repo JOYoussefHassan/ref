@@ -114,10 +114,11 @@
 #
 # [15] - _statementController
 #       [1] - return _data
-#       [2] - del _data
-#       [3] - pass
-#       [4] - continue
-#       [5] - break
+#       [2] - yield _data
+#       [3] - del _data
+#       [4] - pass
+#       [5] - continue
+#       [6] - break
 #
 # _var, ... = _data, ...
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -358,6 +359,13 @@
 #           await _asyncFunction                                                                                     _param can be a function (child function in _command place) and main function is called _decoratorFunction, (->) to hint
 #       @_decoratorFunction                                                                                     ===> to execute child function in decorator function
 #       _childFunction()
+#
+# [7] - try:
+#           _command
+#       except (_err1, _err2, ...):
+#           _command
+#       finally:
+#           _command
 # 
 # [6] - break                                                                                                   ===> to stop
 # [7] - continue                                                                                                ===> to continue
