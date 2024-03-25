@@ -364,7 +364,15 @@
 #           _command
 #       except (_err1, _err2, ...):
 #           _command
+#       except (_err1, _err2, ...):
+#           _command
+#       ...
+#       else:
+#           _command
 #       finally:
+#           _command
+#
+# [8] - with _file as _fileHandle:
 #           _command
 # 
 # [6] - break                                                                                                   ===> to stop
@@ -436,6 +444,17 @@
 # [2] - pip list                                                                                                ===> to show all packages installed
 # [3] - pip install _packageName = _version                                                                     ===> to install external package
 # [4] - pip install --user _packageName --upgrade                                                               ===> to update package
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# | os package |
+# --------------
+# import os
+# [1] - os.getcwd()
+# [2] - os.listdir()
+# [3] - os.mkdir(_str)
+# [4] - os.rename(_strOld, _strNew)                                                                             ===> can be used in moving file
+# [5] - os.remove(_str)                                                                                         ===> for file
+# [6] - os.rmdir(_str)
+# [7] - os.rmtree(_str)                                                                                         ===> to remove non-empty directory
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | Date package |
 # ----------------
