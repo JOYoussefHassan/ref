@@ -19,6 +19,7 @@
 #       [5] - \r                                                                                                ===> carriage return
 #       [6] - \t                                                                                                ===> tab
 #       [7] - \x_hexValue                                                                                       ===> data according hex value
+#       [8] - \v                                                                                                ===> vertical tab
 # [3] - """_data or _newLine"""                                                                                 ===> to print new line, double cout and single
 # [4] - _frmt
 #       [1] - d                                                                                                 ===> integer
@@ -72,6 +73,7 @@
 #       [4] - x                                                                                                 ===> create file, error if exist
 #       [5] - rb                                                                                                ===> open file for read bytes, error if not exist
 #       [5] - wb                                                                                                ===> open file for write bytes, error if not exist
+#       [6] - +                                                                                                 ===> to read and write
 # [10] - _fileData
 #       [1] - name                                                                                              ===> 
 #       [2] - mode                                                                                              ===> 
@@ -109,6 +111,13 @@
 #       [1] - name                                                                                              ===> public
 #       [2] - _name                                                                                             ===> protected but could print it
 #       [3] - __name                                                                                            ===> private and couldn't print it
+#
+# [15] - _statementController
+#       [1] - return _data
+#       [2] - del _data
+#       [3] - pass
+#       [4] - continue
+#       [5] - break
 #
 # _var, ... = _data, ...
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -305,6 +314,8 @@
 # [9] - _dct.popitem()                                                                                          ===> to get the last kay & value from dictionary
 # [10] - _dct.items()                                                                                           ===> to convert each key & value into tuple
 # [11] - dict.fromkeys(_key, _value)                                                                            ===> to create dictionary, key can be tuple
+#
+# [12] - _dct
 # 
 # [1] - dict(_data)                                                                                             ===> to convert to dictonary, (tuple contain nested tuple, list contain nested list, can't convert _num)
 # [2] - dict._builtinFunc(_data)                                                                                ===> execute built in function
