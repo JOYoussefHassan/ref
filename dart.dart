@@ -5,6 +5,7 @@ void main(List<String> args) {
 /*
 dart run _path_.dart
 dart --enable-asserts _path_.dart
+dart pub get                                                                                        ===> to get all dependacies
 */
 /*
 void main(List<String> args) {
