@@ -497,9 +497,12 @@ extension _className_ on _libraryClassName_ {
 | _library_: dart:convert |                                                                                                                          ===> to deal with JSON (Map)
 +-------------------------+
 [
-  {'prameter': 'value'},
+  {'_strPrameter_': _value_},
   ...
 ]
+{
+  '_strPrameter_': _value_
+}
 
 [1] - jsonDecode('_strJson_')
 [2] - jsonEncode(_json_)
