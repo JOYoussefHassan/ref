@@ -77,7 +77,7 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
     [16] - (_datatype_ _varName_, ...)                                                                                                              ===> _record_, (1, a: 2, ...)
           ({_datatype_ _varName_, ...})                                                                                                             ===> ({int a, String b, ...}), `_record_.$_intIndex_` or `_record_._varName_
           (_varName_: _varDeclare_, ...)
-    [17] - _genericDatatype_                                                                                                                        ===> in class
+    [17] - _genericDatatype_                                                                                                                        ===> in class as <T>
   [4] - void
   [5] - static
         in class only to be used in class only
