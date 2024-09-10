@@ -384,6 +384,7 @@ _varDeclare_ = const _className_._functionMethod_;
           @_metadata_
           _statement_;
           ...
+          String greet(...) => _data_;                                                                                 ===> when call class will see that output
           _varDeclare_ get _propertyVarName_ => _data_;
           _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           ...
@@ -398,6 +399,7 @@ _varDeclare_ = const _className_._functionMethod_;
           @_metadata_
           _statement_;
           ...
+          String greet(...) => _data_;                                                                                 ===> when call class will see that output
           _varDeclare_ get _propertyVarName_ => _data_;
           _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           ...
