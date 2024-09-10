@@ -406,7 +406,8 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
         }
 [4] - _classEditor_
-  [1] - @immutable                                                                                                                                                                                        ===> whose state cannot be modified after creation
+  [1] - @immutable                                                                                                                                                                                        ===> whose state cannot be modified after creation and can be before class
+  [2] - @override
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _mixin_ |
 +----------------------+
