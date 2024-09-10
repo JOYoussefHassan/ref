@@ -80,7 +80,7 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
     [17] - _genericDatatype_                                                                                                                        ===> in class as <T> to allow pass of any data
   [4] - void
   [5] - static
-        in class only to be used in class only
+        in class only can be accessed without creating instance class (new class inside variable)
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
 +--------------------+
