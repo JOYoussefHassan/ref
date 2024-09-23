@@ -214,6 +214,29 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
 +-------------------------------+
 [1] - _map_.containsKey('_key_');
 [2] - _map_.isEmpty
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| _statement_: _datatype_ (Stream) |
++----------------------------------+
+await for (_varDeclare_ _varName_ in _stream_) {                                                                                                    ===> to access in stream
+  ...
+}
+
+import 'dart:async';
+StreamSubscription<int> subscription = _stream_.listen(                                                                                             ===> when attached to `sync function` or void
+  (event) {
+    ...
+      subscription.pause(...);                                                                                                                      ===> to pause then resume
+  },
+);
+
+[1] - _stream_.take(_int_)
+[2] - _stream_.forEach(...)
+[3] - _stream_.map((_varDeclare_ _varName_) => ...)
+[4] - _stream_.expand((_varDeclare_ _varName_) => ...)                                                                                              ===> duplicate list
+[5] - _stream_.where((_varDeclare_ _varName_) => ...)
+[6] - _steam_.lastWhere((x) => ...)
+[7] - _stream_.listen(...)
+[8] - _stream_.handleError((e) => log(e))
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _controlFlow_ |
 +----------------------------+
@@ -247,6 +270,9 @@ _varDeclare_ {_varName_, ...} = {_data_, ...}
             ...
           }
     [4] - for (_varDeclare_ _varName_ = _intStart_; _conditionEnd_; _step_) _statement_;
+    [5] - await for (...) {
+            ...
+          }
   [2] - _whileLoop_
     [1] - while (_conditionEnd_) {
             _statement_
@@ -340,7 +366,7 @@ external _function_
 
           _syncFunctionName_(_dataPram_, ..., _varName_: _data_, ...);
 [5] - _asyncFunction_
-  [1] - Stream<_datatype_> _syncFunctionName_(_pram_, ..., {required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) async* {
+  [1] - Stream<_datatype_> _asyncFunctionName_(_pram_, ..., {required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) async* {
             _statement_
             ...
             _statementControler_;
@@ -348,6 +374,20 @@ external _function_
           }
 
           _syncFunctionName_(_dataPram_, ..., _varName_: _data_, ...);
+  [2] - Stream<_datatype_> _syncFunctionName_(_pram_, ..., {required _varDeclare_ _varName_ = _data_, [required _varDeclare_ _varName_ = _data_, ...], ...}) {            ===> import 'dart:async';
+          StreamController controller StreamController<_datatype_>(
+            onListen: _function_,
+            onPause: _function_,
+            onResume: _function_,
+            onCancel: _function_,
+          )._command_;
+            [1] - add(_data_)
+            [2] - close()
+          _statement_
+            ...
+          _statementControler_;
+          return controller.stream;
+        }
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _class_ |
 +----------------------+
