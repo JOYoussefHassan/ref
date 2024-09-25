@@ -394,6 +394,8 @@ external _function_
           )._command_;
             [1] - add(_data_)
             [2] - close()
+            [3] - sink.add(_data_)
+            [4] - stream
           _statement_
             ...
           _statementControler_;
