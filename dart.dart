@@ -82,7 +82,7 @@ _varDeclare_ (_varName_, ...) = (_data_, ...);                                  
   [5] - static
         in class only can be accessed without creating instance class (new class inside variable), and edit class data
     [18] - Stream
-           BehaviorSubject                                                                                                                          ===> import 'package:rxdart/rxdart.dart';
+           BehaviorSubject                                                                                                                          ===> import 'package:rxdart/rxdart.dart'; and stores the initial and latest value
     [19] - Future
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | _statement_: _exp_ |
@@ -399,6 +399,7 @@ external _function_
             [2] - close()
             [3] - sink.add(_data_)
             [4] - stream
+            [5] - close
           _statement_
             ...
           _statementControler_;
