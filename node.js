@@ -34,6 +34,8 @@ http.createServer(function (req, res) {
 +------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | module: built in |
 +------------------+
+| module (no need to imported)                                                             ===> to print module data
++------------------------------------------------------------------------------------------
 | http
 --- http.createServer(function (req, res) {...}).listen(_portNumber);
     --- res.writeHead(_statusCode_, {'Content-Type': 'text/_fileType_'});
