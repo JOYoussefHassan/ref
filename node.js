@@ -119,9 +119,28 @@ var mysqlConnection = mysql.createConnection({
       ...
       throw error;
     });
---- mysqlConnection.query('_sqlQuery', _valuesList_, function (error, result, fields) {    ===> as [['John', 'Highway 71'], ...] to be replace with vars of sql query or `?`, fields is the each column properties
+--- mysqlConnection.query('_sqlQuery_', _valuesList_, function (error, result, fields) {   ===> as [['John', 'Highway 71'], ...] to be replace with vars of sql query or `?`, fields is the each column properties
     --- result.affectedRows
       ...
       throw error;
     });
++------------------------------------------------------------------------------------------
+| sqlite3
+const sqlite3 = require('sqlite3').verbose();
+const sqlite3Database = new sqlite3.Database('_filePath_.db');
+--- sqlite3Database.map('_sqlQuery', function () {...});
+--- sqlite3Database.exec('_sqlQuery', function () {...});
+--- sqlite3Database.run('_sqlQuery', _valuesList_, function () {...});
+--- sqlite3Database.get('_sqlQuery', _valuesList_, function (error, row) {...});
+--- sqlite3Database.all('_sqlQuery', _valuesList_, function (error, rows) {...});
+--- sqlite3Database.each('_sqlQuery', _valuesList_, function (error, row) {...});
+const sqlite3Statement = sqlite3Database.run('_sqlQuery', _valuesList_, function () {...});
+--- sqlite3Statement.reset(function () {...});
+--- sqlite3Statement.finalize(function () {...});
+--- sqlite3Statement.run(_valuesList_, function () {...});
+--- sqlite3Statement.get(_valuesList_, function () {...});
+--- sqlite3Statement.all(_valuesList_, function () {...});
+--- sqlite3Statement.each(_valuesList_, function () {...});
+--- sqlite3Statement.bind(_valuesList_, function () {...});
+sqlite3Database.close();
 */
