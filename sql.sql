@@ -28,6 +28,7 @@ try {
 _datatype
     [1] - CHAR(_intSize)                                                                                            ===> The size parameter specifies the column length in characters - can be from 0 to 255
     [2] - VARCHAR(_intSize)                                                                                         ===> The size parameter specifies the column length in characters - can be from 0 to 65535
+    [3] - TEXT
     
 */
 /*
