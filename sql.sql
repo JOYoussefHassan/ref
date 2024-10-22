@@ -212,3 +212,6 @@ _datatype
     [] - DROP INDEX `_name`;
     [] - DROP PRIMARY KEY;
 */
+/*
+https://www.tutorialspoint.com/sqlite (for sqlite3)
+*/
