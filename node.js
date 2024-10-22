@@ -25,6 +25,27 @@ http.createServer(function (req, res) {
 +-------------------+
 --- var _moduleVarName_ = require('_moduleName_');
 --- var _customModuleVarName_ = require('_modulePath_');
+--- export { _propertyORMethodName_ as _propertyORMethodNewName_, ... };
+    import _dataImported_ from _module_ with { _importAttribute_: '_data_', ... };
+      --- _dataImported_: (
+            { _propertyORMethodName_ as _propertyORMethodNewName_, ... },
+            _propertyORMethodName_,
+            *
+          )
+      --- _module_: (
+            '_modulePah_.mjs?_attributeName_=_value_&...',
+            '_modulePah_.cjs?_attributeName_=_value_&...',
+            '_jsonPath_.json', '_packageName_:_moduleName_,_statement_;'
+          )
+          --- _packageName_: (node, data)
+      --- _importAttribute_: (type: 'json')
+    await import(_module_, { with: { _importAttribute_: '_data_' } });
+--- import._importData_
+    --- meta
+    --- meta.dirname
+    --- meta.filename
+    --- meta.url
+    --- meta.resolve('_anyFilePath_')
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | module: create |
 +----------------+
