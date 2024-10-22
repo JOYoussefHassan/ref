@@ -149,6 +149,7 @@ var mysqlConnection = mysql.createConnection({
 | sqlite3
 const sqlite3 = require('sqlite3').verbose();
 const sqlite3Database = new sqlite3.Database('_filePath_.db');
+const sqlite3Database = new sqlite3.Database(':memory:');                                  ===> to store in ram
 --- sqlite3Database.map('_sqlQuery_', function () {...});
 --- sqlite3Database.exec('_sqlQuery_', function () {...});
 --- sqlite3Database.run('_sqlQuery_', _valuesList_, function () {...});
