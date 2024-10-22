@@ -149,12 +149,12 @@ var mysqlConnection = mysql.createConnection({
 | sqlite3
 const sqlite3 = require('sqlite3').verbose();
 const sqlite3Database = new sqlite3.Database('_filePath_.db');
---- sqlite3Database.map('_sqlQuery', function () {...});
---- sqlite3Database.exec('_sqlQuery', function () {...});
---- sqlite3Database.run('_sqlQuery', _valuesList_, function () {...});
---- sqlite3Database.get('_sqlQuery', _valuesList_, function (error, row) {...});
---- sqlite3Database.all('_sqlQuery', _valuesList_, function (error, rows) {...});
---- sqlite3Database.each('_sqlQuery', _valuesList_, function (error, row) {...});
+--- sqlite3Database.map('_sqlQuery_', function () {...});
+--- sqlite3Database.exec('_sqlQuery_', function () {...});
+--- sqlite3Database.run('_sqlQuery_', _valuesList_, function () {...});
+--- sqlite3Database.get('_sqlQuery_', _valuesList_, function (error, row) {...});
+--- sqlite3Database.all('_sqlQuery_', _valuesList_, function (error, rows) {...});
+--- sqlite3Database.each('_sqlQuery_', _valuesList_, function (error, row) {...});
 const sqlite3Statement = sqlite3Database.run('_sqlQuery', _valuesList_, function () {...});
 --- sqlite3Statement.reset(function () {...});
 --- sqlite3Statement.finalize(function () {...});
