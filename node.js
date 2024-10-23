@@ -166,7 +166,7 @@ sqlite3Database.serialize(() => {
   --- sqlite3Database.get('_sqlQuery_', _valuesList_, function (error, row) {...});
   --- sqlite3Database.all('_sqlQuery_', _valuesList_, function (error, rows) {...});
   --- sqlite3Database.each('_sqlQuery_', _valuesList_, function (error, row) {...});
-  const sqlite3Statement = sqlite3Database.run('_sqlQuery', _valuesList_, function () {...});
+  const sqlite3Statement = sqlite3Database.prepare('_sqlQuery', _valuesList_, function () {...});
   --- sqlite3Statement.reset(function () {...});
   --- sqlite3Statement.finalize(function () {...});
   --- sqlite3Statement.run(_valuesList_, function () {...});
