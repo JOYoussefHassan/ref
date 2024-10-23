@@ -11,6 +11,7 @@ http.createServer(function (req, res) {
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: npm |
 +---------------+
+npm init
 npm install _packageName_@version
 npm install -g _packageName_@version
 npm update -g _packageName_
@@ -29,10 +30,10 @@ http.createServer(function (req, res) {
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | module: including |
 +-------------------+
---- var _moduleVarName_ = require('_moduleName_');
+--- var _moduleVarName_ = require('_moduleName_');                                                                    ===> cjs, js (sync)
 --- var _customModuleVarName_ = require('_modulePath_');
 --- export { _propertyORMethodName_ as _propertyORMethodNewName_, ... };
-    import _dataImported_ from _module_ with { _importAttribute_: '_data_', ... };
+    import _dataImported_ from _module_ with { _importAttribute_: '_data_', ... };                                    ===> mjs (async)
       --- _dataImported_: (
             { _propertyORMethodName_ as _propertyORMethodNewName_, ... },
             _propertyORMethodName_,
