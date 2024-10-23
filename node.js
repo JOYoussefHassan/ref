@@ -69,6 +69,7 @@ http.createServer(function (req, res) {
     --- res.writeHead(_statusCode_, {'Content-Type': '_fileType_'});
         --- _fileType_: text/html, application/json, text/plain
     --- res.write(_data_);
+        --- _data_: _data_, JSON.stringify(_json_)
     --- res.end('_data_');
 +------------------------------------------------------------------------------------------
 | url
