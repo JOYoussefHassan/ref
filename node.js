@@ -66,7 +66,8 @@ http.createServer(function (req, res) {
 +------------------------------------------------------------------------------------------
 | http
 --- http.createServer(function (req, res) {...}).listen(_portNumber);
-    --- res.writeHead(_statusCode_, {'Content-Type': 'text/_fileType_'});
+    --- res.writeHead(_statusCode_, {'Content-Type': '_fileType_'});
+        --- _fileType_: text/html, application/json
     --- res.write(_data_);
     --- res.end('_data_');
 +------------------------------------------------------------------------------------------
