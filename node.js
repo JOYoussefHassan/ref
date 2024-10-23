@@ -176,4 +176,6 @@ sqlite3Database.serialize(() => {
   --- sqlite3Statement.bind(_valuesList_, function () {...});
 });
 sqlite3Database.close();
+
+https://www.tutorialspoint.com/sqlite
 */
