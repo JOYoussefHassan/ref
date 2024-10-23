@@ -13,6 +13,7 @@ http.createServer(function (req, res) {
 +---------------+
 npm install _packageName_@version
 npm install -g _packageName_@version
+npm update -g _packageName_
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: node |
 +----------------+
