@@ -30,7 +30,8 @@ http.createServer(function (req, res) {
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | module: including |
 +-------------------+
---- var _moduleVarName_ = require('_moduleName_');                                                                    ===> cjs, js (sync)
+--- module.exports = _propertyORMethodName_
+    var _moduleVarName_ = require('_moduleName_');                                                                    ===> cjs, js (sync)
 --- var _customModuleVarName_ = require('_modulePath_');
 --- export { _propertyORMethodName_ as _propertyORMethodNewName_, ... };
     import _dataImported_ from _module_ with { _importAttribute_: '_data_', ... };                                    ===> mjs (async)
