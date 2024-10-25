@@ -63,6 +63,11 @@ flutter:
       width: _double_,
       child: _widget_,
     )
+--- DecoratedBox(
+      decoration: _BoxDecoration_,
+      position: _DecorationPosition_,
+      child: _widget_,
+    )
 --- Center(
       key: _key_,
       child: _widget_,
@@ -139,6 +144,7 @@ flutter:
 
 --- Stack(
       key: _key_,
+      fit: _StackFit_,
       alignment: _Alignment,
       children: [_widget_, ...],
     )
@@ -151,6 +157,9 @@ flutter:
     )
 --- SizedBox.expand(
       key: _key_,
+      child: _widget_,
+    )
+--- IntrinsicHeight(
       child: _widget_,
     )
 
@@ -176,6 +185,11 @@ flutter:
 --- ListView(
       key: _key_,
       scrollDirection: _Axis_,
+      reverse: _bool_,
+      shrinkWrap: _bool_,
+      addAutomaticKeepAlives: _bool_,                                                                           ===> to enable the animation when end of scroll
+      cacheExtent: _double_,                                                                                    ===> to enable the animation when end of scroll
+      physics: _ScrollPhysics_,
       children: [_widget_, ...],
     )
 --- ListView.builder(
@@ -183,10 +197,67 @@ flutter:
       itemCount: _int_,
       itemBuilder: (context, index) => _widget_,
     )
+--- ListView.custom(
+      childrenDelegate: _SliverChildDelegate_,                                                                  ===> _SliverChildDelegate_((context, index) => _widget_)
+    )
+--- Listiew.separated(
+      itemCount: _int_,
+      itemBuilder: (context, index) => _widget_,
+      separatorBuilder: (context, index) => _widget_,
+    )
+--- Devider()
 --- ListTile(
       key: _key_,
       title: _widgetText_,
       subtitle: _widgetText_,
       leading: _widgetIcon_,
     )
+
+--- LayoutBuilder(
+      key: _key_,
+      builder: (context, constraints) => _widget_,
+    )
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
+| widget: _widgetScroll_ |
++------------------------+
+--- Scrollbar(
+      isAlwaysShown: _bool_,
+      ShowTrackHover: _bool_,
+      child: _widget_,
+    )
+--- SingleChildScrollView(
+      controller: _scrollController_,
+      child: _widget_,
+    )
+--- DragableScrollableSheet(                                                                                        ===> to append scroll widget
+      initialChildSize: _double_,
+      minChildSize: _double_,
+      maxChildSize: _double_,
+      builder: (context, scrollController) => _widget_,
+    )
+--- ListWheelScrollView(
+      diameterRatio: _double_,
+      offAxixFraction: _double_,
+      useMagnifier: _bool_,
+      magnification: _double_,
+      itemExtent: _int_,
+      children: [_widget_, ...],
+    )
+--- CustomScrollView(
+      slivers: [...],
+      children: [
+        SliverList(
+          delegate: _SliverChildDelegate_,
+        ),
+        ...
+      ],
+    )
+--- SliverList(
+      childCount: _int_,
+      delegate: _SliverChildDelegate_,
+    )
+
+
+--- _SliverChildDelegate_: SliverChildListDelegate, SliverChildBuilderDelegate
+--- _scrollController_: ScrollController()
 */
