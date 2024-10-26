@@ -8,6 +8,20 @@ http.createServer(function (req, res) {
 /*
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
+--- error types
+    EACCES     - Permission denied
+    EADDRINUSE - Address already in use
+    ECONNRESET - Connection reset by peer
+    EEXIST     - File exists
+    EISDIR     - Is a directory
+    EMFILE     - Too many open files in system
+    ENOENT     - No such file or directory
+    ENOTDIR    - Not a directory
+    ENOTEMPTY  - Directory not empty
+    ENOTFOUND  - DNS lookup failed
+    EPERM      - Operation not permitted
+    EPIPE      - Broken Pipe
+    ETIMEDOUT  - Operation timed out
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: npm |
 +---------------+
