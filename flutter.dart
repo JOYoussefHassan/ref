@@ -5,6 +5,10 @@
 name: _appName_
 flutter:
   uses-material-design: _bool_                                                                                      ===> default is `true`
++---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
+| widget controller: _widgetController_ |
++---------------------------------------+
+--- ScrollController()
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
 +--------------------------+
@@ -258,7 +262,7 @@ flutter:
       offAxixFraction: _double_,
       useMagnifier: _bool_,
       magnification: _double_,
-      itemExtent: _int_,
+      itemExtent: _double_,
       children: [_widget_, ...],
     )
 --- CustomScrollView(
