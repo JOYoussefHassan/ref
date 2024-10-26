@@ -246,9 +246,7 @@ flutter:
 --- CustomScrollView(
       slivers: [...],
       children: [
-        SliverList(
-          delegate: _SliverChildDelegate_,
-        ),
+        _widgetSliverList_,
         ...
       ],
     )
