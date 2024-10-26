@@ -39,11 +39,15 @@ class MyFlowDelegate extends FlowDelegate {
     return _bool_;
   }
 }
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------
-| widget context getter data: _widgetGetter |
-+-------------------------------------------+
---- Theme.of(context);
---- Scrollable..of(context);
++-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------
+| widget context getter data: _widgetControllerContext_ |
++-------------------------------------------------------+
+--- Theme
+--- Scrollable
+--- MediaQuery
+--- DeviceOrientation
+--- ui.FlutterView.display
+--- showDialog(context: context, builder: (context) => _widgetDialog_)
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -65,13 +69,21 @@ class MyFlowDelegate extends FlowDelegate {
       key: _key_,
       theme: _ThemeData_,
       title: '_data_',
-      home: Scaffold(
+      home: SafeArea(
         key: _key_,
-        appBar: AppBar(
+        top: _bool_,
+        botom: _bool_,
+        right: _bool_,
+        left: _bool_,
+        child: Scaffold(
           key: _key_,
-          title: _widgetText_,
+          appBar: AppBar(
+            key: _key_,
+            title: _widgetText_,
+          ),
+          bottomNavigationBar: _widgetNavigationBar_,
+          body: _widget_,
         ),
-        body: _widget_,
       ),
     )
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------
@@ -81,13 +93,20 @@ class MyFlowDelegate extends FlowDelegate {
       key: _key_,
       theme: _CupertinoThemeData_,
       title: '_data_',
-      home: CupertinoPageScaffold(
+      home: SafeArea(
         key: _key_,
-        navigationBar: CupertinoNavigationBar(
+        top: _bool_,
+        botom: _bool_,
+        right: _bool_,
+        left: _bool_,
+        child: CupertinoNavigationBar(
+          key: _key_,
+          navigationBar: CupertinoNavigationBar(
           key: _key_,
           middle: _widgetText_,
         ),
-        body: _widget_,
+          body: _widget_,
+        ),
       ),
     )
 +-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -226,6 +245,13 @@ class MyFlowDelegate extends FlowDelegate {
       crossAxisCount: _int_,
       children: [_widget_, ...],
     )
+--- GridView.builder(
+      gridDelegate: _SliverGridDelegate_,
+      itemBuilder: (context, index) => _widget_,
+    )
+
+--- Dialog()                                                                                                    ===> full screen dialog
+--- Dialog.fullscreen()
 
 --- ListView(
       key: _key_,
@@ -284,6 +310,9 @@ class MyFlowDelegate extends FlowDelegate {
       key: _key_,
       builder: (context, constraints) => _widget_,
     )
+
+
+--- SliverGridDelegate: SliverGridDelegateWithFixedCrossAxisCount, SliverGridDelegateWithMaxCrossAxisExtent
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
 | widget: _widgetScroll_ |
 +------------------------+
@@ -350,7 +379,7 @@ class MyFlowDelegate extends FlowDelegate {
         ...
       ],
     )
---- FLow(
+--- FLow(                                                                                                      ===> fixed position widget
       delegate: _flowDelegateName_(...),
       children: [
         _widget_,
@@ -361,4 +390,29 @@ class MyFlowDelegate extends FlowDelegate {
 
 --- _SliverChildDelegate_: SliverChildListDelegate, SliverChildBuilderDelegate
 --- _scrollController_: ScrollController()
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------
+| widget adaptive design: _widgetDesign_ |
++----------------------------------------+
+--- NavigationBar(
+      selectedIndex: _int_,
+      onDestinationSelected: (index) => ...,
+      destinations: [
+        NavigationDestination(
+          icon: _widgetIcon_,
+          label: '_data_',
+        ),
+        ...
+      ],
+    )
+--- NavigationRail(
+      selectedIndex: _int_,
+      onDestinationSelected: (index) => ...,
+      destinations: [
+        NavigationRailDestination(
+          icon: _widgetIcon_,
+          label: '_data_',
+        ),
+        ...
+      ],
+    )
 */
