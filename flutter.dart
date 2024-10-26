@@ -5,6 +5,45 @@
 name: _appName_
 flutter:
   uses-material-design: _bool_                                                                                      ===> default is `true`
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------
+| custom classes: _flowDelegate_ |
++--------------------------------+
+class MyFlowDelegate extends FlowDelegate {
+  const MyFlowDelegate({
+    this.attribute = _valueDefault_,
+    ...
+    required this.attribute,
+    ...
+  });
+
+  @override
+  void paintChildren(FlowPaintingContext context) {
+    context.childCount;
+    ...
+    context.paintChild(_intChildIndex_, transform: Matrix4.identity());
+    context.paintChild(_intChildIndex_, transform: Matrix4.translationValues(50, 50, 0));
+    ...
+  }
+
+  @override
+  bool shouldRelayout(covariant FlowDelegate oldDelegate) {
+    oldDelegate.attribute;
+    ...
+    return _bool_;
+  };
+
+  @override
+  bool shouldRepaint(covariant FlowDelegate oldDelegate) {
+    oldDelegate.attribute;
+    ...
+    return _bool_;
+  }
+}
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------
+| widget context getter data: _widgetGetter |
++-------------------------------------------+
+--- Theme.of(context);
+--- Scrollable..of(context);
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -18,6 +57,7 @@ flutter:
 --- ValueKey(
       _data_,
     )
+--- GlobalKey(debugLabel: '_data_')
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------
 | start widget: _widgetMaterial_ |
 +--------------------------------+
@@ -68,6 +108,7 @@ flutter:
       child: _widget_,
     )
 --- DecoratedBox(
+      key: _key_,
       decoration: _BoxDecoration_,
       position: _DecorationPosition_,
       child: _widget_,
@@ -208,6 +249,7 @@ flutter:
       itemBuilder: (context, index) => _widget_,
     )
 --- ListView.custom(
+      key: _key_,
       scrollDirection: _Axis_,
       reverse: _bool_,
       shrinkWrap: _bool_,
@@ -217,6 +259,7 @@ flutter:
       childrenDelegate: _SliverChildDelegate_,                                                                  ===> _SliverChildDelegate_((context, index) => _widget_)
     )
 --- Listiew.separated(
+      key: _key_,
       scrollDirection: _Axis_,
       reverse: _bool_,
       shrinkWrap: _bool_,
@@ -227,7 +270,9 @@ flutter:
       itemBuilder: (context, index) => _widget_,
       separatorBuilder: (context, index) => _widget_,
     )
---- Devider()
+--- Devider(
+      key: _key_,
+    )
 --- ListTile(
       key: _key_,
       title: _widgetText_,
@@ -243,21 +288,25 @@ flutter:
 | widget: _widgetScroll_ |
 +------------------------+
 --- Scrollbar(
+      key: _key_,
       isAlwaysShown: _bool_,
       ShowTrackHover: _bool_,
       child: _widget_,
     )
 --- SingleChildScrollView(
+      key: _key_,
       controller: _scrollController_,
       child: _widget_,
     )
 --- DragableScrollableSheet(                                                                                        ===> to append scroll widget
+      key: _key_,
       initialChildSize: _double_,
       minChildSize: _double_,
       maxChildSize: _double_,
       builder: (context, scrollController) => _widget_,
     )
 --- ListWheelScrollView(
+      key: _key_,
       diameterRatio: _double_,
       offAxixFraction: _double_,
       useMagnifier: _bool_,
@@ -266,14 +315,47 @@ flutter:
       children: [_widget_, ...],
     )
 --- CustomScrollView(
+      key: _key_,
       slivers: [
         _widgetSliverList_,
         ...
       ],
     )
 --- SliverList(
+      key: _key_,
       childCount: _int_,
       delegate: _SliverChildDelegate_,
+    )
+--- SliverAppBar(
+      key: _key_,
+      title: _widget_,
+      floating: _bool_,
+      expandedHeight: _double_,                                                                                          ===> to change widget background by `FlexableSpaceBar`
+      collapsedHeight: _double_,
+      flexableSpace: FlexableSpaceBar(
+        background: _widget_,
+      ),
+    )
+--- SliverGrid.count(
+      childAxisCount: _int_,
+      children: [
+        _widget_,
+        ...
+      ],
+    )
+--- SliverGrid.extent(
+      childAxisExtent: _double_,
+      children: [
+        _widget_,
+        ...
+      ],
+    )
+--- FLow(
+      delegate: _flowDelegateName_(...),
+      children: [
+        _widget_,
+        ...
+      ],
     )
 
 
