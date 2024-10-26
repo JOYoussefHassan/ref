@@ -194,13 +194,31 @@ flutter:
     )
 --- ListView.builder(
       key: _key_,
+      scrollDirection: _Axis_,
+      reverse: _bool_,
+      shrinkWrap: _bool_,
+      addAutomaticKeepAlives: _bool_,                                                                           ===> to enable the animation when end of scroll
+      cacheExtent: _double_,                                                                                    ===> to enable the animation when end of scroll
+      physics: _ScrollPhysics_,
       itemCount: _int_,
       itemBuilder: (context, index) => _widget_,
     )
 --- ListView.custom(
+      scrollDirection: _Axis_,
+      reverse: _bool_,
+      shrinkWrap: _bool_,
+      addAutomaticKeepAlives: _bool_,                                                                           ===> to enable the animation when end of scroll
+      cacheExtent: _double_,                                                                                    ===> to enable the animation when end of scroll
+      physics: _ScrollPhysics_,
       childrenDelegate: _SliverChildDelegate_,                                                                  ===> _SliverChildDelegate_((context, index) => _widget_)
     )
 --- Listiew.separated(
+      scrollDirection: _Axis_,
+      reverse: _bool_,
+      shrinkWrap: _bool_,
+      addAutomaticKeepAlives: _bool_,                                                                           ===> to enable the animation when end of scroll
+      cacheExtent: _double_,                                                                                    ===> to enable the animation when end of scroll
+      physics: _ScrollPhysics_,
       itemCount: _int_,
       itemBuilder: (context, index) => _widget_,
       separatorBuilder: (context, index) => _widget_,
