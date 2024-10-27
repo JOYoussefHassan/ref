@@ -124,8 +124,8 @@ http.createServer(function (req, res) {
 +------------------------------------------------------------------------------------------
 | events
 var eventEmitter = new events.EventEmitter();
---- eventEmitter.on('_eventName_', function () {...});
---- eventEmitter.emit('_eventName_');                                                      ===> to run event
+--- eventEmitter.on('_eventName_', function (_param_, ...) {...});
+--- eventEmitter.emit('_eventName_', _valueParam_);                                                      ===> to run event
 +------------------------------------------------------------------------------------------
 | formidable
 var form = new formidable.IncomingForm();                                                  ===> to accept post data
