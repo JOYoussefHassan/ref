@@ -46,7 +46,7 @@ class MyFlowDelegate extends FlowDelegate {
 --- Scrollable
 --- MediaQuery
 --- DeviceOrientation
---- ui.FlutterView.display
+--- View.maybeOf(context)                                                                                    ===> get display data
 --- showDialog(context: context, builder: (context) => _widgetDialog_)
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
