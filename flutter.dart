@@ -415,4 +415,19 @@ class MyFlowDelegate extends FlowDelegate {
         ...
       ],
     )
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| widget input: _widgetInput_ |
++-----------------------------+
+--- Listener(
+      onPointerSignal: (event) => ...,
+      child: _widget_,
+    )
+--- FocusableActionDetector(
+      onFocusChange: (value) => ...,
+      actions: <Type, Action<Intent>>{
+        _action_Intent: _action_Action<Intent>(...),
+        ...
+      },
+      child: _widget_,
+    )
 */
