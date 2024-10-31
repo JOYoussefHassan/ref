@@ -9,7 +9,34 @@ flutter:
 | custom classes: _intent_ |
 +--------------------------+
 class _intentName_Intent extends Intent {
-  const _intentName_Intent();
+  const _intentName_Intent(...);
+}
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
+| custom classes: _action_ |
++--------------------------+
+class _actionName_Action extends Action<_intentName_Intent> {
+  _intentName_Intent(...);
+
+  @override
+  Object? invoke(covariant _intentName_Intent intent) {
+    return _Object_;
+  }
+}
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------
+| custom classes: _dispatcher_ |
++------------------------------+
+class _dispatcherName_Dispatcher extends ActionDispatcher {
+  const _dispatcherName_Dispatcher(...);
+
+  @override
+  Object? invokeAction(covariant Action<Intent> action, covariant Intent intent, [BuildContext? context]) {
+    return _Object_;
+  }
+
+  @override
+  (bool, Object?) invokeActionIfEnabled(covariant Action<Intent> action, covariant Intent intent, [BuildContext? context]) {
+    return (_bool_, _Object_);
+  }
 }
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------
 | custom classes: _flowDelegate_ |
@@ -62,8 +89,13 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
         onPressed: () => ...,
       ),
     ))
+--- KeyEventResult
+--- Focus.of(context)
 --- formKeyController.currentState!.validate()
---- Actions.invoke(context, _intentName_Intent(...))
+--- Actions.of(context).invokeAction(Actions.maybeFind<_intentName_Intent>(context), _intentName_Intent(...))
+    Actions.maybeInvoke<_intentName_Intent>(context, _intentName_Intent(...))
+    Actions.handler<_intentName_Intent>(context, _intentName_Intent(...))
+    Actions.invoke(context, _intentName_Intent(...))
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -537,12 +569,14 @@ enum _segmentEnumName_ { _enumVarName_, .... }
       child: _widget_,
     )
 --- Actions(                                                                             ===> to activate action
+      dispatcher: _dispatcherName_Dispatcher(...),
       actions: <Type, Action<Intent>>{
         _intentName_Intent: _actionName_Action<Intent>(...),
         ...
       },
       child: _widget_,
     )
+https://docs.flutter.dev/ui/interactivity/actions-and-shortcuts#the-shortcutmanager
 
 _form_
 --- Form(
