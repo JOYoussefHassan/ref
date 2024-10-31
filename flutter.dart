@@ -53,22 +53,36 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
 --- MediaQuery
 --- DeviceOrientation
 --- View.maybeOf(context)                                                                                    ===> get display data
---- showDialog(context: context, builder: (context) => _widgetDialog_)
---- ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: _widget_))                                  ===> bottom snakbar
+--- showDialog(context: context, builder: (context) => _widgetDialog_Dialog)
+--- Scaffold
+--- ScaffoldMessenger.of(context).showSnackBar(SnackBar(                                                     ===> bottom snakbar
+      content: _widget_,
+      action: SnackBarAction(
+        label: '_data_',
+        onPressed: () => ...,
+      ),
+    ))
+--- formKeyController.currentState!.validate()
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
-late _controllerTypeName_Controller_ _controllerVarName_Controller;
+late final _controllerTypeName_Controller_ _controllerVarName_Controller;
 
 _initState_
 --- scrollController = ScrollController()
 --- tabController = TabController(length: _intLenghtTabs_, vsync: this)
     --- with TickerProviderStateMixin (in StatefulWidget class)
+--- textEditingController = TextEditingController()
+--- focusNodeController = FocusNode()
+--- formKeyController = GlobalKey<FormState>()
 --- HardwareKeyboard.instance.addHandler((event) => ...)
 
 _dispose_
 --- scrollController.dispose()
 --- tabController.dispose()
+--- textEditingController.dispose()
+--- focusNodeController = dispose()
+--- formKeyController.currentState?.dispose()
 --- HardwareKeyboard.instance.removeHandler((event) => ...)
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
@@ -507,9 +521,16 @@ enum _segmentEnumName_ { _enumVarName_, .... }
       onKeyEvent: (node, event) => ...,
       child: _widget_,
     )
---- Shortcut(
+--- Shortcuts(
       shortcuts: <ShortcutActivator, Intent>{
-        _actionName_Activator(...): _intentName_Intent(),
+        _shourtcutName_Activator(...): _intentName_Intent(),
+        ...
+      },
+      child: _widget_,
+    )
+--- CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        _shourtcutName_Activator(...): () => ...,
         ...
       },
       child: _widget_,
@@ -564,6 +585,7 @@ _form_
       onChanged: (value) => ...,
     )
 --- _widgetTextField_
+--- _widgetTextFormField_
 
 enum _radioEnumName_ { _enumVarName_, .... }
 _radioEnumName_ _radioGroupName_ = _radioEnumName_._enumVarName_;
@@ -595,6 +617,12 @@ _radioEnumName_ _radioGroupName_ = _radioEnumName_._enumVarName_;
       onAcceptWithDetails: (details) => ...,
     )
 https://docs.flutter.dev/ui/interactivity/gestures/drag-outside#implement-drag-and-drop-between-apps    ===> outside the app
+
+--- Dismissible(
+      key: _key_,
+      onDismissed: (direction) => ...,
+      child: _widget_,
+    )
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
 +--------------------------+
