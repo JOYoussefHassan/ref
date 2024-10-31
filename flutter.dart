@@ -5,10 +5,16 @@
 name: _appName_
 flutter:
   uses-material-design: _bool_                                                                                      ===> default is `true`
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
+| custom classes: _intent_ |
++--------------------------+
+class _intentName_Intent extends Intent {
+  const _intentName_Intent();
+}
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------
 | custom classes: _flowDelegate_ |
 +--------------------------------+
-class MyFlowDelegate extends FlowDelegate {
+class _flowDelegateName_FlowDelegate extends FlowDelegate {
   const MyFlowDelegate({
     this.attribute = _valueDefault_,
     ...
@@ -51,7 +57,18 @@ class MyFlowDelegate extends FlowDelegate {
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
---- ScrollController()
+late _controllerTypeName_Controller_ _controllerVarName_Controller;
+
+_initState_
+--- scrollController = ScrollController()
+--- tabController = TabController(length: _intLenghtTabs_, vsync: this)
+    --- with TickerProviderStateMixin (in StatefulWidget class)
+--- HardwareKeyboard.instance.addHandler((event) => ...)
+
+_dispose_
+--- scrollController.dispose()
+--- tabController.dispose()
+--- HardwareKeyboard.instance.removeHandler((event) => ...)
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
 +--------------------------+
@@ -77,10 +94,23 @@ class MyFlowDelegate extends FlowDelegate {
         left: _bool_,
         child: Scaffold(
           key: _key_,
-          appBar: AppBar(
-            key: _key_,
-            title: _widgetText_,
-          ),
+          appBar: _bar_,
+            --- AppBar(
+                  key: _key_,
+                  title: _widgetText_,
+                ),
+            --- TabBar(
+                  controller: tabController,
+                  tabAlignment: _TabAlignment_,
+                  isScrollable: _bool_,
+                  tabs: const [
+                    Tab(
+                      icon: _widgetIcon_,
+                      text: '_data_',
+                    ),
+                    ...
+                  ],
+                )
           bottomNavigationBar: _widgetNavigationBar_,
           body: _widget_,
         ),
@@ -348,6 +378,8 @@ class MyFlowDelegate extends FlowDelegate {
       slivers: [
         _widgetSliverList_,
         ...
+        _widget_,
+        ...
       ],
     )
 --- SliverList(
@@ -415,22 +447,58 @@ class MyFlowDelegate extends FlowDelegate {
         ...
       ],
     )
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- NavigationDrawer(
+      children: [
+        DrawerHeader(
+          child: _widget_,
+        ),
+        const NavigationDrawerDestination(
+          icon: _widgetIcon_,
+          label: _widgetText_,
+        ),
+        ...
+      ],
+    )
+
+enum _segmentEnumName_ { _enumVarName_, .... }
+--- SegmentedButton<_segmentEnumName_>(
+      selected: const {_segmentEnumName_._enumVarName_},
+      onSelectionChanged: (p0) {},
+      segments: const [
+        ButtonSegment(
+          icon: _widgetIcon_,
+          value: _segmentEnumName_._enumVarName_,
+        ),
+        ...
+      ],
+    )
++-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------
 | widget input: _widgetInput_ |
 +-----------------------------+
 --- Listener(
       onPointerSignal: (event) => ...,
       child: _widget_,
     )
+--- MouseRegion(
+      cursor: _SystemMouseCursors_,
+      onEnter: (event) => ...,
+      onExit: (event) => ...,
+      onHover: (event) => ...,
+      child: _widget_,
+    )
+--- GestureDetector(
+      onTap: () => ...,
+      child: _widget_,
+    )
 --- FocusableActionDetector(
       onFocusChange: (value) => ...,
       actions: <Type, Action<Intent>>{
-        _action_Intent: _action_Action<Intent>(...),
+        _intentName_Intent: _actionName_Action<Intent>(...),
         ...
       },
       child: _widget_,
     )
---- FocusTraversalGroup(           ===> To get more control over the order that widgets are focused on when the user tabs through
+--- FocusTraversalGroup(                                                                 ===> To get more control over the order that widgets are focused on when the user tabs through
       child: _widget_,
     )
 --- Focus(
@@ -439,5 +507,30 @@ class MyFlowDelegate extends FlowDelegate {
     )
 --- Shortcut(
       shortcuts: <ShortcutActivator, Intent>{
-        _action_Activator(...): 
+        _actionName_Activator(...): _intentName_Intent(),
+        ...
+      },
+      child: _widget_,
+    )
+--- Actions(                                                                             ===> to activate action
+      actions: <Type, Action<Intent>>{
+        _intentName_Intent: _actionName_Action<Intent>(...),
+        ...
+      },
+      child: _widget_,
+    )
++--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
+| app settings: _settings_ |
++--------------------------+
+--- Theme(
+      visualDensity: VisualDensity(
+        horizontal: _double_,
+        vertical: _double_,
+      ),
+    )
+--- Theme.of(context).copyWith(...)
+
+import 'dart:io';
+--- Platform.is_OS_
+--- Platform.enviroment
 */
