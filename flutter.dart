@@ -94,6 +94,7 @@ _dispose_
         left: _bool_,
         child: Scaffold(
           key: _key_,
+          floatingActionButton: _widgetFloatingActionButton_,
           appBar: _bar_,
             --- AppBar(
                   key: _key_,
@@ -518,6 +519,61 @@ enum _segmentEnumName_ { _enumVarName_, .... }
         ...
       },
       child: _widget_,
+    )
+
+_form_
+--- Form(
+      key: GlobalKey<FormState>(),
+      child: _widget_,
+    )
+--- FormField(
+      builder: (field) => _widget_,
+    )
+--- Checkbox(
+      checkColor: _Color_,
+      fillColor: _Color_,
+      onChanged: (value) => ...,
+      value: _bool_,
+    )
+--- DropdownButton<_datatype_>(
+      value: _data_,
+      icon: _Icon_,
+      elevation: _int_,
+      style: _Style_,
+      underline: _widget_,
+      onChanged: (value) => ...,
+      items: [_widget_, ...],
+    )
+--- _widgetTextButton_
+--- _widgetFloatingActionButton_
+--- _widgetIconButton_
+--- _widgetElevatedButton_
+--- Slider(
+      value: _double_,
+      max: _double_,
+      divisions: _double_,
+      label: '_data_',
+      onChanged: (value) => ...,
+    )
+--- Switch(
+      value: _bool_,
+      overlayColor: _Color_,
+      trackColor: _Color_,
+      thumbColor: _Color_,
+      onChanged: (value) => ...,
+    )
+--- _widgetTextField_
+
+enum _radioEnumName_ { _enumVarName_, .... }
+_radioEnumName_ _radioGroupName_ = _radioEnumName_._enumVarName_;
+--- Radio<_radioEnumName_>(
+      value: _radioEnumName_._enumVarName_,
+      groupValue: _radioGroupName_,
+      onChanged: (value) {
+        setState(() {
+          _radioGroupName_ = value;
+        });
+      },
     )
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
