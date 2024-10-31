@@ -54,6 +54,7 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
 --- DeviceOrientation
 --- View.maybeOf(context)                                                                                    ===> get display data
 --- showDialog(context: context, builder: (context) => _widgetDialog_)
+--- ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: _widget_))                                  ===> bottom snakbar
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -575,6 +576,25 @@ _radioEnumName_ _radioGroupName_ = _radioEnumName_._enumVarName_;
         });
       },
     )
++-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------
+| widget intractivity: _widgetIntractivity_ |
++-------------------------------------------+
+--- Draggable<_datatype_>(
+      data: _data_,
+      feedback: _widget_,
+      childWhenDragging: _widget_,
+      child: _widget_,
+    )
+    LongPressDraggable<_datatype_>(
+      data: _data_,
+      dragAnchorStrategy: (draggable, context, position) => _Offset_,
+      feedback: _widget_,
+    )
+--- DragTarget<_datatype_>(
+      builder: (context, accepted, rejected) => _widget_,
+      onAcceptWithDetails: (details) => ...,
+    )
+https://docs.flutter.dev/ui/interactivity/gestures/drag-outside#implement-drag-and-drop-between-apps    ===> outside the app
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
 +--------------------------+
