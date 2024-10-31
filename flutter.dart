@@ -63,6 +63,7 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
       ),
     ))
 --- formKeyController.currentState!.validate()
+--- Actions.invoke(context, _intentName_Intent(...))
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -523,7 +524,7 @@ enum _segmentEnumName_ { _enumVarName_, .... }
     )
 --- Shortcuts(
       shortcuts: <ShortcutActivator, Intent>{
-        _shourtcutName_Activator(...): _intentName_Intent(),
+        _shourtcutName_Activator(...): _intentName_Intent(...),
         ...
       },
       child: _widget_,
