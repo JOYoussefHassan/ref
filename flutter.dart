@@ -94,6 +94,7 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
         onPressed: () => ...,
       ),
     ))
+    ScaffoldMessenger.of(context).removeCurrentSnackBar()
 --- KeyEventResult
 --- Focus.of(context)
 --- formKeyController.currentState!.validate()
@@ -101,6 +102,21 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
     Actions.maybeInvoke<_intentName_Intent>(context, _intentName_Intent(...))
     Actions.handler<_intentName_Intent>(context, _intentName_Intent(...))
     Actions.invoke(context, _intentName_Intent(...))
+
+--- await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => _widget_,
+        settings: RouteSettings(
+          arguments: _Object_
+        ),
+      ),
+    )
+    Navigator.pop(                                                                                              ===> inside custom widget
+      context,
+      '_data_',                                                                                                 ===> as `SnackBar`
+    )
+--- ModalRoute.of(context)!.settings.arguments as _datatype_
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -584,6 +600,7 @@ enum _segmentEnumName_ { _enumVarName_, .... }
       },
       child: _widget_,
     )
+go to top `Action`
 https://docs.flutter.dev/ui/interactivity/actions-and-shortcuts#the-shortcutmanager
 
 _form_
@@ -613,6 +630,7 @@ _form_
 --- _widgetFloatingActionButton_
 --- _widgetIconButton_
 --- _widgetElevatedButton_
+--- _widgetCupertinoButton_
 --- Slider(
       value: _double_,
       max: _double_,
@@ -668,7 +686,7 @@ https://docs.flutter.dev/ui/interactivity/gestures/drag-outside#implement-drag-a
     )
 +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------
 | widget assets: _widgetAssets_ |
-+-------------------------------------------+
++-------------------------------+
 --- Image(image: AssetImage('_imagePath_'))
 --- Image.network('_imageUrlPath_')
 --- FadeInImage.memoryNetwork(
@@ -692,6 +710,27 @@ import 'package:video_player/video_player.dart';
     )
 
 https://docs.flutter.dev/ui/assets/asset-transformation
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------
+| widget assets: _widgetNavigaor_ |
++---------------------------------+
+--- DefaultTabController(
+      length: _intLenght_,
+      child: Scaffold(
+        appBar: AppBar(
+          _postion_: const TabBar(
+            tabs: [
+              Tab(icon: _widgetIcon_),
+              ...
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [_widget_, ...],
+        ),
+      ),
+    )
+
+go to top Navigator
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
 +--------------------------+
