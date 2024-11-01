@@ -117,6 +117,8 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
       '_data_',                                                                                                 ===> as `SnackBar`
     )
 --- ModalRoute.of(context)!.settings.arguments as _datatype_
+
+--- Scaffold.of(context).openDrawer()
 +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------
 | widget controller: _widgetController_ |
 +---------------------------------------+
@@ -186,6 +188,7 @@ _dispose_
                 )
           bottomNavigationBar: _widgetNavigationBar_,
           body: _widget_,
+          drawer: _widgetDrawer_,
         ),
       ),
     )
@@ -731,6 +734,13 @@ https://docs.flutter.dev/ui/assets/asset-transformation
     )
 
 go to top Navigator
+
+--- Drawer(
+      child: _widget_,
+    )
+--- DrawerHeader(
+      child: _widget_,
+    )
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
 +--------------------------+
