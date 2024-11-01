@@ -72,6 +72,11 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
     return _bool_;
   }
 }
++-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------
+| media controller: _mediaController_ |
++-------------------------------------+
+--- await rootBundle.loadString('_filePath_')
+--- AssetImage('_imagePath_')
 +-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------
 | widget context getter data: _widgetControllerContext_ |
 +-------------------------------------------------------+
@@ -108,6 +113,8 @@ _initState_
 --- textEditingController = TextEditingController()
 --- focusNodeController = FocusNode()
 --- formKeyController = GlobalKey<FormState>()
+--- videoPlayerController = VideoPlayerController._method_
+    initVideoPlayerController = videoPlayerController.initialize()
 --- HardwareKeyboard.instance.addHandler((event) => ...)
 
 _dispose_
@@ -116,6 +123,7 @@ _dispose_
 --- textEditingController.dispose()
 --- focusNodeController = dispose()
 --- formKeyController.currentState?.dispose()
+--- videoPlayerController.dispose()
 --- HardwareKeyboard.instance.removeHandler((event) => ...)
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
@@ -658,6 +666,32 @@ https://docs.flutter.dev/ui/interactivity/gestures/drag-outside#implement-drag-a
       onDismissed: (direction) => ...,
       child: _widget_,
     )
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------
+| widget assets: _widgetAssets_ |
++-------------------------------------------+
+--- Image(image: AssetImage('_imagePath_'))
+--- Image.network('_imageUrlPath_')
+--- FadeInImage.memoryNetwork(
+      placeholder: '_data_',
+      image: '_imageUrlPath_',
+    )
+--- FadeInImage.assetNetwork(
+      placeholder: '_data_',
+      image: '_imageUrlPath_',
+    )
+
+import 'package:video_player/video_player.dart';
+--- FutureBuilder(
+      future: initVideoPlayerController,
+      builder: (context, snapshot) {
+        return AspectRatio(
+          aspectRatio: videoPlayerController.value.aspectRatio,
+          child: VideoPlayer(videoPlayerController),
+        );
+      },
+    )
+
+https://docs.flutter.dev/ui/assets/asset-transformation
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | app settings: _settings_ |
 +--------------------------+
