@@ -112,6 +112,10 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
         ),
       ),
     )
+    Navigator.pushNamed(
+      context,
+      '/_urlPath_',
+    )
     Navigator.pop(                                                                                              ===> inside custom widget
       context,
       '_data_',                                                                                                 ===> as `SnackBar`
@@ -192,6 +196,14 @@ _dispose_
         ),
       ),
     )
+--- MaterialApp(
+      initialRoute: '_urlPath_',
+      routes: {
+        '_urlPath_': (context) => _widget_,
+        ...
+      },
+    )
+https://docs.flutter.dev/ui/navigation/deep-linking
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------
 | start widget: _widgetCupertino_ |
 +---------------------------------+
