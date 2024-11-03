@@ -135,7 +135,7 @@ with _mixin_
 ---
 ---
 ---
---- SingleTickerProviderStateMixin
+--- SingleTickerProviderStateMixin<_widgetName_>
 ---
 
 _initState_
