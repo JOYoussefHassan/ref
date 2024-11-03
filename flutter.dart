@@ -128,6 +128,16 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
 +---------------------------------------+
 late final _controllerTypeName_Controller_ _controllerVarName_Controller;
 
+with _mixin_
+---
+---
+---
+---
+---
+---
+--- SingleTickerProviderStateMixin
+---
+
 _initState_
 --- scrollController = ScrollController()
 --- tabController = TabController(length: _intLenghtTabs_, vsync: this)
@@ -137,6 +147,12 @@ _initState_
 --- formKeyController = GlobalKey<FormState>()
 --- videoPlayerController = VideoPlayerController._method_
     initVideoPlayerController = videoPlayerController.initialize()
+--- animationController = AnimationController(
+      vsync: this,
+      duration: _Duration_,
+    ).._function_
+    --- nothing
+    --- repeat()
 --- HardwareKeyboard.instance.addHandler((event) => ...)
 
 _dispose_
@@ -146,6 +162,7 @@ _dispose_
 --- focusNodeController = dispose()
 --- formKeyController.currentState?.dispose()
 --- videoPlayerController.dispose()
+--- animationController.dispose()
 --- HardwareKeyboard.instance.removeHandler((event) => ...)
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
@@ -767,4 +784,46 @@ go to top Navigator
 import 'dart:io';
 --- Platform.is_OS_
 --- Platform.enviroment
+*/
+
+// animation (implicit which not controlled, explicit which controlled)
+/*
++------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
+| widget implicit animation: _widgetAnimationImplicit_ | ===> using setState()
++------------------------------------------------------+
+_widgetAnimationImplicitBuiltin_
+--- _widgetAnimatedContainer_
+
+_widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween)                                      ===> to be as variable `static tween = _Tween_`
+--- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
++------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
+| widget explicit animation: _widgetAnimationExplicit_ |
++------------------------------------------------------+
+_widgetAnimationExplicitBuiltin_ (AnimationController)
+--- _widgetSizeTransition_
+--- _widgetFadeTransition_
+--- _widgetAlignTransition_
+--- _widgetScaleTransition_
+--- _widgetSlideTransition_
+--- _widgetRotaionTransition_
+--- _widgetPositionedTransition_
+--- _widgetDecoratedBoxTransition_
+--- _widgetDefaultTextStyleTransition_
+--- _widgetRelativePositionedTransition_
+
+_widgetAnimationExplicitCustom_ (CustomPainter)
+--- _widgetAnimatedWidget_
+    --- class _animatedWidgetName_AnimatedWidget extends AnimatedWidget {
+          const _animatedWidgetName_AnimatedWidget(
+          ...,
+            {
+              required super.listenable,
+              ...
+            },
+          );
+        
+          @override
+          Widget build(BuildContext context) => _widget_;
+        }
+--- _widgetAnimatedBuilder_
 */
