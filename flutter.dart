@@ -794,7 +794,7 @@ import 'dart:io';
 _widgetAnimationImplicitBuiltin_
 --- _widgetAnimatedContainer_
 
-_widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween)                                      ===> to be as variable `static tween = _Tween_`
+_widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween)                            ===> to be as variable `static tween = _Tween_`
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
 | widget explicit animation: _widgetAnimationExplicit_ |
