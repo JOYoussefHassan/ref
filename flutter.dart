@@ -797,7 +797,7 @@ _widgetAnimationImplicitBuiltin_
 _widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween)                            ===> to be as variable `static tween = _Tween_`
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
-| widget explicit animation: _widgetAnimationExplicit_ |
+| widget explicit animation: _widgetAnimationExplicit_ | ===> the core class is `Animation`
 +------------------------------------------------------+
 _widgetAnimationExplicitBuiltin_ (AnimationController)
 --- _widgetSizeTransition_
