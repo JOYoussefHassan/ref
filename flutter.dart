@@ -796,6 +796,8 @@ _animationBuiltin_
       curve: _animationCurve_,
     )
 
+_animation_.addListener()
+_animation_.addStatusListener()
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------
 | animation curve: _animationCurve_ |
 +-----------------------------------+
