@@ -786,7 +786,7 @@ import 'dart:io';
 --- Platform.enviroment
 */
 
-// animation (implicit which not controlled, explicit which controlled)
+// animation (implicit which not controlled, explicit which controlled) ===> the core class is `Animation<_datatype_>`
 /*
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
 | widget implicit animation: _widgetAnimationImplicit_ | ===> using setState()
@@ -797,7 +797,7 @@ _widgetAnimationImplicitBuiltin_
 _widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween)                            ===> to be as variable `static tween = _Tween_`
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
-| widget explicit animation: _widgetAnimationExplicit_ | ===> the core class is `Animation`
+| widget explicit animation: _widgetAnimationExplicit_ |
 +------------------------------------------------------+
 _widgetAnimationExplicitBuiltin_ (AnimationController)
 --- _widgetSizeTransition_
@@ -826,4 +826,14 @@ _widgetAnimationExplicitCustom_ (CustomPainter)
           Widget build(BuildContext context) => _widget_;
         }
 --- _widgetAnimatedBuilder_
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------
+| widget animation curve: _widgetAnimationCurve_ |
++------------------------------------------------+
+_widgetAnimationCurveCustom_
+--- class _curveAnimationName_Curve extends Curve {
+      const _curveAnimationName_Curve(...);
+
+      @override
+      double transform(double t) => _double_;
+    }
 */
