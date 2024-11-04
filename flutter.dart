@@ -788,6 +788,25 @@ import 'dart:io';
 
 // animation (implicit which not controlled, explicit which controlled) ===> the core class is `Animation<_datatype_>`
 /*
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
+| animation: _animation_ |
++------------------------+
+_animationBuiltin_
+--- CurvedAnimation(
+      parent: animationController,
+      curve: _animationCurve_,
+    )
+
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------
+| animation curve: _animationCurve_ |
++-----------------------------------+
+_widgetAnimationCurveCustom_
+--- class _curveAnimationName_Curve extends Curve {
+      const _curveAnimationName_Curve(...);
+
+      @override
+      double transform(double t) => _double_;
+    }
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
 | widget implicit animation: _widgetAnimationImplicit_ | ===> using setState()
 +------------------------------------------------------+
@@ -826,14 +845,4 @@ _widgetAnimationExplicitCustom_ (CustomPainter)
           Widget build(BuildContext context) => _widget_;
         }
 --- _widgetAnimatedBuilder_
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------
-| widget animation curve: _widgetAnimationCurve_ |
-+------------------------------------------------+
-_widgetAnimationCurveCustom_
---- class _curveAnimationName_Curve extends Curve {
-      const _curveAnimationName_Curve(...);
-
-      @override
-      double transform(double t) => _double_;
-    }
 */
