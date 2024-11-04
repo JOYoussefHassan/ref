@@ -141,7 +141,6 @@ with _mixin_
 _initState_
 --- scrollController = ScrollController()
 --- tabController = TabController(length: _intLenghtTabs_, vsync: this)
-    --- with TickerProviderStateMixin (in StatefulWidget class)
 --- textEditingController = TextEditingController()
 --- focusNodeController = FocusNode()
 --- formKeyController = GlobalKey<FormState>()
