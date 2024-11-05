@@ -149,9 +149,8 @@ _initState_
 --- animationController = AnimationController(
       vsync: this,
       duration: _Duration_,
-    ).._function_
-    --- nothing
-    --- repeat()
+    )
+    animationController._methodORProperty_
 --- HardwareKeyboard.instance.addHandler((event) => ...)
 
 _dispose_
@@ -788,16 +787,19 @@ import 'dart:io';
 // animation (implicit which not controlled, explicit which controlled) ===> the core class is `Animation<_datatype_>`
 /*
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
-| animation: _animation_ |
+| animation: _animation_ | ===> must in `StatefulWidget`
 +------------------------+
 _animationBuiltin_
 --- CurvedAnimation(
       parent: animationController,
       curve: _animationCurve_,
     )
+--- animationController._methodAnimation_
 
 _animation_.addListener()
 _animation_.addStatusListener()
+_animation_.forward()
+_animation_.value
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------
 | animation curve: _animationCurve_ |
 +-----------------------------------+
@@ -848,5 +850,8 @@ _widgetAnimationExplicitCustom_ (CustomPainter)
           @override
           Widget build(BuildContext context) => _widget_;
         }
---- _widgetAnimatedBuilder_
+--- AnimatedBuilder(
+      animation: _animation_,
+      builder: (context, child) => _widget_,
+    )
 */
