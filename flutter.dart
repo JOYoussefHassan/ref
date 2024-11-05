@@ -794,7 +794,8 @@ _animationBuiltin_
       parent: animationController,
       curve: _animationCurve_,
     )
---- animationController._methodAnimation_
+--- _tween_._methodAnimation_
+--- animationController
 
 _animation_.addListener()
 _animation_.addStatusListener()
@@ -814,7 +815,11 @@ _widgetAnimationCurveCustom_
 | widget implicit animation: _widgetAnimationImplicit_ | ===> using setState()
 +------------------------------------------------------+
 _widgetAnimationImplicitBuiltin_
---- _widgetAnimatedContainer_
+--- AnimatedContainer(
+      duration: _Duration_,
+      onEnd: () => ...,
+      child: _widget_,
+    )
 
 _widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween)                            ===> to be as variable `static tween = _Tween_`
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
@@ -824,7 +829,7 @@ animationController.value
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
 | widget explicit animation: _widgetAnimationExplicit_ |
 +------------------------------------------------------+
-_widgetAnimationExplicitBuiltin_ (AnimationController)
+_widgetAnimationExplicitBuiltin_Transition (AnimationController)
 --- _widgetSizeTransition_
 --- _widgetFadeTransition_
 --- _widgetAlignTransition_
@@ -837,19 +842,19 @@ _widgetAnimationExplicitBuiltin_ (AnimationController)
 --- _widgetRelativePositionedTransition_
 
 _widgetAnimationExplicitCustom_ (CustomPainter)
---- _widgetAnimatedWidget_
-    --- class _animatedWidgetName_AnimatedWidget extends AnimatedWidget {
-          const _animatedWidgetName_AnimatedWidget(
-          ...,
-            {
-              required super.listenable,
-              ...
-            },
-          );
-        
-          @override
-          Widget build(BuildContext context) => _widget_;
-        }
+--- class _animatedWidgetName_AnimatedWidget extends AnimatedWidget {
+      const _animatedWidgetName_AnimatedWidget(
+      ...,
+        {
+          super.key,
+          required super.listenable,                                                                          ===> accept `_animation_`
+          ...
+        },
+      );
+    
+      @override
+      Widget build(BuildContext context) => _widget_;
+    }
 --- AnimatedBuilder(
       animation: _animation_,
       builder: (context, child) => _widget_,
