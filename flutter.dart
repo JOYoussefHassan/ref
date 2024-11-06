@@ -825,7 +825,7 @@ _widgetAnimationImplicitBuiltin_
 --- _widgetAnimatedPositioned_
 --- _widgetAnimatedSwitcher_                                                                        ===> must the child has _key_
 
-_widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween)                            ===> to be as variable `static tween = _Tween_`
+_widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween, RectTween)                            ===> to be as variable `static tween = _Tween_`
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
 
 _widgetAnimationImplicitTween_.value
