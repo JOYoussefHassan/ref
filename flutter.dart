@@ -864,3 +864,5 @@ _widgetAnimationExplicitCustom_ (CustomPainter)
       builder: (context, child) => _widget_,
     )
 */
+
+// https://pub.dev/packages?q=is%3Aflutter-favorite
