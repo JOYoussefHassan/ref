@@ -453,6 +453,7 @@ https://docs.flutter.dev/ui/navigation/deep-linking
 +------------------------+
 --- Scrollbar(
       key: _key_,
+      controller: _scrollController,
       isAlwaysShown: _bool_,
       ShowTrackHover: _bool_,
       child: _widget_,
