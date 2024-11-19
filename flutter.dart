@@ -446,7 +446,8 @@ https://docs.flutter.dev/ui/navigation/deep-linking
     )
 
 
---- SliverGridDelegate: SliverGridDelegateWithFixedCrossAxisCount, SliverGridDelegateWithMaxCrossAxisExtent
+--- _SliverGridDelegate_: SliverGridDelegateWithFixedCrossAxisCount, SliverGridDelegateWithMaxCrossAxisExtent
+--- _SliverChildDelegate_: SliverChildListDelegate, SliverChildBuilderDelegate
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
 | widget: _widgetScroll_ |
 +------------------------+
@@ -524,6 +525,7 @@ https://docs.flutter.dev/ui/navigation/deep-linking
     )
 
 
+--- _SliverGridDelegate_: SliverGridDelegateWithFixedCrossAxisCount, SliverGridDelegateWithMaxCrossAxisExtent
 --- _SliverChildDelegate_: SliverChildListDelegate, SliverChildBuilderDelegate
 --- __scrollController_: ScrollController()
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------
