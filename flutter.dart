@@ -86,6 +86,7 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
 --- DeviceOrientation
 --- View.maybeOf(context)                                                                                    ===> get display data
 --- showDialog(context: context, builder: (context) => _widgetDialog_Dialog)
+    Navigator.of(context).pop()
 --- Scaffold
 --- ScaffoldMessenger.of(context).showSnackBar(SnackBar(                                                     ===> bottom snakbar
       content: _widget_,
