@@ -97,7 +97,7 @@ class _flowDelegateName_FlowDelegate extends FlowDelegate {
     ScaffoldMessenger.of(context).removeCurrentSnackBar()
 --- KeyEventResult
 --- Focus.of(context)
---- formKeyController.currentState!.validate()
+--- _formKeyController.currentState!.validate()
 --- Actions.of(context).invokeAction(Actions.maybeFind<_intentName_Intent>(context), _intentName_Intent(...))
     Actions.maybeInvoke<_intentName_Intent>(context, _intentName_Intent(...))
     Actions.handler<_intentName_Intent>(context, _intentName_Intent(...))
@@ -139,28 +139,28 @@ with _mixin_
 ---
 
 _initState_
---- scrollController = ScrollController()
---- tabController = TabController(length: _intLenghtTabs_, vsync: this)
---- textEditingController = TextEditingController()
---- focusNodeController = FocusNode()
---- formKeyController = GlobalKey<FormState>()
---- videoPlayerController = VideoPlayerController._method_
-    initVideoPlayerController = videoPlayerController.initialize()
---- animationController = AnimationController(
+--- _scrollController = ScrollController()
+--- _tabController = TabController(length: _intLenghtTabs_, vsync: this)
+--- _textEditingController = TextEditingController()
+--- _focusNodeController = FocusNode()
+--- _formKeyController = GlobalKey<FormState>()
+--- _videoPlayerController = VideoPlayerController._method_
+    _initVideoPlayerController = _videoPlayerController.initialize()
+--- _animationController = AnimationController(
       vsync: this,
       duration: _Duration_,
     )
-    animationController._methodORProperty_
+    _animationController._methodORProperty_
 --- HardwareKeyboard.instance.addHandler((event) => ...)
 
 _dispose_
---- scrollController.dispose()
---- tabController.dispose()
---- textEditingController.dispose()
---- focusNodeController = dispose()
---- formKeyController.currentState?.dispose()
---- videoPlayerController.dispose()
---- animationController.dispose()
+--- _scrollController.dispose()
+--- _tabController.dispose()
+--- _textEditingController.dispose()
+--- _focusNodeController = dispose()
+--- _formKeyController.currentState?.dispose()
+--- _videoPlayerController.dispose()
+--- _animationController.dispose()
 --- HardwareKeyboard.instance.removeHandler((event) => ...)
 +--------------------------+------------------------------------------------------------------------------------------------------------------------------------------------
 | widget identifier: _key_ |
@@ -194,7 +194,7 @@ _dispose_
                   title: _widgetText_,
                 ),
             --- TabBar(
-                  controller: tabController,
+                  controller: _tabController,
                   tabAlignment: _TabAlignment_,
                   isScrollable: _bool_,
                   tabs: const [
@@ -457,7 +457,7 @@ https://docs.flutter.dev/ui/navigation/deep-linking
     )
 --- SingleChildScrollView(
       key: _key_,
-      controller: _scrollController_,
+      controller: __scrollController_,
       child: _widget_,
     )
 --- DragableScrollableSheet(                                                                                        ===> to append scroll widget
@@ -465,7 +465,7 @@ https://docs.flutter.dev/ui/navigation/deep-linking
       initialChildSize: _double_,
       minChildSize: _double_,
       maxChildSize: _double_,
-      builder: (context, scrollController) => _widget_,
+      builder: (context, _scrollController) => _widget_,
     )
 --- ListWheelScrollView(
       key: _key_,
@@ -524,7 +524,7 @@ https://docs.flutter.dev/ui/navigation/deep-linking
 
 
 --- _SliverChildDelegate_: SliverChildListDelegate, SliverChildBuilderDelegate
---- _scrollController_: ScrollController()
+--- __scrollController_: ScrollController()
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------
 | widget adaptive design: _widgetDesign_ |
 +----------------------------------------+
@@ -730,11 +730,11 @@ https://docs.flutter.dev/ui/interactivity/gestures/drag-outside#implement-drag-a
 
 import 'package:video_player/video_player.dart';
 --- FutureBuilder(
-      future: initVideoPlayerController,
+      future: _initVideoPlayerController,
       builder: (context, snapshot) {
         return AspectRatio(
-          aspectRatio: videoPlayerController.value.aspectRatio,
-          child: VideoPlayer(videoPlayerController),
+          aspectRatio: _videoPlayerController.value.aspectRatio,
+          child: VideoPlayer(_videoPlayerController),
         );
       },
     )
@@ -791,11 +791,11 @@ import 'dart:io';
 +------------------------+
 _animationBuiltin_
 --- CurvedAnimation(
-      parent: animationController,
+      parent: _animationController,
       curve: _animationCurve_,
     )
 --- _tween_._methodAnimation_
---- animationController
+--- _animationController
 
 _animation_.addListener()
 _animation_.addStatusListener()
@@ -829,7 +829,7 @@ _widgetAnimationImplicitTween_ (Tween<_datatype_>, ColorTween, IntTween, RectTwe
 --- _widgetTweenAnimationBuilder_                                                                   ===> `onEnd` to repeat
 
 _widgetAnimationImplicitTween_.value
-animationController.value
+_animationController.value
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------
 | widget explicit animation: _widgetAnimationExplicit_ |
 +------------------------------------------------------+
