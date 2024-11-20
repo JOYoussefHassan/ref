@@ -25,7 +25,7 @@ class _actionName_Action extends Action<_intentName_Intent> {
 
 --- CallbackAction((intent) => _object_)
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------
-| custom classes: _dispatcher_ |
+| custom class: _dispatcher_ |
 +------------------------------+
 class _dispatcherName_Dispatcher extends ActionDispatcher {
   const _dispatcherName_Dispatcher(...);
@@ -585,7 +585,7 @@ enum _segmentEnumName_ { _enumVarName_, .... }
       ],
     )
 +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------
-| widget input: _widgetInput_ | => shortcut -> intent -> action
+| widget input: _widgetInput_ | => shortcut -> dispatcher -> intent -> action
 +-----------------------------+
 --- Listener(
       onPointerSignal: (event) => ...,
