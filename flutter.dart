@@ -32,7 +32,7 @@ class _dispatcherName_Dispatcher extends ActionDispatcher {
 
   @override
   Object? invokeAction(covariant Action<Intent> action, covariant Intent intent, [BuildContext? context]) {
-    super.invokeAction(action, intent, context)
+    super.invokeAction(action, intent, context);
     ...
     return _Object_;
   }
