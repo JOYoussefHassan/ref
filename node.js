@@ -41,6 +41,15 @@ _options_
 | terminal: node |
 +----------------+
 node _nodejsFileName_.js
+node debug _nodejsFileName_.js
+node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
+node --inspect=_host_:_port_ _nodejsFileName_.js
+--- node inspect _nodejsFileName_.js                                                             ===> to open debugging inspector CLI
+--- edge://inspect                                                                               ===> to open debugging inspector in edge
+--- chrome://inspect                                                                             ===> to open debugging inspector in chrome
+--- `run and debug` in vscode
+
+https://nodejs.org/en/learn/getting-started/debugging#command-line-options
 +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | node project: main.js |
 +-----------------------+
@@ -206,3 +215,9 @@ sqlite3Database.close();
 
 https://www.tutorialspoint.com/sqlite
 */
+/*
+to continue
+https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production
+https://nodejs.org/en/learn/getting-started/nodejs-with-webassembly
+*/
+
