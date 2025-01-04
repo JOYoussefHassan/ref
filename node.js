@@ -26,9 +26,17 @@ http.createServer(function (req, res) {
 | terminal: npm |
 +---------------+
 npm init
-npm install _packageName_@version
-npm install -g _packageName_@version
+npm install _packageName_@version _options_
+npm install -g _packageName_@version _options_                                                  ===> `-g` is meaning global
 npm update -g _packageName_
+npm run _taskName_
+
+_options_
+--- --save (-S)
+--- --no-save
+--- --save-dev (-D)
+--- --save-optional (-O)
+--- --no-optional
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: node |
 +----------------+
