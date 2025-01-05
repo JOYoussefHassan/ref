@@ -54,6 +54,10 @@ _options_
 node (open bash REPL)
 --- .save _filePath_.js
 --- .load _filePath_.js (to load in REPL)
+--- .help
+--- .break
+--- .clear
+--- .exit
 node _nodejsFileName_.js
 node debug _nodejsFileName_.js
 node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
