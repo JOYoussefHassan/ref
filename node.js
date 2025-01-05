@@ -101,6 +101,7 @@ http.createServer(function (req, res) {
 | http
 --- http.createServer(function (req, res) {...}).listen(_portNumber);
     --- res.writeHead(_statusCode_, {'Content-Type': '_fileType_'});
+    --- res.writeHead('Content-Type', '_fileType_');
         --- _fileType_: text/html, application/json, text/plain
     --- res.write(_data_);
         --- _data_: _data_, JSON.stringify(_json_)
