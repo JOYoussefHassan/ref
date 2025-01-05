@@ -51,8 +51,9 @@ _options_
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: node |
 +----------------+
-node (open bash)
+node (open bash REPL)
 --- .save _filePath_.js
+--- .load _filePath_.js (to load in REPL)
 node _nodejsFileName_.js
 node debug _nodejsFileName_.js
 node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
