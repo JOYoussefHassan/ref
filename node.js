@@ -32,7 +32,7 @@ Express.js: Express is a popular web application framework for Node.js. It simpl
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: npm |
 +---------------+
-npm init
+npm init -y
 npm install _packageName_@version _options_
 npm install -g _packageName_@version _options_                                                  ===> `-g` is meaning global
 npm update -g _packageName_
