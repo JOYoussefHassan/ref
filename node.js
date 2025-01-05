@@ -6,6 +6,13 @@ http.createServer(function (req, res) {
 }).listen(8080);
 
 /*
+A RESTful API (Representational State Transfer Application Programming Interface) is a set of web services that allow applications to communicate with each other over the internet using. RESTful APIs are designed to be simple, scalable, and stateless, making them a popular choice for building web services.
+
+
+Socket.io: For real-time communication, Socket.io is a go-to library. It enables bidirectional communication between the server and clients using WebSockets or fallback mechanisms.
+
+
+Express.js: Express is a popular web application framework for Node.js. It simplifies routing, middleware handling, and request/response management. Many developers choose Express for building APIs, web servers, and single-page applications.
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
 --- error types
