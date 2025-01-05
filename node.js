@@ -54,6 +54,7 @@ _options_
 node (open bash REPL)
 --- .save _filePath_.js
 --- .load _filePath_.js (to load in REPL)
+--- .editor
 --- .help
 --- .break
 --- .clear
