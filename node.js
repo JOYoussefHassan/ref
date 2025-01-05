@@ -37,6 +37,7 @@ npm install _packageName_@version _options_
 npm install -g _packageName_@version _options_                                                  ===> `-g` is meaning global
 npm update -g _packageName_
 npm run _taskName_
+npm start
 
 _options_
 --- --save (-S)
