@@ -51,6 +51,7 @@ _options_
 +----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: node |
 +----------------+
+node (open bash)
 node _nodejsFileName_.js
 node debug _nodejsFileName_.js
 node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
