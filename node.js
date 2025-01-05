@@ -38,7 +38,7 @@ npm install -g _packageName_@version _options_                                  
 npm update _packageName_
 npm update -g _packageName_
 npm uninstall _packageName_
-npm uninstall -g _packageName_
+npm uninstall _packageName_ -g
 npm run _taskName_
 npm start
 
