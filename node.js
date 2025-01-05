@@ -48,6 +48,8 @@ node --inspect=_host_:_port_ _nodejsFileName_.js
 --- edge://inspect                                                                               ===> to open debugging inspector in edge
 --- chrome://inspect                                                                             ===> to open debugging inspector in chrome
 --- `run and debug` in vscode
+node --prof _nodejsFileName_.js                                                                  ===> to display CPU activity and time
+node --prof-process isolate-0xnnnnnnnnnnnn-v8.log                                                ===> to summerize CPU activity and time
 
 https://nodejs.org/en/learn/getting-started/debugging#command-line-options
 +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -142,7 +144,7 @@ http.createServer(function (req, res) {
 | events
 var eventEmitter = new events.EventEmitter();
 --- eventEmitter.on('_eventName_', function (_param_, ...) {...});
---- eventEmitter.emit('_eventName_', _valueParam_);                                                      ===> to run event
+--- eventEmitter.emit('_eventName_', _valueParam_);                                         ===> to run event
 --- eventEmitter.once()
 --- eventEmitter.off()
     eventEmitter.removeListener()
@@ -219,5 +221,6 @@ https://www.tutorialspoint.com/sqlite
 to continue
 https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production
 https://nodejs.org/en/learn/getting-started/nodejs-with-webassembly
+https://nodejs.org/en/learn/getting-started/security-best-practices
 */
 
