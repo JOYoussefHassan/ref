@@ -142,6 +142,10 @@ http.createServer(function (req, res) {
       ...
       return res.end();
     });
+--- fs.readFileSync('_filePath_', {encoding: "_encoding_", flag: "_flag_"}, function (error, data) {
+      ...
+      return res.end();
+    });
 --- fs.appendFile('_filePath_', '_data_', function (error) {
       ...
       throw error;
