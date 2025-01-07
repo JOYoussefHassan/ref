@@ -13,6 +13,17 @@ Socket.io: For real-time communication, Socket.io is a go-to library. It enables
 
 
 Express.js: Express is a popular web application framework for Node.js. It simplifies routing, middleware handling, and request/response management. Many developers choose Express for building APIs, web servers, and single-page applications.
+
+
+core modules
+--- http
+--- fs
+--- assert
+--- path
+--- process
+--- os
+--- querystring
+--- url
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
 --- error types
