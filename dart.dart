@@ -422,7 +422,10 @@ _varDeclare_ = new _className_._functionMethod_;
 _varDeclare_ = const _className_._functionMethod_;
 
 [1] - _normalClass_
-  [1] - class _normalClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixinName_, ... implements _className_, ... with _mixinName_, ... {
+  [1] - class _normalClassName_<_genericDatatype_extends _className_, ...>
+        extends _className_, ..., _abstractMixinName_, ...
+        implements _className_, ...
+        with _mixinName_, ... {
           const _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           factory _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...}) => _data_;
           @_metadata_
@@ -441,7 +444,10 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
         }
 [2] - _abstractClass_
-  [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixin_, ... implements _className_, ... with _mixinName_, ... {
+  [1] - abstract class _abstractClassName_<_genericDatatype_ extends _className_, ...>
+        extends _className_, ..., _abstractMixin_, ...
+        implements _className_, ...
+        with _mixinName_, ... {
           const _abstractClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
@@ -456,7 +462,11 @@ _varDeclare_ = const _className_._functionMethod_;
           ...
         }
 [3] - _sealedClass_
-  [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...> extends _className_, ..., _abstractMixinName_, ... implements _className_, ... with _mixinName_, ... {
+  [1] - sealed class _sealedClassName_<_genericDatatype_ extends _className_, ...>
+        extends _className_, ..., _abstractMixinName_, ...
+        implements _className_, ...
+        with _mixinName_, ...
+        permits _className_, ... {                                                                                     ===> to restrict inheritance to specific classes
           const _sealedClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
           @_metadata_
           _statement_;
@@ -474,7 +484,7 @@ _varDeclare_ = const _className_._functionMethod_;
   [1] - @immutable                                                                                                                                                                                        ===> whose state cannot be modified after creation and can be before class
   [2] - @override
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| _statement_: _mixin_ |
+| _statement_: _mixin_ |                                                                                               ===> to be reused
 +----------------------+
 [1] - _normalMixin_
   [1] - mixin _normalMixinName_ on _className_, ... {
