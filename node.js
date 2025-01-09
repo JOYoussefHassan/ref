@@ -203,7 +203,7 @@ const http = require('http');
       ...
       throw error;
     });
---- fs.createReadStream('_filePath_').on('open', function () {...});
+--- fs.createReadStream('_filePath_').on('open', function (chunk) {...});
 +------------------------------------------------------------------------------------------
 | events
 var eventEmitter = new events.EventEmitter();
