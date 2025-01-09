@@ -43,6 +43,10 @@ core modules
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: npm |
 +---------------+
+npm root -g                                                                                     ===> to get packages global path
+npm root                                                                                        ===> to get packages path
+npm list -g                                                                                     ===> to list global packages
+npm list                                                                                        ===> to list packages
 npm version _version_
 --- patch
 --- minor
@@ -91,6 +95,10 @@ node --prof _nodejsFileName_.js                                                 
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log                                                ===> to summerize CPU activity and time
 
 https://nodejs.org/en/learn/getting-started/debugging#command-line-options
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| terminal: nodemon |
++-------------------+
+nodemon _nodejsFileName_.js
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | node project: package.json |
 +----------------------------+
@@ -365,5 +373,7 @@ to continue
 https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production
 https://nodejs.org/en/learn/getting-started/nodejs-with-webassembly
 https://nodejs.org/en/learn/getting-started/security-best-practices
+https://www.geeksforgeeks.org/node-js-child-process
+https://www.geeksforgeeks.org/how-to-use-session-variable-with-node-js
 */
 
