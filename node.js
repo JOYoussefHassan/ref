@@ -166,6 +166,11 @@ const http = require('http');
         --- _data_: _data_, JSON.stringify(_json_)
     --- res.end('_data_');
 +------------------------------------------------------------------------------------------
+| net
+const net = require('net');
+--- net.createServer((socket) => {...}).listen(_portNumber_);
+    --- socket.on('close', () => {...});
++------------------------------------------------------------------------------------------
 | url
 --- url.parse(req.url, true)._function_
     --- query._prameters_                                                                  ===> as `http://www.example.com/?year=gffj
@@ -348,6 +353,12 @@ const chalk = require('chalk');
 --- chalk.bg_colorName_(_data_);
 --- chalk.rgb(_int_, _int_, _int_)(_data_);
 --- chalk._textStyle_(_daat_);
++------------------------------------------------------------------------------------------
+| idle-gc
+const idle = require('idle-gc');
+--- idle.ignore();
++------------------------------------------------------------------------------------------
+| Express, AdonisJS, MeteorJS, NestJS, SailsJS, Hapi, Loopback.io, Feathers, MEAN, KoaJS
 */
 /*
 to continue
