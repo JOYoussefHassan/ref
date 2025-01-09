@@ -43,6 +43,14 @@ core modules
 +---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | terminal: npm |
 +---------------+
+npm version _version_
+--- patch
+--- minor
+--- major
+npm login
+npm publish                                                                                     ===> to publish package
+npm unpublish _packageName_                                                                     ===> to unpublish package
+npm search _packageName_
 npm init -y
 npm install _packageName_@version _options_
 npm install -g _packageName_@version _options_                                                  ===> `-g` is meaning global
@@ -74,6 +82,7 @@ node _nodejsFileName_.js
 node debug _nodejsFileName_.js
 node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
 node --inspect=_host_:_port_ _nodejsFileName_.js
+node --inspect-brk _nodejsFileName_.js
 --- node inspect _nodejsFileName_.js                                                             ===> to open debugging inspector CLI
 --- edge://inspect                                                                               ===> to open debugging inspector in edge
 --- chrome://inspect                                                                             ===> to open debugging inspector in chrome
@@ -86,6 +95,7 @@ https://nodejs.org/en/learn/getting-started/debugging#command-line-options
 | node project: package.json |
 +----------------------------+
 {
+  "type": "module",                                                                              ===> add if the package will be published, then add `README.md`
   "scripts": {
       "start": "node _command_"
   }
@@ -133,13 +143,22 @@ http.createServer(function (req, res) {
 --- exports._moduleFunctionName_ = function () {
       ...
     };
+--- export const _packageName_ = {
+      _propertyORMethodName_: _statement_,
+      ...
+    }
 +------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | module: built in |
 +------------------+
 | module (no need to imported)                                                             ===> to print module data
 +------------------------------------------------------------------------------------------
 | http
---- http.createServer(function (req, res) {...}).listen(_portNumber);
+const http = require('http');
+--- http.createServer(function (req, res) {...}).listen(_portNumber_, () {...});
+    --- req.url;
+
+    --- res.statusCode = _statusCode_;
+
     --- res.writeHead(_statusCode_, {'Content-Type': '_fileType_'});
     --- res.setHeader('Content-Type', '_fileType_');
         --- _fileType_: text/html, application/json, text/plain
@@ -261,6 +280,74 @@ sqlite3Database.serialize(() => {
 sqlite3Database.close();
 
 https://www.tutorialspoint.com/sqlite
+*/
+/*
++-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| module: debug inspector |
++-------------------------+
+| module (no need to imported)                                                             ===> to print module data
++------------------------------------------------------------------------------------------
+| chrome-remote-interface
+const dp = require('chrome-remote-interface');
+
+async function test() {
+  const client = await dp();
+  const {Profiler, Runtime} = client;
+
+  await Profiler.enable();
+  await Profiler.setSamplingInterval({interval: 500});
+
+  await Profiler.start();
+  await Runtime.evaluate({expression: 'startTest();'});
+  await sleep(800);
+
+  const data = await Profiler.stop();
+  require('fs').writeFileSync(
+    'data.cpuprofile',
+    JSON.stringify(data.profile),
+  );
+};
+
+test().then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+});
++------------------------------------------------------------------------------------------
+| inspector
+const inspector = require('inspector');
+const fs = require('fs');
+const session = new inspector.Session();
+
+session.connect();
+session.post('Profiler.enable');
+session.post('Profiler.start');
+
+setTimeout(function () {
+  session.post(
+    'Profiler.stop', 
+    function (err, data) {
+      fs.writeFileSync(
+        'data.cpuprofile',
+        JSON.stringify(data.profile),
+      );
+    },
+  );
+}, 8000);
+*/
+/*
++----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| module: npm packages |
++----------------------+
+| module (no need to imported)                                                             ===> to print module data
++------------------------------------------------------------------------------------------
+| chalk
+const chalk = require('chalk');
+--- chalk._colorName_(_data_);
+--- chalk.bg_colorName_(_data_);
+--- chalk.rgb(_int_, _int_, _int_)(_data_);
+--- chalk._textStyle_(_daat_);
 */
 /*
 to continue
