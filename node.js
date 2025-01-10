@@ -366,6 +366,37 @@ const chalk = require('chalk');
 const idle = require('idle-gc');
 --- idle.ignore();
 +------------------------------------------------------------------------------------------
+| express express-session cookie-parser
+const express = require("express");
+const session = require("express-session");
+const cookies = require("cookie-parser");
+
+const app = express();
+app.use(cookies());
+app.use(session(secret: '_data_', saveUninitialized: _bool_, resave: _bool_);
+
+--- app.get('_path_', (res, req) {...}).listen(_portNumber_, () {...});
+    --- res.send('_data_');
+    --- req.session.view;
+    --- req.session.user;
+    --- req.session.save();
+    --- req.session.destroy();
++------------------------------------------------------------------------------------------
+| assert (AssertionError if false)
+const assert = require('assert').strict;
+--- assert(_bool_);
+--- assert.match('_data_', /_data_/);                                                      ===> `/` to sea
+--- assert.strictEqual(_data_, _data_);
+--- assert.deepStrictEqual(_data_, _data_);
+--- assert.notEqual(_data_, _data_);
+--- assert.notDeepEqual(_data_, _data_);
+--- assert.notDeepStrictEqual(_data_, _data_);
+--- assert.doesNotThrow(() {...}, _data_, _data_);                                         ===> throw custom error
+--- assert.fail(new _Error_);
+--- assert.ifError(_data_);
+--- assert.ok(_bool_, '_data_');                                                           ===> `_data_` is output if error or false
+--- assert.rejects(async () {...}, (err) => _bool_);
++------------------------------------------------------------------------------------------
 | Express, AdonisJS, MeteorJS, NestJS, SailsJS, Hapi, Loopback.io, Feathers, MEAN, KoaJS
 */
 /*
