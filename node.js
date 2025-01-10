@@ -355,6 +355,15 @@ setTimeout(function () {
 +----------------------+
 | module (no need to imported)                                                             ===> to print module data
 +------------------------------------------------------------------------------------------
+| console
+const console = require('console');
+--- console.trace('_data_ %d', 39);
+https://www.geeksforgeeks.org/node-js-console-complete-reference
++------------------------------------------------------------------------------------------
+| crypto
+const crypto = reuqire('crypto');
+https://www.geeksforgeeks.org/node-js-crypto-complete-reference/
++------------------------------------------------------------------------------------------
 | chalk
 const chalk = require('chalk');
 --- chalk._colorName_(_data_);
