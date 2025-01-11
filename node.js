@@ -360,9 +360,33 @@ const console = require('console');
 --- console.trace('_data_ %d', 39);
 https://www.geeksforgeeks.org/node-js-console-complete-reference
 +------------------------------------------------------------------------------------------
-| crypto
+| bcrypt (password)
+| => salt: random value before hashing
+| => cost: complexity of hashing
+const bcrypt = reqiure('bcrypt');
+const PASSWORD = '_password_';
+let hashedPassword = bcrypt.hashSync(PASSWORD, _intSalt_);
+--- bcrypt.hashSync(PASSWORD, _intSalt_);
+--- bcrypt.hash(PASSWORD, _intSalt_);                                                      ===> as Promise<string>
+--- bcrypt.compare(PASSWORD, _1);                                                          ===> as Promise<bool>
+--- bcrypt.getSalt(_intSalt_);                                                             ===> as Promise<string> to randomize salt
++------------------------------------------------------------------------------------------
+| scrypt (password storage and cryptocurrency)
++------------------------------------------------------------------------------------------
+| crypto (data)
 const crypto = reuqire('crypto');
-https://www.geeksforgeeks.org/node-js-crypto-complete-reference/
+https://www.geeksforgeeks.org/node-js-crypto-complete-reference
+
+[1] - sha256 (hash data)
+const DATA = '_data_';
+let hashed = crypto.hash('sha256', DATA, '_datatype_');                                   ===> as string, and hashed not changed as `bcrypt`
+
+_datatype_:
+--- hex
+--- binary
+--- base64
+--- base64url
+--- buffer
 +------------------------------------------------------------------------------------------
 | chalk
 const chalk = require('chalk');
