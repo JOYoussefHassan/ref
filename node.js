@@ -13,6 +13,7 @@ Socket.io: For real-time communication, Socket.io is a go-to library. It enables
 Express.js: Express is a popular web application framework for Node.js. It simplifies routing, middleware handling, and request/response management. Many developers choose Express for building APIs, web servers, and single-page applications.
 
 CORS (Cross-Origin Resource Sharing): control access to resources (like APIs or fonts) on a web page from a different domain than the one serving the web page.
+CSP (Content Security Policy): prevent cross-site scripting (XSS), clickjacking, and other code injection attacks.
 
 core modules
 --- http
@@ -421,10 +422,20 @@ app.use(cors({
   origin: '_HTTP_://_HOST_:_PORT_',
   metods: [_httpMethod_, ...],
   credentials: _bool_,
+  maxAge: _int_,
 });
 
 --- app.get('/_path_', (res, req) {...}).listen(_portNumber_, () {...});
     --- res.send('_data_');
+    --- res.setHeader('_headerName_', _headerData_);
+        --- 'Content-type': 'text/html' - 'application/json' - 'text/plain'
+        --- 'Content-Security-Policy-Report-Only': "_security_; ..."                       ===> CORS
+            --- default-src 'self' 'sha256-_hashed_' _url_ ...
+            --- font-src 'self' 'sha256-_hashed_' _url_ ...
+            --- img-src 'self' 'sha256-_hashed_' _url_ ...
+            --- script-src 'self' 'sha256-_hashed_' _url_ ...                              ===> `sha256-...` in `<script nonce="EDNnf03nceIOfn39fn3e9h3sdfa">`
+            --- style-src 'self' 'sha256-_hashed_' _url_ ...
+            --- frame-src 'self' 'sha256-_hashed_' _url_ ...
     --- req.session.view;
     --- req.session.user;
     --- req.session.save();
