@@ -10,10 +10,9 @@ A RESTful API (Representational State Transfer Application Programming Interface
 
 
 Socket.io: For real-time communication, Socket.io is a go-to library. It enables bidirectional communication between the server and clients using WebSockets or fallback mechanisms.
-
-
 Express.js: Express is a popular web application framework for Node.js. It simplifies routing, middleware handling, and request/response management. Many developers choose Express for building APIs, web servers, and single-page applications.
 
+CORS (Cross-Origin Resource Sharing): control access to resources (like APIs or fonts) on a web page from a different domain than the one serving the web page.
 
 core modules
 --- http
@@ -24,6 +23,16 @@ core modules
 --- os
 --- querystring
 --- url
+
+http methods (_httpMethod_):
+--- CONNECT
+--- GET
+--- POST
+--- DELETE
+--- PATCH (edit)
+--- PUT
+--- HEAD
+--- OPTIONS
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
 --- error types
@@ -399,16 +408,22 @@ const chalk = require('chalk');
 const idle = require('idle-gc');
 --- idle.ignore();
 +------------------------------------------------------------------------------------------
-| express express-session cookie-parser
-const express = require("express");
-const session = require("express-session");
-const cookies = require("cookie-parser");
+| express express-session cookie-parser cors
+const express = require('express');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const cors = require('cors');
 
 const app = express();
 app.use(cookies());
 app.use(session(secret: '_data_', saveUninitialized: _bool_, resave: _bool_);
+app.use(cors({
+  origin: '_HTTP_://_HOST_:_PORT_',
+  metods: [_httpMethod_, ...],
+  credentials: _bool_,
+});
 
---- app.get('_path_', (res, req) {...}).listen(_portNumber_, () {...});
+--- app.get('/_path_', (res, req) {...}).listen(_portNumber_, () {...});
     --- res.send('_data_');
     --- req.session.view;
     --- req.session.user;
