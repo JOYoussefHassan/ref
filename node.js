@@ -446,8 +446,9 @@ app.use(cors({
   credentials: _bool_,
   maxAge: _int_,
 });
+app.use((req, res, next) => {...});
 
---- app.get('/_path_', (res, req) {...}).listen(_portNumber_, () {...});
+--- app.get('/_path_', (res, req, next) {...}).listen(_portNumber_, () {...});
     --- res.send('_data_');
     --- res.setHeader('_headerName_', _headerData_);
         --- 'Content-type': 'text/html' - 'application/json' - 'text/plain'
