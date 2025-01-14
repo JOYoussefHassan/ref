@@ -446,7 +446,10 @@ app.use(cors({
   credentials: _bool_,
   maxAge: _int_,
 });
-app.use((req, res, next) => {...});
+app.use((req, res, next) => {
+  res.status(404)....
+  ...
+});
 
 --- app.get('/_path_', (res, req, next) {...}).listen(_portNumber_, () {...});
     --- res.send('_data_');
