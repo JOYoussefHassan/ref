@@ -1,4 +1,83 @@
 /*
+_data_
+--- '...'
+--- 45
+--- 45.5
+--- #07/31/1996#
+    DATE         - format YYYY-MM-DD
+    DATETIME     - format: YYYY-MM-DD HH:MI:SS
+    TIMESTAMP    - format: YYYY-MM-DD HH:MI:SS
+    YEAR         - format YYYY or YY
+--- '1996-07-31'
+--- ANY(...)
+--- ALL(...)
+
+CREATE DATABASE _databaseName_;
+DROP DATABASE _databaseName_;
+BACKUP DATABASE _databaseName_ TO DISK '_filePath_.bak' WITH DIFFERENTIAL;
+
+CREATE TABLE _tableName_ (_columnName_ _datatype_, ...);
+CREATE TABLE _tableName_ AS _selectCommand_;
+DROP TABLE _tableName_;
+TRUNCATE TABLE _tableName_;                                                                                                              ===> clear table without delete table
+ALTER TABLE _tableName_
+    ADD (_columnName_ _datatype_ NOT NULL, ...)
+    ADD CONSTRAINT _uniqueName_ UNIQUE (_columnName_, ...)
+    ADD CONSTRAINT _primarykeyName_ PRIMARY KEY (_columnName_, ...)
+    DROP COLUMN (_columnName_, ...)
+    DROP CONSTRAINT (_columnName_, ...)                                                                                                  ===> to drop primary key and unique
+    RENAME COLUMN _oldTableName TO _newTableName_
+    ALTER COLUMN (_columnName_ _datatype_ _constraintColumn_, ...);
+--- _constraintColumn_ (NOT NULL, UNIQUE, PRIMARY KEY, CHECK(_bool_), DEFAULT _data_, AUTO_INCREMENT)
+--- _columnName_ => can be (FOREIGN KEY (_columnName_) REFERENCES _otherTableName_(_columnName_))
+
+CREATE INDEX _indexName_ ON _tableName_ (_columnName_, ...);
+CREATE UNIQUE INDEX _indexName_ ON _tableName_ (_columnName_, ...);
+DROP INDEX _tableName_._indexName_;
+
+SELECT _function_(DISTINCT *, _newTableName_._columnName_ + '...' + _newTableName_._columnName_ ..., ...) [_newColumnName_]
+AS [_newColumnName_] + '...', AS ...                                                                                                     ===> may "_newColumnName_"
+(CASE
+    WHEN (_newTableName_._columnName_ _conditionOperator_ _data_) _logicalOerator_ ... THEN _data_
+    ...
+    ELSE _data_
+END AS [_newColumnName_] + '...')
+INTO _newTableName_ IN '_database_.mdb'
+FROM _tableName_ AS _newTableName_, FROM ...
+WHERE EXISTS (_newTableName_._columnName_ _conditionOperator_ _data_) _logicalOerator_ ...                                               ===> can be use select query
+    ORDER BY _newTableName_._columnName_ _order_, ...                                                                                    ===> these commands below can be in other order
+    GROUP BY _newTableName_._columnName_ ... _order_ ...
+    LIMIT _num_
+    FETCH FIRST _num_ ROWS ONLY
+    ROWNUM _conditionOperator_ _num_
+    _joinType_ JOIN _otherTableName_ ON _newTableName_._columnName_=_otherTableName_._coilumnName_
+    HAVING (_newTableName_._columnName_ _conditionOperator_ _data_) _logicalOerator_ ...                                                ===> can use COUNT, MIN, MAX, SUM, AVG
+_unionType_ _selectCommand_;
+--- DISTINCT => print without doublicates
+--- _tableName_ => can be as query
+--- _function_ (_nothing_, CONCAT, TOP _num_, COUNT, MIN, MAX, SUM, AVG)
+--- _conditionOperator_ (=, >, <, >=, <=, <> not equal, BETWEEN _intORString_ AND _intORString_, LIKE _regText_, IN (_data_, ...), IN (_selectCommand_))
+--- _logicalOerator_ (AND, OR, NOT, IS NULL, IS NOT NULL, ISNULL(_data_, _data_))
+--- _order_ (ASC, DESC)
+--- _regText_ (% in start or end mean anything, _ character or number, * character or number or nothing, ? character, # number, [abc...], [a-...], [!...], )
+--- _num_ (_int_, _int_ PERSENT)
+--- _joinType_ (_nothing_ (INNER), LEFT (OUTER), RIGHT (OUTER), FULL (FULL OUTER))
+--- _unionType_ (UNION without doublicates, UNION ALL with doublicates)
+
+INSERT INTO _tableName (_columnName_, ...)
+VALUES (_data_, ...), ...;                                                                                                              ===> can be as query
+
+UPDATE _tableName_
+SET _columnName_ = _data_, ...
+WHERE (_columnName_ _conditionOperator_ _data_) _logicalOerator_ ...;
+
+DELETE FROM _tableName_
+WHERE (_columnName_ _conditionOperator_ _data_) _logicalOerator_ ...;
+
+DROP TABLE _tableName_;
+*/
+
+/*
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | php |
 -------
