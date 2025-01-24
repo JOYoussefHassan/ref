@@ -440,6 +440,7 @@ const cors = require('cors');
 const app = express();
 app.use(cookies());
 app.use(session(secret: '_data_', saveUninitialized: _bool_, resave: _bool_);
+app.use(express.json(), express.urlencoded({extended: true});
 app.use(cors({
   origin: '_HTTP_://_HOST_:_PORT_',
   metods: [_httpMethod_, ...],
@@ -452,6 +453,7 @@ app.use((req, res, next) => {
 });
 
 --- app.get('/_path_', (req, res, next) {...}).listen(_portNumber_, () {...});
+    app.post('/_path_', (req, res, next) {...}).listen(_portNumber_, () {...});
     --- res.send('_data_');
     --- res.setHeader('_headerName_', _headerData_);
         --- 'Content-type': 'text/html' - 'application/json' - 'text/plain'
