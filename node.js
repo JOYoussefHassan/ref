@@ -466,6 +466,7 @@ app.use((req, res, next) => {
     --- req.session.user;
     --- req.session.save();
     --- req.session.destroy();
+    --- next();                                                                            ===> to go to another get which has same path
 +------------------------------------------------------------------------------------------
 | assert (AssertionError if false)
 const assert = require('assert').strict;
