@@ -287,7 +287,7 @@ const sqlite3Database = new sqlite3.Database(':memory:');                       
 sqlite3Database.serialize(() => {
   --- sqlite3Database.map('_sqlQuery_', function () {...});
   --- sqlite3Database.exec('_sqlQuery_', function () {...});
-  --- sqlite3Database.run('_sqlQuery_', _valuesList_, function () {...});
+  --- sqlite3Database.run('_sqlQuery_', _valuesList_, function () {...});                  ===> to access value list we add in query `?`
   --- sqlite3Database.get('_sqlQuery_', _valuesList_, function (error, row) {...});
   --- sqlite3Database.all('_sqlQuery_', _valuesList_, function (error, rows) {...});
   --- sqlite3Database.each('_sqlQuery_', _valuesList_, function (error, row) {...});
