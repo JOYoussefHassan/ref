@@ -16,9 +16,18 @@
     |   "scripts": {
     |     "build": "tsc",
     |     "start": "node _pathIndex_.js",
-    |     "dev": "nodemon --exec ts-node ./src/index.ts"
+    |     "dev": "nodemon --exec ts-node _pathIndex_.ts"
     |   },
     |   ...
+    | }
+--- tsconfig.json
+    | {
+    |    "compilerOptions": {
+    |      ...
+    |      "rootDir": "./_pathTsDir",
+    |      "outDir": "./_pathJsDir_",
+    |      ...
+    |    }
     | }
 --- terminal
     > npm run build
@@ -27,6 +36,7 @@
 | ref |
 +-----+
 _datatype_
+--- void
 --- boolean
 --- number
 --- string
@@ -40,8 +50,6 @@ _datatype_
 --- _datatype_
 --- _datatype_[_datatype_, ...]
 --- _datatype_<_datatype, ...>
---- [_var_: _datatype_, ...]
---- {_var_: _datatype_, ...}
 
 _varPrefix_
 --- readonly
@@ -54,5 +62,13 @@ _varSuffix_
 --- ?
 
 _varDeclaration_
---- _varPrefix_ _var_ _varSuffix_: _datatype_
+--- _var_ _varSuffix_: _datatype_
+--- [_var_: _datatype_, ...]
+--- {_var_: _datatype_, ...}
+
+_interface_ (as `{var: _data_, ...}`)
+interface _interfaceName_ {
+  _varDeclaration_,
+  ...
+}
 */
