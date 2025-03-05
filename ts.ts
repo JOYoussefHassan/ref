@@ -47,6 +47,8 @@ _datatype_
 --- never
 --- null
 --- undefined
+--- Promise<_datatype_>
+--- Generator<_datatype_>
 --- _datatype_
 --- _datatype_[_datatype_, ...]
 --- _datatype_<_datatype, ...>
