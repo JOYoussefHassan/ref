@@ -25,3 +25,22 @@ function bubbleSort(array: number[], index?: number): number[] {
 
   return (index <= 0) ? array : bubbleSort(array, --index);
 }
+// --------------------------------------------
+function * swapSelectionSort(first: number, second: number, reverse: boolean = false): Generator<number> {
+  if (first < second) {
+    yield first;
+    yield second;
+  } else {
+    yield second;
+    yield first;
+  }
+}
+function selectionSort(array: number[], index: number = 0): number[] {
+  for (let i: number = index + 1; i < array.length; i++) {
+    let swap: Generator<number> = swapSelectionSort(array[index], array[i]);
+    array[index] = swap.next().value;
+    array[i] = swap.next().value;
+  }
+  console.log('-------------');
+  return (index >= array.length - 1) ? array : selectionSort(array, ++index);
+}
