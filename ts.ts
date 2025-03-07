@@ -13,6 +13,7 @@
     |   "version": "_version_",
     |   "main": "_pathIndex_.js",
     |   "scripts": {
+    |     ...
     |     "build": "tsc",
     |     "start": "node _pathIndex_.js",
     |     "dev": "nodemon --exec ts-node _pathIndex_.ts"
