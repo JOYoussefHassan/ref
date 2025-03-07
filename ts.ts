@@ -4,8 +4,7 @@
 +------+
 --- terminal
     > npm init -y
-    > npm install express
-    > npm install --save-dev typescript @types/node @types/express ts-node nodemon
+    > npm install --save-dev typescript @types/node @types/nodemon ts-node nodemon
     > npm install _packageName_ @types/_packageName_
     > npx tsc --init
 --- package.json
