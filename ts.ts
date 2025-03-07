@@ -50,7 +50,8 @@ _datatype_
 --- Promise<_datatype_>
 --- Generator<_datatype_>
 --- _datatype_
---- _datatype_[_datatype_, ...]
+--- (_datatype_ | ...)[]
+--- _datatype_[]
 --- _datatype_<_datatype, ...>
 
 _varPrefix_
