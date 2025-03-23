@@ -632,13 +632,15 @@ enum _segmentEnumName_ { _enumVarName_, .... }
       },
       child: _widget_,
     )
---- Actions(                                                                             ===> to activate action
+--- Action(                                                                              ===> to activate action
       dispatcher: _dispatcherName_Dispatcher(...),
       actions: <Type, Action<Intent>>{
         _intentName_Intent: _actionName_Action<Intent>(...),
         ...
       },
-      child: _widget_,
+      child: Builder(                                                                    ===> must add this widget
+        builder: (context) => _widget_,
+      ),
     )
 go to top `Action`
 https://docs.flutter.dev/ui/interactivity/actions-and-shortcuts#the-shortcutmanager
