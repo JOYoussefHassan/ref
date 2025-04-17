@@ -28,12 +28,18 @@ core modules
 http methods (_httpMethod_):
 --- CONNECT
 --- GET
---- POST
+--- POST           ===> create
 --- DELETE
 --- PATCH (edit)
 --- PUT
 --- HEAD
 --- OPTIONS
+
+REST (GET /api/v3/products?limit=22&offset=23)
+- version
+- method (GET => get, POST => create, PUT => update, DELETE => delete)
+- route `products` (must be as property not verb)
+- query (limit, offset) => paginnation
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
 --- error types
