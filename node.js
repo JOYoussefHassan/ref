@@ -35,11 +35,11 @@ http methods (_httpMethod_):
 --- HEAD
 --- OPTIONS
 
-REST (GET /api/v3/products?limit=22&offset=23)
+REST & JSONAPI (GET /api/v3/products?limit=22&offset=23&include=author&fields[people]=name)
 - version
 - method (GET => get, POST => create, PUT => update, DELETE => delete)
 - route `products` (must be as property not verb)
-- query (limit, offset) => paginnation
+- query (limit, offset, include => extradata, fields[data] = to set the shown data) => paginnation
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --- the url path can be anything
 --- error types
