@@ -1,4 +1,9 @@
 /*
+firebase login
+firebase projects:list
+--- dart pub global activate flutterfire_cli
+--- flutterfire configure
+--- flutter pub add firebase_core
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------
 | file: pubspec.yamel |
 +---------------------+
