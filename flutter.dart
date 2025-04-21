@@ -1,4 +1,5 @@
 /*
+(firebase_core, cloudfirestore)
 firebase login
 firebase projects:list
 --- dart pub global activate flutterfire_cli
@@ -880,6 +881,10 @@ _widgetAnimationExplicitCustom_ (CustomPainter)
       animation: _animation_,
       builder: (context, child) => _widget_,
     )
++--------------------------------------------------------------------------------------------------------------+------------------------------------------------------------
+| firebase (firestore database): _cloudFireStore_  ===> 'firebase_core', 'firebase_options', 'cloud_firestore' |
++--------------------------------------------------------------------------------------------------------------+
+db = FirebaseFirestore.instance;
 */
 
 // https://pub.dev/packages?q=is%3Aflutter-favorite
