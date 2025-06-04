@@ -426,12 +426,12 @@ _varDeclare_ = const _className_._functionMethod_;
         extends _className_, ..., _abstractMixinName_, ...
         implements _className_, ...
         with _mixinName_, ... {
-          const _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...});
+          const _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...}) : _propertyVarName_ = _data_, ...;    ===> to init `_propertyVarName_` with data and `,` is as `or`
           factory _normalClassName_({required this._propertyVarName_, ..., required super._propertyVarName_, ...}) => _data_;
           @_metadata_
           _statement_;
           ...
-          String greet(...) => _data_;                                                                                 ===> when call class will see that output
+          String greet(...) => _data_;                                                                                                                 ===> when call class will see that output
           _varDeclare_ get _propertyVarName_ => _data_;
           _varDeclare_ get _propertyVarNameImplementClass_ => _data_;
           set _propertyVarName_(_varDeclare_) => _data_;
