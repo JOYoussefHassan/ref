@@ -100,6 +100,7 @@ node (open bash REPL)
 --- .exit
 node _nodejsFileName_.js
 node debug _nodejsFileName_.js
+node inspect _nodejsFileName_.js
 node --inspect _nodejsFileName_.js                                                               ===> to enable debugging
 node --inspect=_host_:_port_ _nodejsFileName_.js
 node --inspect-brk _nodejsFileName_.js
