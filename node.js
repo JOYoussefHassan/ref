@@ -177,6 +177,13 @@ http.createServer(function (req, res) {
 +------------------+
 | module (no need to imported)                                                             ===> to print module data
 +------------------------------------------------------------------------------------------
+| process
+const process = require('process');
+--- process.cwd();                                                                         ===> current directory
+--- process.nextTick(() => ...);
++------------------------------------------------------------------------------------------
+| path
++------------------------------------------------------------------------------------------
 | http
 const http = require('http');
 --- http.createServer(function (req, res) {...}).listen(_portNumber_, () {...});
