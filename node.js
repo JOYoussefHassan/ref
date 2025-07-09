@@ -374,6 +374,8 @@ setTimeout(function () {
 | console
 const console = require('console');
 --- console.trace('_data_ %d', 39);
+--- console.error(...);
+--- console.log(...);
 https://www.geeksforgeeks.org/node-js-console-complete-reference
 +------------------------------------------------------------------------------------------
 | bcrypt (password)
