@@ -21,6 +21,15 @@
 
 ## Database connection in Django
 
+#### ACID
+
+| **Property** | **Meaning**         | **Explanation**                                                                 | **Example**                                                                 |
+|--------------|---------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **A - Atomicity** | All-or-nothing     | A transaction must either complete fully or not at all. If any part fails, the entire transaction is rolled back. | Transferring money: if $100 is deducted from Account A but not added to Account B, the whole transaction is canceled. |
+| **C - Consistency** | Valid state transitions | A transaction must bring the database from one valid state to another, maintaining all rules (constraints, triggers, etc.). | If a product stock must never be negative, a transaction that would cause this must be rejected. |
+| **I - Isolation** | Concurrent safety | Transactions must not interfere with each other. Intermediate states are hidden from other transactions. | Two users booking the last ticket at the same time—only one should succeed. |
+| **D - Durability** | Permanent results | Once a transaction is committed, its changes are permanent—even in the case of a crash or power failure. | After placing an order, the order record remains in the database even if the server crashes immediately after. |
+
 | **Concept**                          | **Definition / Behavior**                                                                                                                                                       |
 |--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Synchronous (Sync)**               | - Executes tasks one at a time<br>- Caller waits for the response (blocking)<br>- Simple and predictable<br>- **Latency:** Lower when the database is small; higher due to blocking operations as data size or concurrency increases<br>- **Scalability:** Limited; performance drops with more concurrent tasks |
