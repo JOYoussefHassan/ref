@@ -23,8 +23,8 @@
 
 | **Concept**                          | **Definition / Behavior**                                                                                                                                                       |
 |--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Synchronous (Sync)**               | - Executes tasks one at a time<br>- Caller waits for the response (blocking)<br>- Simple and predictable                                                                        |
-| **Asynchronous (Async/concurrent)**  | - Executes tasks independently<br>- Caller doesn't wait (non-blocking)<br>- Efficient for I/O-heavy operations                                                                  |
+| **Synchronous (Sync)**               | - Executes tasks one at a time<br>- Caller waits for the response (blocking)<br>- Simple and predictable<br>- **Latency:** Higher due to blocking operations<br>- **Scalability:** Limited; performance drops with more concurrent tasks |
+| **Asynchronous (Async/concurrent)**  | - Executes tasks independently<br>- Caller doesn't wait (non-blocking)<br>- Efficient for I/O-heavy operations<br>- **Latency:** Lower for I/O-bound tasks; multiple operations can proceed<br>- **Scalability:** High; handles many concurrent tasks efficiently |
 | **Connection Pooling**               | technique used to manage database connections efficiently by reusing active connections instead of creating new ones each time a connection is requested. This approach significantly reduces the overhead associated with opening and closing connections, thereby enhancing the performance and scalability of applications. |
 
 #### Note in Django:
