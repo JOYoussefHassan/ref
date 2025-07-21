@@ -166,6 +166,8 @@
 # _modelSelectVar_._modelName__set.count()
 # _modelSelectVar_._modelName__set.all()
 #
+# await _modelName_.objects.a_function_(...)
+#
 # _modelCreateVar_ = _modelSelectVar_._modelName__set.create(_tableName_='_data_', ...)
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | views.py |
