@@ -11,6 +11,8 @@
 # python manage.py createsuperuser
 # -----------
 # python manage.py test _appName_
+# -----------
+# daphne -p 8000 djangoproject.asgi:application
 
 
 # sudo systemctl _command_ apache2
@@ -73,6 +75,8 @@
 #     'django.contrib.sessions',
 #     'django.contrib.messages',
 #     'django.contrib.staticfiles',
+#
+#     'daphne',
 # ]
 #
 # TEMPLATES = [
@@ -92,6 +96,8 @@
 #         },
 #     },
 # ]
+#
+# ASGI_APPLICATION = '_projectName_.asgi.application'
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # | admin.py |
 # ------------
