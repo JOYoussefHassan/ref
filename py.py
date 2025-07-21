@@ -348,6 +348,9 @@
 #           _command
 # [4] - with _file as _var :
 #           _command
+# [5] - async with _asyncFunction():                                                                            ===> after first async do the bottom function and command
+#           await _ayncFunction()
+#           _command
 # [5] - def _functionName(_param1 = _default, _param2 = _default, ...) -> _dataType :                           ===> _functionName() to execute this, *_param to set the number of parameter according inputs as tuple or **_param to create
 #           _command                                                                                                 dictionary and this one is key (unpaking) => _functionName(_data = "_data") tuple unpacking with * and dictionary with **,
 #                                                                                                                    _param can be a function (child function in _command place) and main function is called _decoratorFunction, (->) to hint
