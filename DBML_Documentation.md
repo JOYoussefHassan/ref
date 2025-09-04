@@ -136,6 +136,13 @@ id integer [primary key, increment]
 username varchar [note: 'User login name']
 ```
 
+#### References
+```dbml
+user_id integer [ref: > users.id]
+```
+
+See relationship types for shortcut symbols used in refs (>, <, -, <>): [Show relationship types](#relationship-types)
+
 #### Multiple Settings
 ```dbml
 email varchar [unique, not null, note: 'User email address']
