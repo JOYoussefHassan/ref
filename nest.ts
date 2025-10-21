@@ -4,7 +4,34 @@ npm i --save @nestjs/platform-fastify
 npm i --save zod
 npm i --save class-validator class-transformer
 
-$ npm i --save @nestjs/websockets @nestjs/platform-socket.io
+npm i --save @nestjs/websockets @nestjs/platform-socket.io
+
+npm install prisma --save-dev
+npx prisma
+npx prisma init
+_inPrisma_
+_setInEnv_
+npx prisma migrate dev --name init
+npm install @prisma/client
++-------------------+-------------------------------------------------------------------
+| prisma.service.ts |
++-------------------+
+| import { Injectable, OnModuleInit } from '@nestjs/common';
+| import { PrismaClient } from 'generated/prisma';
+|
+| @Injectable()
+| export class PrismaService extends PrismaClient implements OnModuleInit {
+|   async onModuleInit() {
+|     await this.$connect();
+|   }
+| }
+| // then append it as to parameter of another service
++---------------------------------------------------------------------------------------
+
+npm install --save @nestjs/jwt
+
+npm install --save @nestjs/passport passport passport-local
+npm install --save-dev @types/passport-local
 
 npm run start
 npm new _projectName_
@@ -190,7 +217,25 @@ const _mockServiceName_ = {
 
 @Global()                                                                                     ===> optional for global modules to be used across the app one time
 @Module({
-  imports: [_Module_],
+  imports: [
+    _Module_,
+    JwtModule.register({
+      secret: '_secret_;,
+      signOptions: { expiresIn: '60s' },
+    }),
+    RouterModule.register([
+      {
+        path: '_path_',
+        module: _Module_,
+        children: [
+          {
+            path: '_path_',
+            module: _Module,
+          },
+        ],
+      },
+    ]),
+  ],
   controllers: [_ControllerName_],
   providers: [
     _ServiceName_,
