@@ -11,6 +11,7 @@ npx prisma
 npx prisma init
 _inPrisma_
 _setInEnv_
+npx prisma generate
 npx prisma migrate dev --name init
 npm install @prisma/client
 +-------------------+-------------------------------------------------------------------
