@@ -34,6 +34,8 @@ npm install --save @nestjs/jwt
 npm install --save @nestjs/passport passport passport-local
 npm install --save-dev @types/passport-local
 
+npm install --save-dev dotenv @types/dotenv
+
 npm run start
 npm new _projectName_
 npm run start:dev
