@@ -18,7 +18,7 @@ npm install @prisma/client
 | prisma.service.ts |
 +-------------------+
 | import { Injectable, OnModuleInit } from '@nestjs/common';
-| import { PrismaClient } from 'generated/prisma';
+| import { PrismaClient } from '../../generated/prisma';
 |
 | @Injectable()
 | export class PrismaService extends PrismaClient implements OnModuleInit {
@@ -27,6 +27,18 @@ npm install @prisma/client
 |   }
 | }
 | // then append it as to parameter of another service
++------------------+--------------------------------------------------------------------
+| prisma.module.ts |
++------------------+
+| import { Global, Module } from '@nestjs/common';
+| import { PrismaService } from './prisma.service';
+|
+| @Global()
+| @Module({
+|   providers: [PrismaService],
+|   exports: [PrismaService],
+| })
+| export class PrismaModule {}
 +---------------------------------------------------------------------------------------
 
 npm install --save @nestjs/jwt
