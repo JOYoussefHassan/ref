@@ -116,6 +116,8 @@ export class _controllerName_ {
   [1] - UseFilters(...filters: ExceptionFilter[])
   [2] - UsePipes(new _pipe_(options))
   [3] - _DecoratorRolesName_(...roles: string[])
+  [4] - UseGuards(_guard_)
+  [5] - UseGuards(new _guard_())
   _functionName_(
     @Req() req: Request,
     @Res() res: Response,
