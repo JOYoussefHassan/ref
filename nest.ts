@@ -13,6 +13,7 @@ _inPrisma_
 _setInEnv_
 npx prisma generate
 npx prisma migrate dev --name init
+npx create-db                                                                           ===> create free postgres server
 npm install @prisma/client
 +-------------------+-------------------------------------------------------------------
 | prisma.service.ts |
