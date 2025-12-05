@@ -15,6 +15,7 @@ npx prisma generate
 npx prisma migrate dev --name init
 npx create-db                                                                           ===> create free postgres server
 npm install @prisma/client
+npm install @prisma/adapter-better-sqlite3
 +-------------------+-------------------------------------------------------------------
 | prisma.service.ts |
 +-------------------+
