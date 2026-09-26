@@ -8,10 +8,9 @@
 #       [5] - xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                                 ===> Default XAML namespace (WPF controls)
 #       [6] - xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                                            ===> XAML language namespace (x:Name, x:Class, x:Key)
 #       [7] - xmlns:local="clr-namespace:MyApp"                                                                 ===> Map custom CLR namespace to XAML prefix
-#       [8] - <!-- _comment -->                                                                                 ===> XAML comment
-#       [9] - <_Element _Property="_value" />                                                                   ===> Self-closing element with attribute
-#       [10] - <_Element> _content </_Element>                                                                  ===> Element with child content
-#       [11] - <_Element> <_Element.Property> _val </_Element.Property> </_Element>                             ===> Property element syntax (for complex objects)
+#       [8] - <_Element _Property="_value" />                                                                   ===> Self-closing element with attribute
+#       [9] - <_Element> _content </_Element>                                                                  ===> Element with child content
+#       [10] - <_Element> <_Element.Property> _val </_Element.Property> </_Element>                             ===> Property element syntax (for complex objects)
 #
 # [2] - _markupExtensions
 #       [1] - x:Name="_varName"                                                                                 ===> assigns a name to an element (like variable name in C#)
