@@ -1,0 +1,134 @@
+<!--
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [1] - _basicSyntax
+#       [1] - <?xml version="1.0" encoding="utf-8" ?>                                                           ===> XML declaration (optional but recommended)
+#       [2] - <Window ...> ... </Window>                                                                        ===> Root element for WPF Window
+#       [3] - <Page ...> ... </Page>                                                                            ===> Root element for UWP/WinUI Page
+#       [4] - <UserControl ...> ... </UserControl>                                                              ===> Root element for reusable custom controls
+#       [5] - xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                                 ===> Default XAML namespace (WPF controls)
+#       [6] - xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                                            ===> XAML language namespace (x:Name, x:Class, x:Key)
+#       [7] - xmlns:local="clr-namespace:MyApp"                                                                 ===> Map custom CLR namespace to XAML prefix
+#       [8] - <!-- _comment -->                                                                                 ===> XAML comment
+#       [9] - <_Element _Property="_value" />                                                                   ===> Self-closing element with attribute
+#       [10] - <_Element> _content </_Element>                                                                  ===> Element with child content
+#       [11] - <_Element> <_Element.Property> _val </_Element.Property> </_Element>                             ===> Property element syntax (for complex objects)
+#
+# [2] - _markupExtensions
+#       [1] - x:Name="_varName"                                                                                 ===> assigns a name to an element (like variable name in C#)
+#       [2] - x:Key="_keyName"                                                                                  ===> unique identifier for resources in a ResourceDictionary
+#       [3] - x:Class="_namespace.className"                                                                    ===> links XAML to C#/VB.NET code-behind partial class
+#       [4] - x:Null                                                                                              ===> assigns a null value to a property
+#       [5] - x:Static _class._property                                                                         ===> references a static property or field
+#       [6] - {Binding _propertyName}                                                                           ===> binds a property to a data context
+#       [7] - {StaticResource _keyName}                                                                         ===> retrieves a resource evaluated at load time
+#       [8] - {DynamicResource _keyName}                                                                        ===> retrieves a resource evaluated at runtime (can change)
+#       [9] - {x:Bind _propertyName}                                                                            ===> UWP/WinUI compiled binding (faster than Binding)
+#
+# [3] - _commonProperties
+#       [1] - Width="_num" / Height="_num"                                                                      ===> explicit size (use "Auto" to size to content)
+#       [2] - Margin="_left,_top,_right,_bottom"                                                                ===> space outside the element (thickness)
+#       [3] - Padding="_left,_top,_right,_bottom"                                                               ===> space inside the element (thickness)
+#       [4] - HorizontalAlignment="Left|Center|Right|Stretch"                                                   ===> horizontal alignment within parent
+#       [5] - VerticalAlignment="Top|Center|Bottom|Stretch"                                                     ===> vertical alignment within parent
+#       [6] - Visibility="Visible|Hidden|Collapsed"                                                             ===> Visible (shows), Hidden (hides but keeps space), Collapsed (hides and removes space)
+#       [7] - Background="_colorOrBrush"                                                                        ===> background color or brush
+#       [8] - Foreground="_colorOrBrush"                                                                        ===> text or foreground color
+#       [9] - FontSize="_num" / FontWeight="Bold" / FontStyle="Italic"                                          ===> typography properties
+#       [10] - IsEnabled="_bool"                                                                                ===> enables or disables user interaction
+#       [11] - ToolTip="_textOrElement"                                                                         ===> popup hint when hovering over element
+#       [12] - DataContext="_object"                                                                            ===> sets the default source object for data bindings
+#
+# [4] - _layoutPanels
+#       [1] - Grid                                                                                              ===> flexible row and column layout
+#               [1] - <Grid.ColumnDefinitions> <ColumnDefinition Width="Auto|*|_num*"/> </Grid.ColumnDefinitions>
+#               [2] - <Grid.RowDefinitions> <RowDefinition Height="Auto|*|_num*"/> </Grid.RowDefinitions>
+#               [3] - Grid.Column="_num" / Grid.Row="_num"                                                      ===> places child in specific cell
+#               [4] - Grid.ColumnSpan="_num" / Grid.RowSpan="_num"                                              ===> spans across multiple cells
+#       [2] - StackPanel                                                                                          ===> stacks children in a single line
+#               [1] - Orientation="Horizontal|Vertical"                                                         ===> direction of stacking (default Vertical)
+#       [3] - DockPanel                                                                                           ===> docks children to edges (Top, Bottom, Left, Right)
+#               [1] - DockPanel.Dock="Top|Bottom|Left|Right"                                                    ===> sets docking edge for child
+#               [2] - LastChildFill="True|False"                                                                ===> last child fills remaining space (default True)
+#       [4] - WrapPanel                                                                                           ===> positions children in sequential order, wrapping to next line
+#       [5] - Canvas                                                                                               ===> absolute positioning using coordinates
+#               [1] - Canvas.Left="_num" / Canvas.Top="_num"                                                     ===> exact X and Y coordinates
+#       [6] - UniformGrid                                                                                         ===> forces children into a grid of equal-sized cells
+#               [1] - Rows="_num" / Columns="_num"                                                              ===> defines grid dimensions
+#
+# [5] - _controlsBasic
+#       [1] - Button Content="_text" Click="_eventHandler"                                                      ===> clickable button
+#       [2] - TextBlock Text="_text" TextWrapping="Wrap"                                                        ===> lightweight text display (not editable)
+#       [3] - TextBox Text="_text" AcceptsReturn="True|False"                                                   ===> editable text input
+#       [4] - CheckBox Content="_text" IsChecked="_bool|null"                                                   ===> toggleable true/false/indeterminate state
+#       [5] - RadioButton Content="_text" GroupName="_name" IsChecked="_bool"                                   ===> mutually exclusive selection within a group
+#       [6] - ComboBox SelectedItem="_item" ItemsSource="_collection"                                           ===> drop-down selection list
+#       [7] - ListBox ItemsSource="_collection" SelectionMode="Single|Multiple"                                 ===> selectable list of items
+#       [8] - Image Source="_uri" Stretch="Fill|Uniform|UniformToFill|None"                                     ===> displays an image
+#       [9] - ProgressBar Value="_num" Minimum="0" Maximum="100" IsIndeterminate="_bool"                        ===> shows progress (bar fills or animates)
+#       [10] - Slider Value="_num" Minimum="_num" Maximum="_num" Orientation="Horizontal|Vertical"             ===> select value from a range by dragging a thumb
+#       [11] - DatePicker SelectedDate="_date"                                                                  ===> calendar date picker
+#
+# [6] - _dataBinding
+#       [1] - {Binding}                                                                                         ===> binds to the entire DataContext object
+#       [2] - {Binding _propertyPath}                                                                           ===> binds to a specific property (e.g., {Binding Name})
+#       [3] - {Binding Path=_property, Mode=OneWay|TwoWay|OneTime|OneWayToSource}                               ===> defines binding direction (TwoWay for TextBox.Text)
+#       [4] - {Binding UpdateSourceTrigger=PropertyChanged|LostFocus|Explicit}                                  ===> when to push changes back to source (PropertyChanged for instant TextBox updates)
+#       [5] - {Binding ElementName=_xName, Path=_property}                                                      ===> binds to another named element in the UI
+#       [6] - {Binding RelativeSource={RelativeSource Self}, Path=_property}                                    ===> binds to a property on the same element
+#       [7] - {Binding RelativeSource={RelativeSource AncestorType={x:Type _type}}}                             ===> binds to a parent element in the visual tree
+#       [8] - Converter={StaticResource _converterName}                                                         ===> passes value through an IValueConverter before display
+#       [9] - FallbackValue="_defaultValue"                                                                     ===> value used if binding fails
+#       [10] - TargetNullValue="_nullValue"                                                                     ===> value used if source property is null
+#
+# [7] - _resourcesAndStyles
+#       [1] - <Window.Resources> ... </Window.Resources>                                                        ===> scope for storing reusable objects, styles, and templates
+#       [2] - <SolidColorBrush x:Key="_brushName" Color="_color" />                                             ===> defining a reusable brush
+#       [3] - <Style TargetType="_ControlType"> ... </Style>                                                    ===> defines shared property values for a control type
+#               [1] - <Setter Property="_PropertyName" Value="_value" />                                        ===> sets a specific property in the style
+#               [2] - BasedOn="{StaticResource _baseStyle}"                                                     ===> inherits from another style
+#       [4] - <ControlTemplate x:Key="_templateName" TargetType="_ControlType"> ... </ControlTemplate>          ===> redefines the entire visual structure of a control
+#               [1] - <ContentPresenter />                                                                      ===> placeholder for the control's content
+#       [5] - <DataTemplate DataType="{x:Type _modelType}"> ... </DataTemplate>                                 ===> defines how a data object (not a control) should be visually displayed
+#       [6] - <DataTemplate x:Key="_templateKey"> ... </DataTemplate>                                           ===> applied explicitly via ContentTemplate or ItemTemplate
+#
+# [8] - _triggers
+#       [1] - <Trigger Property="_PropertyName" Value="_value"> ... </Trigger>                                  ===> changes properties when a specific property reaches a value
+#               [1] - <Setter Property="_TargetProperty" Value="_newValue" />                                   ===> action to perform when triggered
+#       [2] - <MultiTrigger> ... </MultiTrigger>                                                                ===> triggers only when multiple conditions are met
+#               [1] - <Condition Property="_Prop1" Value="_val1" />                                             ===> first condition
+#               [2] - <Condition Property="_Prop2" Value="_val2" />                                             ===> second condition
+#       [3] - <DataTrigger Binding="{Binding _property}" Value="_value"> ... </DataTrigger>                     ===> triggers based on bound data values instead of UI properties
+#       [4] - <EventTrigger RoutedEvent="_EventName"> ... </EventTrigger>                                       ===> triggers actions (like animations) when an event occurs (e.g., MouseEnter)
+#               [1] - <BeginStoryboard> <Storyboard> ... </Storyboard> </BeginStoryboard>                       ===> starts an animation sequence
+#
+# [9] - _animations
+#       [1] - <Storyboard> ... </Storyboard>                                                                    ===> container and controller for animations
+#       [2] - <DoubleAnimation Storyboard.TargetProperty="(_type._property)" From="_num" To="_num" Duration="_time" /> ===> animates a double value (Width, Opacity, Angle)
+#       [3] - <ColorAnimation Storyboard.TargetProperty="(_type._property)" To="_color" Duration="_time" />     ===> animates a color value (Background, Foreground)
+#       [4] - <ObjectAnimationUsingKeyFrames> ... </ObjectAnimationUsingKeyFrames>                              ===> animates discrete objects or visibility
+#               [1] - <DiscreteObjectKeyFrame KeyTime="_time" Value="{x:Static Visibility.Visible}" />          ===> sets value at specific time
+#       [5] - Duration="0:0:_seconds"                                                                           ===> format is Hours:Minutes:Seconds
+#       [6] - BeginTime="0:0:_delay"                                                                            ===> delay before animation starts
+#       [7] - AutoReverse="True|False"                                                                          ===> plays backward after finishing
+#       [8] - RepeatBehavior="_numx|Forever"                                                                    ===> loops the animation (e.g., 3x or Forever)
+#       [9] - EasingFunction="<_EasingFunction />"                                                              ===> alters the pace of animation (e.g., QuadraticEase, BounceEase)
+#
+# [10] - _eventHandling
+#       [1] - Click="_EventHandlerName"                                                                         ===> direct event (Button, CheckBox)
+#       [2] - SelectionChanged="_EventHandlerName"                                                              ===> fires when selection changes (ListBox, ComboBox)
+#       [3] - TextChanged="_EventHandlerName"                                                                   ===> fires when TextBox content changes
+#       [4] - MouseEnter / MouseLeave                                                                           ===> fires when mouse pointer enters/leaves bounds
+#       [5] - Routed Events                                                                                       ===> events that travel up or down the visual tree
+#               [1] - Bubbling (e.g., Click, MouseLeftButtonDown)                                               ===> travels from source up to root (Window)
+#               [2] - Tunneling / Preview (e.g., PreviewMouseLeftButtonDown)                                    ===> travels from root down to source (Prefix "Preview")
+#       [6] - e.Handled = True;                                                                                 ===> stops the routed event from continuing up/down the tree (in C# code-behind)
+#
+# [11] - _commandsAndMVVM
+#       [1] - Command="{Binding _CommandName}"                                                                  ===> binds a UI action to an ICommand in the ViewModel
+#       [2] - CommandParameter="_valueOrBinding"                                                                ===> passes an argument to the command's Execute method
+#       [3] - InputBindings                                                                                       ===> maps keyboard shortcuts to commands
+#               [1] - <KeyBinding Key="_Key" Modifiers="Ctrl" Command="{Binding _Command}" />                   ===> binds Ctrl+Key to a command
+#       [4] - CommandBindings                                                                                     ===> binds RoutedCommands to handlers in code-behind
+#               [1] - <CommandBinding Command="ApplicationCommands.Copy" Executed="_Handler" CanExecute="_Handler" />
+# -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-->
